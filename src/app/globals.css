@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: "Fira-Code", sans-serif;
 }
 
 @layer utilities {
@@ -31,3 +32,92 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.navbar-fixed {
+  @apply fixed z-[9999] bg-white bg-opacity-70 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-line {
+  @apply my-2 block h-[2px] w-[30px] bg-dark dark:bg-white;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.grid-card {
+  @apply mb-10 overflow-hidden rounded-md shadow-md dark:bg-dark dark:bg-opacity-50 dark:text-light sm:mb-0 sm:w-64 md:w-80 lg:w-72;
+}
+
+.project-card {
+  @apply mb-6 w-full rounded-md shadow-lg dark:border-gray-700 dark:bg-gray-800 md:w-1/2 md:basis-80;
+}
+
+.achievement-card {
+  @apply m-3 h-full  shrink-0 basis-80 overflow-hidden md:w-1/2 md:basis-96;
+}
+
+#dark-toggle:checked ~ label div.toggle-circle {
+  @apply translate-x-3;
+}
+
+
+.swiper {
+  width: 90%;
+  height: 100%;
+
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  margin-bottom:30px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor:grab;
+}
+
+  .swiper-button-next {
+    opacity:1;
+    width: 40px;
+    height: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#9fa */
+  }
+  .swiper-button-prev {
+    opacity:1;
+    width: 40px;
+    height: 40px;
+    tranform:rotate(90deg);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#9fa */
+  }
+
+
+/* .swiper-pagination-bullet {
+     background-color: #000 !important;
+} */
+
