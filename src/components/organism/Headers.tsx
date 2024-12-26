@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Toggle from "../molecules/Toggles";
 
 export default function Header() {
@@ -10,9 +11,29 @@ export default function Header() {
   //   setIsDarkMode(newMode);
   //   localStorage.setItem("isDarkMode", JSON.stringify(newMode));
   // };
+  const [isAtTop, setIsAtTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <div className="bg-transparent absolute top-0 left-0 w-full flex items-center z-[9999]">
+      <div
+        className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-300 ${
+          isAtTop
+            ? "bg-transparent border-b-0"
+            : "bg-white/70 backdrop-blur-md border-b-[1px]"
+        }`}
+      >
         <div className="container ">
           <div className="flex items-center justify-between relative ">
             <div className="px-4 ">

@@ -1,5 +1,14 @@
 "use client";
+
+import { ProjectType } from "@/data/type";
+import CardProject from "../molecules/Card/CardProject";
+import { projectData } from "@/data/dataProject";
+import { useMemo } from "react";
+
 const Project: React.FC = () => {
+  const filteredProjects = useMemo(() => {
+    return projectData;
+  }, [projectData]);
   return (
     <section id="project" className="pt-24 pb-12 bg-white dark:bg-slate-800">
       <div className="max-w-xl mx-auto text-center mb-16">
@@ -13,7 +22,7 @@ const Project: React.FC = () => {
         </p>
       </div>
       <div className="container mt-28 flex md:justify-evenly flex-wrap md:gap-2  mb-12">
-        <div className="project-card">
+        {/* <div className="project-card">
           <a href="https://first-submission.netlify.app/">
             <img
               className="rounded-t-lg"
@@ -93,7 +102,11 @@ const Project: React.FC = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </div> */}
+
+        {filteredProjects.map((project, index) => (
+          <CardProject project={project} isGrid />
+        ))}
 
         <div className="project-card">
           <a href="https://booktodoappsubs2.netlify.app/">
