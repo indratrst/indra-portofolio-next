@@ -20,22 +20,29 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="pt-20 lg:pt-44 dark:bg-dark bg-white transition-colors duration-500"
+      className="pt-20 pb-32 lg:pt-44 dark:bg-dark bg-white transition-colors duration-500"
     >
       <div className="container">
         <div className="flex flex-wrap">
           <div
-            className="w-full self-center md:px-14 lg:w-1/2"
+            className="w-full md:px-14 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-4 self-start"
             data-aos="fade-down"
           >
-            <h1 className="text-base font-semibold text-primary md:text-xl">
+            <h1 className="uppercase text-primary  leading-5 text-lg">
+              Front End Web Developer
+            </h1>
+            {/* <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
-              <span className="block text-dark text-4xl font-bold mt-1 lg:5xl dark:text-light">
-                {" "}
+            </h1> */}
+            <h2 className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide">
+              {" "}
+              Hello👋, saya
+              <br />
+              <span className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide line-1 anim-typewriter">
                 Indra Tristia
               </span>
-            </h1>
-            <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl">
+            </h2>
+            <h2 className="font-medium text-secondary text-lg  lg:text-2xl">
               Self Taught{" "}
               <span className="text-dark dark:text-light">
                 {" "}
@@ -49,12 +56,9 @@ export default function Hero() {
               </span>
             </p>
 
-            <a
-              href="mailto:tristia71@gmail.com"
-              className="text-base font-semibold bg-primary py-3 px-8 rounded-full text-white hover:shadow-lg hover:opacity-90 transition duration-400 ease-in-out cursor-pointer relative z-50"
-            >
-              Hubungi Saya{" "}
-            </a>
+            <button className="self-start text-base font-semibold bg-primary py-3 px-8  rounded-full text-white hover:shadow-lg hover:opacity-90 transition duration-400 ease-in-out cursor-pointer relative z-50">
+              <a href="mailto:tristia71@gmail.com">Hubungi Saya </a>
+            </button>
           </div>
 
           <div className="w-full self-end px-4 lg:w-1/2">
@@ -82,13 +86,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#f3f4f5"
-          fill-opacity="1"
-          d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,170.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
-      </svg>
     </section>
   );
 }

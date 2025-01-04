@@ -102,7 +102,7 @@ body {
   opacity: 1;
   width: 40px;
   height: 40px;
-  tranform: rotate(90deg);
+  /* transform: rotate(90deg); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,3 +112,33 @@ body {
 /* .swiper-pagination-bullet {
      background-color: #000 !important;
 } */
+
+.line-1 {
+  top: 50%;
+  width: 6.5em;
+  border-right: 2px solid rgba(235, 18, 18, 0.979);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 6.5em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
