@@ -3,25 +3,7 @@ import { ProjectType } from "./type";
 export const projectData: ProjectType[] = [
   {
     image: "/myproject/first-subs.png",
-    categories: ["next js", "typescript", "javascript", "css", "node"],
-    title: "Landing Page",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
-    link: "https://chatbot-rkd.vercel.app/",
-    github: "https://github.com/tangguhriyadi/chatbot-rag",
-  },
-  {
-    image: "/myproject/first-subs.png",
-    categories: ["next js", "typescript", "javascript", "css", "node"],
-    title: "Landing Page",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
-    link: "https://chatbot-rkd.vercel.app/",
-    github: "https://github.com/tangguhriyadi/chatbot-rag",
-  },
-  {
-    image: "/myproject/first-subs.png",
-    categories: ["next js", "typescript", "javascript", "css", "node"],
+    categories: ["html", "javascript", "css"],
     title: "Landing Page",
     description:
       "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
