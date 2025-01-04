@@ -160,7 +160,6 @@ const CategoryStack: React.FC<CategoryStack> = ({ categories }) => {
       </span>
     ),
   };
-  console.log(categories);
   return <>{categories.map((category) => icons[category.toLowerCase()])}</>;
 };
 
