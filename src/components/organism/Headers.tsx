@@ -4,13 +4,6 @@ import { useEffect, useState } from "react";
 import Toggle from "../molecules/Toggles";
 
 export default function Header() {
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // const handleThemeToggle = () => {
-  //   const newMode = !isDarkMode;
-  //   setIsDarkMode(newMode);
-  //   localStorage.setItem("isDarkMode", JSON.stringify(newMode));
-  // };
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
@@ -25,16 +18,43 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleAnchorClick = (event: MouseEvent) => {
+      const target = event.target as HTMLAnchorElement;
+      if (
+        target.tagName === "A" &&
+        target.getAttribute("href")?.startsWith("#")
+      ) {
+        event.preventDefault();
+        const id = target.getAttribute("href")?.substring(1);
+        if (id) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+    };
+  }, []);
+
   return (
     <>
       <div
-        className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-300 ${
+        className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
           isAtTop
-            ? "bg-transparent border-b-0"
-            : "bg-white/70 backdrop-blur-md border-b-[1px]"
+            ? "bg-transparent border-b-0 dark:bg-dark dark:border-dark"
+            : "bg-white/70 backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
-        <div className="container ">
+        <div className="container bg-transparent">
           <div className="flex items-center justify-between relative ">
             <div className="px-4 ">
               <a
@@ -103,22 +123,6 @@ export default function Header() {
                     </a>
                   </li>
                   <li className="flex items-center mt-3 lg:mt-0 sm:justify-center">
-                    {/* <div className="flex justify-center ml-4">
-                      <span className="text-sm text-slate-500 mr-2">light</span>
-                      <input
-                        type="checkbox"
-                        id="dark-toggle"
-                        className="hidden"
-                        checked={isDarkMode}
-                        onChange={handleThemeToggle}
-                      />
-                      <label htmlFor="dark-toggle">
-                        <div className="w-9 h-5 bg-slate-800 rounded-full flex items-center p-1 cursor-pointer">
-                          <div className="w-4 h-4 bg-white rounded-full toggle-circle transition duration-300 ease-in-out"></div>
-                        </div>
-                      </label>
-                      <span className="text-sm text-slate-500 ml-2">dark</span>
-                    </div> */}
                     <Toggle />
                   </li>
                 </ul>
