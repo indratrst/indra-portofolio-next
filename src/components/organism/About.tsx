@@ -1,10 +1,14 @@
 "use client";
+
 export default function About() {
   return (
-    <section id="about" className="pt-36 pb-32 bg-white dark:bg-dark">
+    <section
+      id="about"
+      className="pt-36 pb-32 bg-white dark:bg-dark transition-colors duration-500"
+    >
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="w-full px-4 mb-10 lg:w-1/2">
+          <div className="w-full px-4 mb-10 lg:w-1/2" data-aos="fade-up">
             <h4 className="font-bold uppercase text-primary text-lg mb-3">
               About Me
             </h4>
@@ -19,7 +23,10 @@ export default function About() {
               platform lainnya
             </p>
           </div>
-          <div className="w-full px-4 lg:w-1/2 lg:pt-10">
+          <div
+            className="w-full px-4 lg:w-1/2 lg:pt-10 lg:mt-56"
+            data-aos="fade-up"
+          >
             <h3 className="font-semibold text-dark text-2xl mb-4 lg:text-3xl dark:text-light">
               Lets Be Friend
             </h3>
