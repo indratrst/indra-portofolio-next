@@ -18,10 +18,16 @@ export default function Hero() {
   //   }, []);
 
   return (
-    <section id="home" className="pt-20 lg:pt-44 dark:bg-dark bg-white">
+    <section
+      id="home"
+      className="pt-20 lg:pt-44 dark:bg-dark bg-white transition-colors duration-500"
+    >
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="w-full self-center md:px-14 lg:w-1/2">
+          <div
+            className="w-full self-center md:px-14 lg:w-1/2"
+            data-aos="fade-down"
+          >
             <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
               <span className="block text-dark text-4xl font-bold mt-1 lg:5xl dark:text-light">
@@ -52,7 +58,7 @@ export default function Hero() {
           </div>
 
           <div className="w-full self-end px-4 lg:w-1/2">
-            <div className="-mt-20 relative lg:right-0">
+            <div className="-mt-20 relative lg:right-0" data-aos="fade-down">
               <img
                 src="/hero.png"
                 alt="pic hero"
@@ -76,6 +82,13 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#f3f4f5"
+          fill-opacity="1"
+          d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,170.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
     </section>
   );
 }
