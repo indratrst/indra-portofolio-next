@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Toggle from "../molecules/Toggles";
+import Toggle from "../../molecules/Toggles";
 
 export default function Header() {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -54,9 +54,9 @@ export default function Header() {
             : "bg-white/70 backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
-        <div className="container bg-transparent">
-          <div className="flex items-center justify-between relative ">
-            <div className="px-4 ">
+        <div className="2xl:container bg-transparent">
+          <div className="flex items-center justify-between relative w-full">
+            <div className="px-4 flex justify-center items-center ">
               <a
                 href="#home"
                 className="font-bold text-lg text-primary block py-6 "

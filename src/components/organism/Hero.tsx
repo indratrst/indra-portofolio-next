@@ -1,12 +1,18 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+
 // if (typeof window !== "undefined") {
 //   const getUserfromLocalStorage = localStorage.getItem("isDarkMode")
 //     ? localStorage.getItem("isDarkMode")
 //     : false;
 // }
 
-export default function Hero() {
+interface HeroProps {
+  text: string;
+}
+
+export default function Hero({ text = "Indra Tristia" }: HeroProps) {
   //   const [isDarkMode, setisDarkMode] = useState<boolean>(false);
   //   useEffect(() => {
   //     // if (typeof window !== "undefined") {
@@ -17,6 +23,15 @@ export default function Hero() {
   //     // }
   //   }, []);
 
+  const [animationDuration, setAnimationDuration] = useState(0);
+  const textRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (textRef.current) {
+      const textLength = text.length;
+      setAnimationDuration(textLength * 0.1); // 0.1s per character
+    }
+  }, [text]);
   return (
     <section
       id="home"
@@ -34,12 +49,21 @@ export default function Hero() {
             {/* <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
             </h1> */}
-            <h2 className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide">
+            <h2 className=" w-fit text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide">
               {" "}
               Hello👋, saya
               <br />
-              <span className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide line-1 anim-typewriter">
-                Indra Tristia
+              <span
+                ref={textRef}
+                className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide line-1"
+                style={{
+                  animation: text
+                    ? `typewriter ${animationDuration}s steps(${text.length}) 1s forwards, 
+         blinkTextCursor 500ms steps(44) infinite`
+                    : "none",
+                }}
+              >
+                {text}
               </span>
             </h2>
             <h2 className="font-medium text-secondary text-lg  lg:text-2xl">

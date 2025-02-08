@@ -113,16 +113,16 @@ body {
      background-color: #000 !important;
 } */
 
-.line-1 {
+/* .line-1 {
   top: 50%;
-  width: 6.5em;
+  width: 50%;
   border-right: 2px solid rgba(235, 18, 18, 0.979);
   white-space: nowrap;
   overflow: hidden;
 }
 
 /* Animation */
-.anim-typewriter {
+/* .anim-typewriter {
   animation: typewriter 4s steps(44) 1s 1 normal,
     blinkTextCursor 500ms steps(44) infinite normal;
 }
@@ -131,7 +131,7 @@ body {
     width: 0;
   }
   to {
-    width: 6.5em;
+    width: max-content;
   }
 }
 @keyframes blinkTextCursor {
@@ -140,5 +140,33 @@ body {
   }
   to {
     border-right-color: transparent;
+  }
+} */
+
+.line-1 {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(235, 18, 18, 0.979);
+}
+
+/* Animasi Typewriter */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+    border-right: 2px solid transparent;
+  }
+}
+
+/* Animasi Cursor Berkedip */
+@keyframes blinkTextCursor {
+  50% {
+    border-right-color: transparent;
+  }
+  100% {
+    border-right-color: rgba(255, 255, 255, 0);
   }
 }

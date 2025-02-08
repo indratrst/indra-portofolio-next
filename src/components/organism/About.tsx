@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-36 bg-white dark:bg-dark transition-colors duration-500"
+      className="pt-28 bg-white dark:bg-dark transition-colors duration-500"
     >
       <div className="container">
         <div className="flex flex-wrap">
