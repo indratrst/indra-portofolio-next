@@ -1,82 +1,84 @@
 import { ProjectType } from "@/data/type";
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import CategoryStack from "../CategoryStack";
-interface ProjectCardProps {
-  project: ProjectType;
-}
-const CardProject: React.FC<ProjectCardProps> = ({ project }) => {
-  return (
-    <>
-      {/* <div className="project-card bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden w-[300px] relative">
-        <a href={project.image}>
-          <img className="rounded-t-lg" src={project.image} alt="" />
-        </a>
-        <div className="p-5">
-          <a href={project.image}>
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {project.title}
-            </h5>
-          </a>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {project.description}
-          </p>
-          <h4 className="font-semibold mt-3 text-gray-700 dark:text-gray-400">
-            Tech Stack :
-          </h4>
-          <div className="flex gap-x-2 flex-wrap">
-            <CategoryStack categories={project.categories} />
-          </div>
-        </div>
-        <div className="p-5">
-          <Link href="https://first-submission.netlify.app/">
-            <button className="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Read more
-              <svg
-                aria-hidden="true"
-                className="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </Link>
-        </div>
-      </div> */}
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import { Autoplay, FreeMode } from "swiper/modules";
 
-      <div className="card-wrapper relattive h-[500px] w-full flex items-center">
-        <div className="card">
-          <div className="image">
-            <img
-              src={project.image}
-              className="h-[220px] object-cover w-full"
-            />
-          </div>
-          <div className="content">
-            <a href={project.image}>
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {project.title}
-              </h5>
-            </a>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {project.description}
-            </p>
-            <h4 className="font-semibold mt-3 text-gray-700 dark:text-gray-400">
-              Tech Stack :
-            </h4>
-            <div className="flex gap-x-2 flex-wrap">
-              <CategoryStack categories={project.categories} />
+interface ProjectCardProps {
+  projects: ProjectType[];
+}
+
+const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(1); // Default ke index tengah
+
+  return (
+    <Swiper
+      slidesPerView={3} // Menampilkan 3 card
+      spaceBetween={30} // Jarak antar card
+      centeredSlides={true} // Pastikan card tengah selalu terlihat
+      loop={true} // Infinite loop agar tidak berhenti
+      speed={1200}
+      autoplay={{
+        delay: 4000, // Ganti slide setiap 2 detik
+        disableOnInteraction: true, // Jangan berhenti meskipun user klik/swipe
+      }}
+      onSlideChange={(swiper) => setHoveredIndex(swiper.realIndex)} // Update card tengah
+      modules={[FreeMode, Autoplay]}
+      className="w-full h-[600px] flex justify-center"
+    >
+      {projects.map((project, index) => (
+        <SwiperSlide
+          key={index}
+          className="flex justify-center justify-items-center mt-32"
+        >
+          <div
+            className={`relative flex items-center w-full max-w-[500px] transition-all duration-1000  ease-in-out ${
+              hoveredIndex === index ? "mt-7" : ""
+            }`}
+            onMouseEnter={() => setHoveredIndex(index)}
+          >
+            5
+            <div
+              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-md rounded-[15px] transition-all  duration-1000 ease-in-out ${
+                hoveredIndex === index ? "h-[450px]" : ""
+              }`}
+            >
+              {/* Gambar */}
+              <div className="relative w-[440px] h-[200px] -top-[40%] -left-[1%] shadow-lg z-10">
+                <img
+                  src={project.image}
+                  className="w-full max-w-full rounded-[15px]"
+                />
+              </div>
+
+              {/* Deskripsi */}
+              <div
+                className={`absolute inset-0 flex flex-col justify-center items-center p-[10px] px-[15px] text-center text-gray-900 transition-all  duration-1000 ease-in-out ${
+                  hoveredIndex === index
+                    ? "opacity-100 visible mt-7"
+                    : "opacity-0 invisible"
+                }`}
+              >
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {project.title}
+                </h5>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  {project.description}
+                </p>
+                <h4 className="font-semibold mt-3 text-gray-700 dark:text-gray-400">
+                  Tech Stack :
+                </h4>
+                <div className="flex gap-x-2 flex-wrap justify-center">
+                  <CategoryStack categories={project.categories} />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

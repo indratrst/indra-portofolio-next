@@ -5,6 +5,6 @@ export type ProjectType = {
   categories: string[];
   title: string;
   description: string;
-  link?: string;
-  github?: string;
+  link?: string; // Opsional
+  github?: string; // Opsional
 };
