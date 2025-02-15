@@ -21,7 +21,7 @@ const Project: React.FC = () => {
           explore ilmu yang baru dipelajari
         </p>
       </div>
-      <div className="container mt-28 flex md:justify-evenly flex-wrap md:gap-2  mb-12">
+      <div className="grid grid-cols-3 justify-center items-center mt-28 md:gap-2  mb-12">
         {filteredProjects.map((project, index) => (
           <CardProject project={project} />
         ))}

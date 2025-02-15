@@ -18,6 +18,10 @@ const config: Config = {
       //   "gradient-conic":
       //     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       // },
+      fontFamily: {
+        newSpirit: ["New Spirit", "serif"],
+        founderGrotesk: ["Founder Grotesk", "sans-serif"],
+      },
 
       colors: {
         primary: "#961c1c",
@@ -26,9 +30,7 @@ const config: Config = {
         light: "#CBD5E1",
         navy: "#181823",
       },
-      screens: {
-        "2xl": "1320px",
-      },
+
       gridTemplateColumns: {
         "auto-fit-100": "repeat(auto-fit,1fr)",
       },

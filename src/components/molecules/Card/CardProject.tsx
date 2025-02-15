@@ -8,7 +8,7 @@ interface ProjectCardProps {
 const CardProject: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <>
-      <div className="project-card">
+      {/* <div className="project-card bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden w-[300px] relative">
         <a href={project.image}>
           <img className="rounded-t-lg" src={project.image} alt="" />
         </a>
@@ -47,6 +47,33 @@ const CardProject: React.FC<ProjectCardProps> = ({ project }) => {
               </svg>
             </button>
           </Link>
+        </div>
+      </div> */}
+
+      <div className="card-wrapper relattive h-[500px] w-full flex items-center">
+        <div className="card">
+          <div className="image">
+            <img
+              src={project.image}
+              className="h-[220px] object-cover w-full"
+            />
+          </div>
+          <div className="content">
+            <a href={project.image}>
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {project.title}
+              </h5>
+            </a>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {project.description}
+            </p>
+            <h4 className="font-semibold mt-3 text-gray-700 dark:text-gray-400">
+              Tech Stack :
+            </h4>
+            <div className="flex gap-x-2 flex-wrap">
+              <CategoryStack categories={project.categories} />
+            </div>
+          </div>
         </div>
       </div>
     </>

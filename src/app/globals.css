@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Founder Grotesk";
+  src: url("/fonts/FounderGrotesk-Regular.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Founder Grotesk";
+  src: url("/fonts/FounderGrotesk-Bold.otf") format("otf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "New Spirit";
+  src: url("/fonts/NewSpirit-Medium.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -52,9 +73,9 @@ body {
   @apply mb-10 overflow-hidden rounded-md shadow-md dark:bg-dark dark:bg-opacity-50 dark:text-light sm:mb-0 sm:w-64 md:w-80 lg:w-72;
 }
 
-.project-card {
+/* .project-card {
   @apply mb-6 w-full rounded-md shadow-lg dark:border-gray-700 dark:bg-gray-800 md:w-1/2 md:basis-80;
-}
+} */
 
 .achievement-card {
   @apply m-3 h-full  shrink-0 basis-80 overflow-hidden md:w-1/2 md:basis-96;
@@ -109,6 +130,62 @@ body {
   /* background-color:#9fa */
 }
 
+/* .card-wrapper {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+
+} */
+.card-wrapper .card {
+  position: relative;
+  max-width: 900px;
+  height: 200px;
+  background-color: #fff;
+  margin: 0px 80px;
+  padding: 20px 34px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+}
+.card-wrapper .card:hover {
+  height: 420px;
+}
+
+.card-wrapper .card .image {
+  position: relative;
+  width: 450px;
+  height: 660px;
+  top: -40%;
+  left: -1%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.card-wrapper .card .image img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.card-wrapper .card .content {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.card-wrapper .card:hover .content {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
 /* .swiper-pagination-bullet {
      background-color: #000 !important;
 } */
