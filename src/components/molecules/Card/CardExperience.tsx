@@ -36,18 +36,18 @@ const CardExperience: React.FC<ExperienceCardProps> = ({ experiences }) => {
     >
       {experiences.map((item, index) => (
         <SwiperSlide key={index} className="flex justify-center">
-          <div className="w-[100%] border-gray-400 bg-white rounded-b flex flex-col leading-normal">
+          <div className="w-full   border-gray-400 bg-white rounded-b flex flex-col leading-normal">
             {/* Wrapper untuk gambar dan teks */}
             <div className="relative group ">
               {/* Image */}
               <img
                 src={item.image}
-                className="w-full transition-all duration-500"
+                className="w-[899px] h-full transition-all duration-500 object-cover"
               />
 
               {/* Wrapper untuk title + description yang bertambah tinggi */}
               <div
-                className="absolute -bottom-5 left-0  shadow-sm border-b-2 w-full bg-white p-4 pt-2 h-[45px] group-hover:h-[320px] 
+                className="absolute -bottom-10 left-0  shadow-sm border-b-2 w-full bg-[#f1f5f9] p-4 pt-2 h-[45px] group-hover:h-[220px] 
                transition-all duration-500 ease-in-out origin-bottom overflow-hidden"
               >
                 <a

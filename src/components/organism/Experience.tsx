@@ -29,7 +29,7 @@ const Experience: React.FC = () => {
           <div className="w-full h-full text-dark  grid py-16 px-52">
             <div className="flex flex-col gap-y-5">
               <h2 className="text-3xl text-black">Experience</h2>
-              <div className="grid gap-y-2 border-b-[1px] pb-9">
+              <div className="grid gap-y-2 border-b-2 pb-9">
                 <h5>7 Kelas</h5>
                 <h5>7 Event</h5>
               </div>
