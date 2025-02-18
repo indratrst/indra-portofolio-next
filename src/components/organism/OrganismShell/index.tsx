@@ -5,6 +5,7 @@ import Portfolio from "../Portfolio";
 import Project from "../Project";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Experience from "../Experience";
 
 export const OrganismShell = () => {
   useEffect(() => {
@@ -17,8 +18,9 @@ export const OrganismShell = () => {
     <>
       <Hero />
       <About />
-      <Portfolio />
       <Project />
+      <Experience />
+      <Portfolio />
     </>
   );
 };

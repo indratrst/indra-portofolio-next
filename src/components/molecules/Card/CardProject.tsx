@@ -15,14 +15,20 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
 
   return (
     <Swiper
-      slidesPerView={3} // Menampilkan 3 card
-      spaceBetween={30} // Jarak antar card
+      slidesPerView={1} // Default: 1 card untuk semua layar
+      spaceBetween={20} // Jarak antar card
       centeredSlides={true} // Pastikan card tengah selalu terlihat
       loop={true} // Infinite loop agar tidak berhenti
       speed={1200}
       autoplay={{
-        delay: 4000, // Ganti slide setiap 2 detik
+        delay: 4000, // Ganti slide setiap 4 detik
         disableOnInteraction: true, // Jangan berhenti meskipun user klik/swipe
+      }}
+      breakpoints={{
+        1024: {
+          slidesPerView: 3, // Hanya di desktop (≥1024px), tampilkan 3 card
+          spaceBetween: 40,
+        },
       }}
       onSlideChange={(swiper) => setHoveredIndex(swiper.realIndex)} // Update card tengah
       modules={[FreeMode, Autoplay]}
@@ -39,17 +45,16 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
             }`}
             onMouseEnter={() => setHoveredIndex(index)}
           >
-            5
             <div
-              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-md rounded-[15px] transition-all  duration-1000 ease-in-out ${
+              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-md rounded-[15px]  transition-all  duration-1000 ease-in-out ${
                 hoveredIndex === index ? "h-[450px]" : ""
               }`}
             >
               {/* Gambar */}
-              <div className="relative w-[440px] h-[200px] -top-[40%] -left-[1%] shadow-lg z-10">
+              <div className="relative w-full md:max-w-[440px] h-fit max-h-[200px] -top-[40%] -left-[1%] shadow-lg z-10 rounded-t-md">
                 <img
                   src={project.image}
-                  className="w-full max-w-full rounded-[15px]"
+                  className="w-full max-w-full rounded-t-md"
                 />
               </div>
 

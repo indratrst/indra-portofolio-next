@@ -8,3 +8,12 @@ export type ProjectType = {
   link?: string; // Opsional
   github?: string; // Opsional
 };
+
+export type ExperienceType = {
+  image: string;
+  title: string;
+  description: string;
+  link?: string; // Opsional
+  github?: string; // Opsional
+  time?: string; // Opsional
+};
