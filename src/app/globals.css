@@ -216,8 +216,8 @@ body {
 } */
 
 .line-1 {
-  display: inline-block;
-  white-space: nowrap;
+  display: block;
+  /* white-space: nowrap; */
   overflow: hidden;
   border-right: 2px solid rgba(235, 18, 18, 0.979);
 }
@@ -240,5 +240,20 @@ body {
   }
   100% {
     border-right-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: rgba(235, 18, 18, 0.979);
+  margin-left: 2px;
+  animation: blinkCursor 0.5s infinite;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0;
   }
 }

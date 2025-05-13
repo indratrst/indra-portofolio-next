@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
   }, [experienceData]);
   return (
     <>
-      <section id="portfolio" className="pt-36 pb-9  dark:bg-slate-800">
+      <section id="portfolio" className="pt-36 pb-9 bg-white dark:bg-slate-800">
         <div className="2xl:container">
           <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16 grid gap-y-2">
@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="w-full  h-full flex gap-x-4">
+          <div className="w-full  h-full flex px-10">
             <CardExperience experiences={filteredExperience} />
           </div>
         </div>

@@ -16,7 +16,7 @@ export const OrganismShell = () => {
   }, []);
   return (
     <>
-      <Hero />
+      <Hero text={""} />
       <About />
       <Project />
       <Experience />

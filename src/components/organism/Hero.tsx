@@ -12,7 +12,9 @@ interface HeroProps {
   text: string;
 }
 
-export default function Hero({ text = "Indra Tristia" }: HeroProps) {
+export default function Hero({
+  text = "Front End Web Developer Based in Indonesia",
+}: HeroProps) {
   //   const [isDarkMode, setisDarkMode] = useState<boolean>(false);
   //   useEffect(() => {
   //     // if (typeof window !== "undefined") {
@@ -23,39 +25,57 @@ export default function Hero({ text = "Indra Tristia" }: HeroProps) {
   //     // }
   //   }, []);
 
-  const [animationDuration, setAnimationDuration] = useState(0);
-  const textRef = useRef<HTMLSpanElement>(null);
+  // const [animationDuration, setAnimationDuration] = useState(0);
+  // const textRef = useRef<HTMLSpanElement>(null);
+
+  // useEffect(() => {
+  //   if (textRef.current) {
+  //     const textLength = text.length;
+  //     setAnimationDuration(textLength * 0.1); // 0.1s per character
+  //   }
+  // }, [text]);
+
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
-    if (textRef.current) {
-      const textLength = text.length;
-      setAnimationDuration(textLength * 0.1); // 0.1s per character
-    }
+    setDisplayText(""); // Reset teks saat `text` berubah
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      if (index < text.length) {
+        setDisplayText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+        setShowCursor(false); // Hentikan cursor berkedip setelah teks selesai
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
   }, [text]);
   return (
     <section
       id="home"
-      className="pt-20 pb-32 lg:pt-44 dark:bg-dark bg-white transition-colors duration-500"
+      className="pt-20 pb-32 lg:pt-44 bg-white dark:bg-white bg-transparent transition-colors duration-500 "
     >
       <div className="container">
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap ">
           <div
-            className="w-full md:px-14 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-4 self-start"
+            className="w-full md:px-5 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-1 self-start"
             data-aos="fade-down"
           >
-            <h1 className="uppercase text-primary  leading-5 text-lg">
-              Front End Web Developer
-            </h1>
             {/* <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
             </h1> */}
-            <h2 className=" w-fit text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide">
+            <h2 className="w-fit text-dark lg:text-7xl dark:text-light leading-snug tracking-wide font-founderGrotesk">
               {" "}
-              Hello👋, saya
+              Hello👋,Saya
               <br />
-              <span
+              Indra Tristia
+              {/* <span
                 ref={textRef}
-                className="block text-dark text-5xl font-extrabold lg:5xl dark:text-light leading-snug tracking-wide line-1"
+                className=" text-black text-5xl  dark:text-light leading-snug tracking-wide line-1 font-newSpirit"
                 style={{
                   animation: text
                     ? `typewriter ${animationDuration}s steps(${text.length}) 1s forwards, 
@@ -64,19 +84,37 @@ export default function Hero({ text = "Indra Tristia" }: HeroProps) {
                 }}
               >
                 {text}
-              </span>
+              </span> */}
             </h2>
-            <h2 className="font-medium text-secondary text-lg  lg:text-2xl">
+            {/* <h2 className="font-medium text-secondary text-lg  lg:text-2xl">
               Self Taught{" "}
-              <span className="text-dark dark:text-light">
-                {" "}
-                Full Stack Web Developer{" "}
-              </span>
-            </h2>
-            <p className="font-medium text-secondary mb-10 leading-relaxed">
+            </h2> */}
+            {/* <span className="lg:text-5xl text-primary font-light dark:text-light pb-3 font-newSpirit">
+              {" "}
+              Front End Web Developer Based in Indonesia
+            </span> */}
+            {/* <span
+              ref={textRef}
+              className=" lg:text-5xl text-primary font-light pb-3 text-5xl  dark:text-light leading-snug tracking-wide line-1 font-newSpirit"
+              style={{
+                animation: text
+                  ? `typewriter ${animationDuration}s steps(${text.length}) 1s forwards, 
+         blinkTextCursor 500ms steps(44) infinite`
+                  : "none",
+              }}
+            >
+              {text}
+            </span> */}
+            <span className="lg:text-4xl text-primary font-light pb-3 text-5xl dark:text-light leading-snug tracking-wide font-newSpirit">
+              {displayText}
+              {showCursor && <span className="blinking-cursor"></span>}
+            </span>
+            <p className="font-medium text-secondary mb-4 leading-relaxed">
               Life long{" "}
               <span className="text-dark font-bold uppercase dark:text-light">
-                Learner !
+                Learner ! As a dedicated Frontend Developer, I'm passionate
+                about crafting innovative and user-centric web experiences for
+                global audiences.
               </span>
             </p>
 
@@ -85,17 +123,17 @@ export default function Hero({ text = "Indra Tristia" }: HeroProps) {
             </button>
           </div>
 
-          <div className="w-full self-end px-4 lg:w-1/2">
+          <div className="w-full self-start px-4 lg:w-1/2">
             <div className="-mt-20 relative lg:right-0" data-aos="fade-down">
               <img
                 src="/hero.png"
                 alt="pic hero"
-                className="relative z-10 max-w-full mx-auto lg:-mt-64 transform"
+                className="relative z-10 max-w-full mx-auto lg:-mt-72 transform md:scale-125"
               />
-              <span className="absolute -bottom-3  left-1/2 -translate-x-1/2 md:scale-125">
+              <span className="absolute -bottom-28  left-1/2 -translate-x-1/2 md:scale-125">
                 <svg
-                  width="350"
-                  height="350"
+                  width="550"
+                  height="550"
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
                 >

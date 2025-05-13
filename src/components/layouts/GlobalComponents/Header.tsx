@@ -50,11 +50,11 @@ export default function Header() {
       <div
         className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
           isAtTop
-            ? "bg-transparent border-b-0 dark:bg-dark dark:border-dark"
+            ? "bg-white border-b-0 dark:bg-dark dark:border-dark"
             : "bg-white/70 backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
-        <div className="2xl:container bg-transparent">
+        <div className="2xl:container ">
           <div className="flex items-center justify-between relative w-full">
             <div className="px-4 flex justify-center items-center ">
               <a
