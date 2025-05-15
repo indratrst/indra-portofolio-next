@@ -22,7 +22,7 @@ export const OrganismShell = () => {
       <Experience />
       <Project />
       <Portfolio />
-      <Timeline />
+      {/* <Timeline /> */}
     </>
   );
 };

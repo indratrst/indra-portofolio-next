@@ -57,7 +57,7 @@ export default function Hero({
   return (
     <section
       id="home"
-      className="pt-20 pb-32 lg:pt-44 bg-white dark:bg-white bg-transparent transition-colors duration-500 "
+      className="pt-20 pb-32 lg:pt-44 bg-white dark:bg-dark bg-transparent transition-colors duration-500 "
     >
       <div className="container">
         <div className="flex flex-wrap ">
@@ -68,10 +68,13 @@ export default function Hero({
             {/* <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
             </h1> */}
-            <h2 className="w-fit text-dark lg:text-7xl dark:text-light leading-snug tracking-wide font-founderGrotesk">
+            <h2 className="w-fit text-dark lg:text-[85px] dark:text-light leading-[1.1]  tracking-wide font-founderGrotesk">
               {" "}
-              Hello👋,Saya
+              Hello👋
               <br />
+              <span className="text-[35px]  text-base font-semibold text-primary">
+                Saya
+              </span>
               Indra Tristia
               {/* <span
                 ref={textRef}
@@ -109,9 +112,9 @@ export default function Hero({
               {displayText}
               {showCursor && <span className="blinking-cursor"></span>}
             </span>
-            <p className="font-medium text-secondary mb-4 leading-relaxed">
+            <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
               Life long{" "}
-              <span className="text-dark font-bold uppercase dark:text-light">
+              <span className="text-base font-medium text-secondary mb-6 lg:text-lg">
                 Learner ! As a dedicated Frontend Developer, I'm passionate
                 about crafting innovative and user-centric web experiences for
                 global audiences.

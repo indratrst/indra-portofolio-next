@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-28 bg-white dark:bg-dark transition-colors duration-500"
+      className="py-28 bg-white dark:bg-dark transition-colors duration-500"
     >
       <div className="container">
         <div className="flex flex-wrap">
@@ -148,7 +148,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="dark:invisible">
+      {/* <div className="dark:invisible">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#f1f5f9"
@@ -156,7 +156,7 @@ export default function About() {
             d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,170.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }

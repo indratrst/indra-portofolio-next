@@ -194,10 +194,7 @@ const Portfolio = () => {
     // </div> */}
 
     <>
-      <section
-        id="portfolio"
-        className="pt-36 pb-9 bg-slate-100 dark:bg-slate-800"
-      >
+      <section id="portfolio" className="pt-36 pb-9 bg-white dark:bg-slate-800">
         <div className="container">
           <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16 grid gap-y-2">
@@ -214,11 +211,13 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
-          <div className="flex flex-row-reverse items-center justify-around w-[100%] text-red-600">
-            <button className="swiper-button-next">
-              <SvgArrowRight />
-            </button>
+        <div className="relative w-full -translate-x-1/2 transform left-1/2">
+          <div className="flex flex-row-reverse items-center justify-around w-[100%] mx-auto text-red-600">
+            <div className="swiper-button-next px-8">
+              <button className="bg-slate-200/80 hover:bg-slate-400 text-black p-2 rounded-full shadow transition">
+                <SvgArrowRight />
+              </button>
+            </div>
 
             <Swiper
               breakpoints={{
@@ -248,7 +247,7 @@ const Portfolio = () => {
               }}
               pagination={true}
               modules={[Pagination, Navigation]}
-              className="mySwiper"
+              className="w-full flex justify-center mt-4"
             >
               <SwiperSlide>
                 <img
@@ -301,14 +300,16 @@ const Portfolio = () => {
                 />
               </SwiperSlide>
             </Swiper>
-            <button className="swiper-button-prev">
-              <SvgArrowLeft />
-            </button>
+            <div className="swiper-button-prev px-8">
+              <button className="bg-slate-200/80 hover:bg-slate-400 text-black p-2 rounded-full shadow transition">
+                <SvgArrowLeft />
+              </button>
+            </div>
           </div>
         </div>
       </section>
       {/* // <!-- Start Timeline --> */}
-      <section id="" className="pt-36 pb-32 bg-slate-100  dark:bg-slate-800">
+      <section id="" className="pt-36 pb-32 bg-white dark:bg-slate-800">
         <div className="container">
           <div className="w-full px-4">
             <div className=" mx-auto text-center mb-16">
