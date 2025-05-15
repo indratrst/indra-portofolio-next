@@ -6,6 +6,7 @@ import Project from "../Project";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Experience from "../Experience";
+import Timeline from "../Timeline";
 
 export const OrganismShell = () => {
   useEffect(() => {
@@ -18,9 +19,10 @@ export const OrganismShell = () => {
     <>
       <Hero text={""} />
       <About />
-      <Project />
       <Experience />
+      <Project />
       <Portfolio />
+      <Timeline />
     </>
   );
 };

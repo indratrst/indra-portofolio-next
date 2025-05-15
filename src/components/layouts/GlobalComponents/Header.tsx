@@ -51,7 +51,7 @@ export default function Header() {
         className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
           isAtTop
             ? "bg-white border-b-0 dark:bg-dark dark:border-dark"
-            : "bg-white/70 backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
+            : "bg-white backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
         <div className="2xl:container ">
