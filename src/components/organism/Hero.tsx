@@ -57,10 +57,10 @@ export default function Hero({
   return (
     <section
       id="home"
-      className="pt-20 pb-32 lg:pt-44 bg-white dark:bg-dark bg-transparent transition-colors duration-500 "
+      className="pt-20  lg:pt-44 bg-[#f1f5f9] dark:bg-dark  transition-colors duration-500 "
     >
       <div className="container">
-        <div className="flex flex-wrap ">
+        <div className="flex flex-wrap">
           <div
             className="w-full md:px-5 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-1 self-start"
             data-aos="fade-down"
@@ -68,11 +68,11 @@ export default function Hero({
             {/* <h1 className="text-base font-semibold text-primary md:text-xl">
               Selamat Datang 👋, Saya{" "}
             </h1> */}
-            <h2 className="w-fit text-dark lg:text-[85px] dark:text-light leading-[1.1]  tracking-wide font-founderGrotesk">
+            <h2 className="w-fit text-dark text-5xl lg:text-[85px] dark:text-light leading-[1.1]  tracking-wide font-founderGrotesk">
               {" "}
               Hello👋
               <br />
-              <span className="text-[35px]  text-base font-semibold text-primary">
+              <span className="text-[36px] lg:text-[30px]  text-base font-semibold text-primary">
                 Saya
               </span>
               Indra Tristia
@@ -133,10 +133,10 @@ export default function Hero({
                 alt="pic hero"
                 className="relative z-10 max-w-full mx-auto lg:-mt-72 transform md:scale-125"
               />
-              <span className="absolute -bottom-28  left-1/2 -translate-x-1/2 md:scale-125">
+              <span className="absolute -bottom-24 md:-bottom-9 lg:-bottom-28  left-1/2 -translate-x-1/2 md:scale-125">
                 <svg
-                  width="550"
-                  height="550"
+                  className="w-[400px] h-[500px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[500px]"
+                  height="150 lg:550"
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -150,6 +150,15 @@ export default function Hero({
             </div>
           </div>
         </div>
+      </div>
+      <div className="dark:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffff"
+            fillOpacity="1"
+            d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,170.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          ></path>
+        </svg>
       </div>
     </section>
   );
