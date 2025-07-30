@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Experience from "../Experience";
 import Timeline from "../Timeline";
+import Achievement from "../Achievement";
 
 export const OrganismShell = () => {
   useEffect(() => {
@@ -17,11 +18,15 @@ export const OrganismShell = () => {
   }, []);
   return (
     <>
-      <Hero text={""} />
-      <About />
-      <Experience />
-      <Project />
-      <Portfolio />
+      <div className="border-none md:border-none">
+        <Hero text={""} />
+        <About />
+        <Experience />
+        <Project />
+        <Achievement acheivements={[]} />
+        <Portfolio />
+      </div>
+
       {/* <Timeline /> */}
     </>
   );

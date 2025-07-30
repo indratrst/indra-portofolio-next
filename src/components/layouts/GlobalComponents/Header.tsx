@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Toggle from "../../molecules/Toggles";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
@@ -50,16 +51,16 @@ export default function Header() {
       <div
         className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
           isAtTop
-            ? "bg-white border-b-0 dark:bg-dark dark:border-dark"
+            ? "bg-[#f1f5f9] border-b-0 dark:bg-dark dark:border-dark"
             : "bg-white backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
         <div className="2xl:container ">
-          <div className="flex items-center justify-between relative w-full">
+          <div className="flex items-center justify-between  ">
             <div className="px-4 flex justify-center items-center ">
               <a
                 href="#home"
-                className="font-bold text-lg text-primary block py-6 "
+                className="font-bold text-lg text-primary block py-6"
               >
                 Indra Tristia
               </a>
@@ -70,6 +71,7 @@ export default function Header() {
                 id="hamburger"
                 name="hamburger"
                 type="button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="block absolute right-4 lg:hidden"
               >
                 <span className="hamburger-line origin-top-left transition duration-300"></span>
@@ -79,7 +81,9 @@ export default function Header() {
 
               <nav
                 id="nav-menu"
-                className="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:rounded-none lg:shadow-none dark:bg-dark dark:lg:bg-transparent dark:shadow-red-900"
+                className={`absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:rounded-none lg:shadow-none dark:bg-dark dark:lg:bg-transparent dark:shadow-red-900 ${
+                  isMenuOpen ? "block" : "hidden"
+                }`}
               >
                 <ul className="block lg:flex">
                   <li className="group">
@@ -122,7 +126,7 @@ export default function Header() {
                       Project
                     </a>
                   </li>
-                  <li className="flex items-center mt-3 lg:mt-0 sm:justify-center">
+                  <li className="flex items-center mt-3 lg:mt-0 justify-center">
                     <Toggle />
                   </li>
                 </ul>
