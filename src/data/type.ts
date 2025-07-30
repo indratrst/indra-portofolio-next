@@ -17,3 +17,9 @@ export type ExperienceType = {
   github?: string; // Opsional
   time?: string; // Opsional
 };
+
+export type AcheivementType = {
+  image: string;
+  title: string;
+  description?: string;
+};
