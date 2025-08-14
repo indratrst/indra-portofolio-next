@@ -8,7 +8,10 @@ const Experience: React.FC = () => {
   }, [experienceData]);
   return (
     <>
-      <section id="portfolio" className="pt-36 pb-9 bg-white dark:bg-slate-800">
+      <section
+        id="portfolio"
+        className="pt-12 lg:pt-36 pb-9 bg-white dark:bg-slate-800"
+      >
         <div className="2xl:container">
           {/* <div className="w-full px-4">
             <div className="max-w-xl mx-auto text-center mb-16 grid gap-y-2">
@@ -25,15 +28,15 @@ const Experience: React.FC = () => {
             </div>
           </div> */}
         </div>
-        <div className="grid grid-cols-2  w-full  h-[500px]">
-          <div className="w-full h-full text-dark  grid  px-52">
+        <div className="grid grid-cols-1 lg:grid-cols-2  w-full  h-[500px]">
+          <div className="w-full h-full text-dark  grid px-5 lg:px-52 pb-10">
             <div className="font-newSpirit leading-[1.1]">
-              <h2 className="text-[120px] text-primary">My</h2>
-              <h2 className="text-[120px] text-black dark:text-white">
+              <h2 className="text-[50px] lg:text-[120px] text-primary">My</h2>
+              <h2 className="text-[60px] lg:text-[120px] text-black dark:text-white">
                 Journey
               </h2>
 
-              <div className="grid gap-y-2 border-b-2 border-black dark:border-slate-500">
+              <div className="grid gap-y-2 border-b-2 border-black dark:border-slate-500 ">
                 {/* <h5>7 Kelas</h5>
                 <h5>7 Event</h5> */}
               </div>
@@ -44,12 +47,12 @@ const Experience: React.FC = () => {
               </p> */}
             </div>
           </div>
-          <div className="w-full  h-full flex px-10">
+          <div className="w-full  h-full md:flex px-10">
             {/* <CardExperience experiences={filteredExperience} /> */}
             <div className="w-full">
               <div className="w-full px-4">
                 <div className=" mx-auto  mb-2">
-                  <h2 className="font-bold text-primary text-3xl mb-4 sm:text-4xl lg:text-2xl">
+                  <h2 className="font-bold text-primary  mb-4 text-2xl lg:text-2xl">
                     Experience
                   </h2>
                   {/* <p className="font-medium text-base text-secondary md:text-lg ">
@@ -97,10 +100,10 @@ const Experience: React.FC = () => {
                 </ol>
               </div>
             </div>
-            <div className="w-full">
+            <div className="mt-10 lg:mt-0 w-full">
               <div className="w-full px-4">
                 <div className=" mx-auto  mb-2">
-                  <h2 className="font-bold text-primary text-3xl mb-4 sm:text-4xl lg:text-2xl">
+                  <h2 className="font-bold text-primary text-2xl mb-4  lg:text-2xl">
                     Education
                   </h2>
                   {/* <p className="font-medium text-base text-secondary md:text-lg ">
@@ -108,7 +111,7 @@ const Experience: React.FC = () => {
                   </p> */}
                 </div>
                 <ol className="relative border-l border-gray-200 dark:border-gray-700">
-                  <li className="mb-10 ml-4">
+                  {/* <li className="mb-10 ml-4">
                     <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       2023
@@ -119,7 +122,7 @@ const Experience: React.FC = () => {
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                       Full Stack Web Developer
                     </p>
-                  </li>
+                  </li> */}
                   <li className="mb-10 ml-4">
                     <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">

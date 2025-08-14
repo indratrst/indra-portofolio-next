@@ -11,6 +11,9 @@ const config: Config = {
     container: {
       center: true,
       padding: "16px",
+      screens: {
+        "2xl": "1400px",
+      },
     },
     extend: {
       // backgroundImage: {

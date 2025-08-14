@@ -10,7 +10,10 @@ const Project: React.FC = () => {
     return projectData;
   }, [projectData]);
   return (
-    <section id="project" className="pt-24 pb-12 bg-white dark:bg-slate-800">
+    <section
+      id="project"
+      className="pt-12 lg:pt-36 pb-9 bg-white dark:bg-slate-800"
+    >
       <div className="max-w-xl mx-auto text-center mb-16">
         <h4 className="font-semibold text-lg text-primary mb-2">Portfolio</h4>
 

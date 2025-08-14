@@ -35,25 +35,25 @@ export default function Hero({
   //   }
   // }, [text]);
 
-  const [displayText, setDisplayText] = useState("");
-  const [showCursor, setShowCursor] = useState(true);
+  // const [displayText, setDisplayText] = useState("");
+  // const [showCursor, setShowCursor] = useState(true);
 
-  useEffect(() => {
-    setDisplayText(""); // Reset teks saat `text` berubah
-    let index = 0;
+  // useEffect(() => {
+  //   setDisplayText(""); // Reset teks saat `text` berubah
+  //   let index = 0;
 
-    const typingInterval = setInterval(() => {
-      if (index < text.length) {
-        setDisplayText(text.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-        setShowCursor(false); // Hentikan cursor berkedip setelah teks selesai
-      }
-    }, 100);
+  //   const typingInterval = setInterval(() => {
+  //     if (index < text.length) {
+  //       setDisplayText(text.slice(0, index + 1));
+  //       index++;
+  //     } else {
+  //       clearInterval(typingInterval);
+  //       setShowCursor(false); // Hentikan cursor berkedip setelah teks selesai
+  //     }
+  //   }, 100);
 
-    return () => clearInterval(typingInterval);
-  }, [text]);
+  //   return () => clearInterval(typingInterval);
+  // }, [text]);
   return (
     <section
       id="home"
@@ -108,10 +108,10 @@ export default function Hero({
             >
               {text}
             </span> */}
-            <span className="lg:text-4xl text-primary font-light pb-3 text-5xl dark:text-light leading-snug tracking-wide font-newSpirit">
+            {/* <span className="lg:text-4xl text-primary font-light pb-3 text-5xl dark:text-light leading-snug tracking-wide font-newSpirit">
               {displayText}
               {showCursor && <span className="blinking-cursor"></span>}
-            </span>
+            </span> */}
             <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
               Life long{" "}
               <span className="text-base font-medium text-secondary mb-6 lg:text-lg">
@@ -151,7 +151,7 @@ export default function Hero({
           </div>
         </div>
       </div>
-      <div className="dark:invisible">
+      {/* <div className="dark:invisible">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffff"
@@ -159,7 +159,7 @@ export default function Hero({
             d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,170.7C840,192,960,224,1080,224C1200,224,1320,192,1380,176L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }

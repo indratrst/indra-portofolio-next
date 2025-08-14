@@ -2,15 +2,21 @@ import { AcheivementType } from "./type";
 
 export const acheivementData: AcheivementType[] = [
   {
+    image: "/sertifikat/vuejs.jpeg",
+    title: "Bootcamp Vuejs Jagooit",
+    description:
+      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
+  },
+  {
     image: "/sertifikat/jago-lev2.png",
     title:
-      "Bootcamp Intensif Level 2 Development With Framework [React Js,Laravel,Mysql]",
+      "Bootcamp Intensif  Development With Framework [React Js,Laravel,Mysql]",
     description:
       "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/jago-lev1.png",
-    title: "Bootcamp Intensif Level 1 Fundamental Programming",
+    title: "Bootcamp Intensif  Fundamental Programming",
     description:
       "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },

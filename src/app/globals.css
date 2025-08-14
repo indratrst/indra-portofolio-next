@@ -38,9 +38,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent)
-    rgb(var(--background-start-rgb));
   font-family: "Fira-Code", sans-serif;
 }
 
@@ -214,16 +211,16 @@ body {
     border-right-color: transparent;
   }
 } */
-
+/* 
 .line-1 {
-  display: block;
-  /* white-space: nowrap; */
-  overflow: hidden;
+  display: block; */
+/* white-space: nowrap; */
+/* overflow: hidden;
   border-right: 2px solid rgba(235, 18, 18, 0.979);
-}
+} */
 
 /* Animasi Typewriter */
-@keyframes typewriter {
+/* @keyframes typewriter {
   from {
     width: 0;
   }
@@ -231,19 +228,19 @@ body {
     width: 100%;
     border-right: 2px solid transparent;
   }
-}
+} */
 
 /* Animasi Cursor Berkedip */
-@keyframes blinkTextCursor {
+/* @keyframes blinkTextCursor {
   50% {
     border-right-color: transparent;
   }
   100% {
     border-right-color: rgba(255, 255, 255, 0);
   }
-}
+} */
 
-.blinking-cursor {
+/* .blinking-cursor {
   display: inline-block;
   width: 1px;
   height: 1em;
@@ -256,4 +253,4 @@ body {
   50% {
     opacity: 0;
   }
-}
+} */
