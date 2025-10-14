@@ -4,30 +4,38 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-12 lg:pt-36 pb-9 bg-white dark:bg-dark transition-colors duration-500"
+      className="pt-12 lg:pt-0 lg:pb-24 bg-basic dark:bg-dark transition-colors duration-500"
     >
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full px-4 mb-10 lg:w-1/2" data-aos="fade-up">
-            <h4 className="font-bold uppercase text-primary text-lg mb-3">
+            <div className="lg:mt-80 absolute lg:right-0">
+              <img
+                src="/hero-left.svg"
+                alt="pic hero"
+                className="relative -z-10 max-w-full mx-auto -ms-[75px] lg:ms-[230px] -mt-72 scale-[1.6] lg:-mt-[335px] transform lg:scale-[2.1]"
+              />
+            </div>
+            <h4 className="font-bold uppercase text-reds text-lg mb-3">
               About Me
             </h4>
-            <h2 className="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-light">
+            <h2 className="font-bold text-sand text-3xl mb-5 max-w-md lg:text-4xl dark:text-light">
               Let Me Introduce Myself.
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
               Lulusan Smk Negeri 2 Cimahi jurusan Rpl (Rekayasa Perangkat Lunak)
-              tahun 2019, Usia 22 tahun . Sangat tertarik dalam Web Developer
-              dan telah mengikuti pelatihan dari Dicoding melalui program
-              beasiswa kolaborasi dengan Indosat Ooredoo (IDCamp) dan beberapa
-              platform lainnya
+              tahun 2019. Sangat tertarik dalam Web Developer dan telah
+              mengikuti pelatihan dari Dicoding melalui program beasiswa
+              kolaborasi dengan Indosat Ooredoo (IDCamp) dan beberapa platform
+              lainnya dan juga telah terlibat di beberapa projek di berbagai
+              perusahaan.
             </p>
           </div>
           <div
             className="w-full px-4 lg:w-1/2 lg:pt-10 lg:mt-56"
             data-aos="fade-up"
           >
-            <h3 className="font-semibold text-dark text-2xl mb-4 lg:text-3xl dark:text-light">
+            <h3 className="font-semibold text-sand text-2xl mb-4 lg:text-3xl dark:text-light">
               Lets Be Friend
             </h3>
             <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
@@ -42,7 +50,7 @@ export default function About() {
               <a
                 href="mailto:tristia71@gmail.com"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center  border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center  border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary"
               >
                 <svg
                   role="img"
@@ -59,7 +67,7 @@ export default function About() {
               <a
                 href="http://www.linkedin.com/in/indra-tristia-087a48250"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center  border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center  border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary "
               >
                 <svg
                   role="img"
@@ -77,7 +85,7 @@ export default function About() {
               <a
                 href="https://www.instagram.com/indratrst/"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary"
               >
                 <svg
                   role="img"
@@ -95,7 +103,7 @@ export default function About() {
               <a
                 href="https://www.twitter.com/indratrst/"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary"
               >
                 <svg
                   role="img"
@@ -113,7 +121,7 @@ export default function About() {
               <a
                 href="https://github.com/indratrst"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary"
               >
                 <svg
                   role="img"
@@ -131,7 +139,7 @@ export default function About() {
               <a
                 href="https://www.facebook.com/indratristia/"
                 target="_blank"
-                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+                className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand hover:text-white dark:hover:bg-primary dark:hover:border-primary"
               >
                 <svg
                   role="img"

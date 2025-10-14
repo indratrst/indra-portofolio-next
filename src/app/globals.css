@@ -23,28 +23,8 @@
   font-style: normal;
 }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   font-family: "Fira-Code", sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
 
 .navbar-fixed {
@@ -80,6 +60,16 @@ body {
 
 #dark-toggle:checked ~ label div.toggle-circle {
   @apply translate-x-3;
+}
+
+.dot {
+  @apply relative w-full h-full bg-white [filter:contrast(7)] [--mask:linear-gradient(red,rgba(0,0,0,0.45))];
+}
+
+.dot::before {
+  @apply content-[''] absolute inset-0 
+         [background:radial-gradient(#000,transparent)_0_0/1em_1em_space] 
+         [-webkit-mask:var(--mask)] [mask:var(--mask)];
 }
 
 /* .swiper {
@@ -177,6 +167,35 @@ body {
   visibility: visible;
   opacity: 1;
   transition-delay: 0.2s;
+}
+
+.dot {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fff;
+  filter: contrast(7);
+  --mask: linear-gradient(red, rgba(0, 0, 0, 0.45));
+}
+
+.dot::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(#000, transparent) 0 0/1em 1em space;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  content: "";
+}
+
+/* .sand_border {
+  box-shadow: 4px 4px 1px rgb(197, 168, 128);
+} */
+
+.black_border {
+  box-shadow: 4px 4px 1px rgb(0, 0, 0);
 }
 /* .swiper-pagination-bullet {
      background-color: #000 !important;

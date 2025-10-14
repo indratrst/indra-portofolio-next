@@ -51,19 +51,24 @@ export default function Header() {
       <div
         className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
           isAtTop
-            ? "bg-[#f1f5f9] border-b-0 dark:bg-dark dark:border-dark"
-            : "bg-white backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
+            ? "bg-basic border-b-0 dark:bg-dark dark:border-dark"
+            : "bg-basic backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
         <div className="2xl:container ">
           <div className="flex items-center justify-between  ">
             <div className="px-4 flex justify-center items-center ">
-              <a
+              <img
+                src="/fire.svg"
+                alt="pic hero"
+                className=" h-24  transform lg:scale-[1.7] "
+              />
+              {/* <a
                 href="#home"
                 className="font-bold text-lg text-primary block py-6"
               >
                 Indra Tristia
-              </a>
+              </a> */}
             </div>
 
             <div className="flex items-center px-4">
@@ -89,7 +94,7 @@ export default function Header() {
                   <li className="group">
                     <a
                       href="#home"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-primary border-b-2 border-b-transparent  group-hover:border-b-primary "
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       Beranda
                     </a>
@@ -97,7 +102,7 @@ export default function Header() {
                   <li className="group">
                     <a
                       href="#about"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-primary border-b-2 border-b-transparent  group-hover:border-b-primary "
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       About Me
                     </a>
@@ -105,7 +110,7 @@ export default function Header() {
                   <li className="group">
                     <a
                       href="#portfolio"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-primary border-b-2 border-b-transparent  group-hover:border-b-primary "
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       Achievement
                     </a>
@@ -113,7 +118,7 @@ export default function Header() {
                   <li className="group">
                     <a
                       href="#timeline"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-primary border-b-2 border-b-transparent  group-hover:border-b-primary "
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       Timeline
                     </a>
@@ -121,7 +126,7 @@ export default function Header() {
                   <li className="group">
                     <a
                       href="#project"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-primary border-b-2 border-b-transparent  group-hover:border-b-primary "
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       Project
                     </a>

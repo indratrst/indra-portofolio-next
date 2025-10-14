@@ -32,6 +32,9 @@ const config: Config = {
         secondary: "#64748b",
         light: "#CBD5E1",
         navy: "#181823",
+        sand: "#c5a880",
+        reds: "#730000",
+        basic: "#e5e4e2",
       },
 
       gridTemplateColumns: {

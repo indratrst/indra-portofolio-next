@@ -2,8 +2,7 @@ import { ProjectType } from "@/data/type";
 import React, { useState } from "react";
 import CategoryStack from "../CategoryStack";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
+
 import { Autoplay, FreeMode } from "swiper/modules";
 
 interface ProjectCardProps {
@@ -46,8 +45,8 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
             onMouseEnter={() => setHoveredIndex(index)}
           >
             <div
-              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-md rounded-[15px]  transition-all  duration-1000 ease-in-out ${
-                hoveredIndex === index ? "h-[450px]" : ""
+              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-sand dark:shadow-primary shadow-md rounded-[15px]  transition-all  duration-1000 ease-in-out ${
+                hoveredIndex === index ? "h-[400px]" : ""
               }`}
             >
               {/* Gambar */}

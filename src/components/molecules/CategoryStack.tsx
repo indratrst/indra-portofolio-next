@@ -159,6 +159,120 @@ const CategoryStack: React.FC<CategoryStack> = ({ categories }) => {
         &nbsp;Laravel
       </span>
     ),
+    vue: (
+      <span className="inline-flex items-center px-3 py-2 mt-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="22px"
+          viewBox="0,0,255.98958,255.98958"
+        >
+          <g
+            fill="none"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style={{ mixBlendMode: "normal" }}
+          >
+            <g transform="scale(5.33333,5.33333)">
+              <path
+                d="M23.987,17l-5.253,-9h-15.76l21.013,36l21.013,-36h-15.76z"
+                fill="#41b883"
+              ></path>
+              <path
+                d="M29.24,8l-5.253,9l-5.253,-9h-7.588l12.841,22l12.841,-22z"
+                fill="#455a64"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        &nbsp;VueJs
+      </span>
+    ),
+    next: (
+      <span className="inline-flex items-center px-3 py-2 mt-2 text-sm font-medium text-center text-black bg-slate-100 rounded-lg hover:bg-slate-300 focus:ring-4 focus:outline-none focus:ring-bg-slate-300 dark:bg-slate-100 dark:hover:bg-slate-300 dark:focus:ring-bg-slate-100">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24px"
+          viewBox="0,0,255.98958,255.98958"
+        >
+          <g
+            fill="#000000"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style={{ mixBlendMode: "normal" }}
+          >
+            <g transform="scale(5.33333,5.33333)">
+              <path d="M18.974,31.5c0,0.828 -0.671,1.5 -1.5,1.5c-0.829,0 -1.5,-0.672 -1.5,-1.5v-14c0,-0.653 0.423,-1.231 1.045,-1.43c0.625,-0.198 1.302,0.03 1.679,0.563l16.777,23.704c5.142,-3.628 8.525,-9.602 8.525,-16.337c0,-11 -9,-20 -20,-20c-11,0 -20,9 -20,20c0,11 9,20 20,20c3.192,0 6.206,-0.777 8.89,-2.122l-13.916,-19.662zM28.974,16.5c0,-0.828 0.671,-1.5 1.5,-1.5c0.829,0 1.5,0.672 1.5,1.5v13.84l-3,-4.227z"></path>
+            </g>
+          </g>
+        </svg>
+        &nbsp;NextJs
+      </span>
+    ),
+    typescript: (
+      <span className="inline-flex items-center px-3 py-2 mt-2 text-sm font-medium text-center text-black bg-slate-100 rounded-lg hover:bg-slate-300 focus:ring-4 focus:outline-none focus:ring-bg-slate-300 dark:bg-slate-100 dark:hover:bg-slate-300 dark:focus:ring-bg-slate-100">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24px"
+          viewBox="0,0,255.98958,255.98958"
+        >
+          <g
+            fill="none"
+            fill-rule="nonzero"
+            stroke="none"
+            stroke-width="1"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="10"
+            stroke-dasharray=""
+            stroke-dashoffset="0"
+            font-family="none"
+            font-weight="none"
+            font-size="none"
+            text-anchor="none"
+            style={{ mixBlendMode: "normal" }}
+          >
+            <g transform="scale(5.33333,5.33333)">
+              <rect x="6" y="6" width="36" height="36" fill="#1962ab"></rect>
+              <path
+                d="M27.49,22h-13.263v3.264h4.757v14.736h3.769v-14.736h4.737z"
+                fill="#ffffff"
+              ></path>
+              <path
+                d="M39.194,26.084c0,0 -1.787,-1.192 -3.807,-1.192c-2.02,0 -2.747,0.96 -2.747,1.986c0,2.648 7.381,2.383 7.381,7.712c0,8.209 -11.254,4.568 -11.254,4.568v-3.938c0,0 2.152,1.622 4.733,1.622c2.581,0 2.483,-1.688 2.483,-1.92c0,-2.449 -7.315,-2.449 -7.315,-7.878c0,-7.381 10.658,-4.469 10.658,-4.469z"
+                fill="#ffffff"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        &nbsp;TypeScript
+      </span>
+    ),
   };
   return <>{categories.map((category) => icons[category.toLowerCase()])}</>;
 };

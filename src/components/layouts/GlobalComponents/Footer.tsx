@@ -1,13 +1,18 @@
 export default function Footer() {
   return (
-    <footer className="bg-dark pb-6">
-      <div className="w-full pt-10 border-t border-slate-700">
+    <footer className="relative h-[200px] overflow-hidden">
+      <img
+        src="/footer.svg"
+        alt="pic hero"
+        className="absolute -mt-12 -z-10 h-fit w-full object-cover bg-basic dark:bg-dark"
+      />
+      <div className="w-full pt-16 ">
         <div className="flex items-center justify-center mb-5">
           {/* <!-- gmail --> */}
           <a
             href="mailto:tristia71@gmail.com"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300  text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
@@ -25,7 +30,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/indratrst/"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300  text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
@@ -43,7 +48,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/indratrst/"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
@@ -61,7 +66,7 @@ export default function Footer() {
           <a
             href="https://www.twitter.com/indratrst/"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
@@ -79,7 +84,7 @@ export default function Footer() {
           <a
             href="https://github.com/indratrst"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-light  hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
@@ -97,7 +102,7 @@ export default function Footer() {
           <a
             href="https://www.facebook.com/indratristia/"
             target="_blank"
-            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >
             <svg
               role="img"
