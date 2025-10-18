@@ -12,11 +12,11 @@ const Portfolio = () => {
       id="timeline"
       className="pt-36 pb-32 bg-white dark:bg-basic relative z-10 overflow-hidden shadow-md mt-2 dark:mt-0 "
     >
-      {/* <img
+      <img
         src="/timeline-1.png"
         alt="pic hero"
         className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-30 dark:opacity-95"
-      /> */}
+      />
       <img
         src="/timeline-2.png"
         alt="pic hero"
@@ -30,11 +30,11 @@ const Portfolio = () => {
       <div className="absolute z-0 inset-0 bg-basic/50 dark:bg-slate-800/90 "></div>
 
       <div className="container relative z-10">
-        <img
+        {/* <img
           src="/timeline-1.png"
           alt="pic hero"
           className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-10 dark:opacity-95"
-        />
+        /> */}
         <div className="w-full px-4">
           <div className="mx-auto text-center mb-16">
             <h4 className="font-semibold text-lg text-primary mb-2">
@@ -363,7 +363,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <ol className="items-baseline ps-14 p-3 sm:flex ">
+        <ol className="items-baseline mx-6 md:ps-9 lg:ps-14 p-3 sm:flex ">
           <li className="relative mb-6 sm:mb-0">
             <div className="flex items-center">
               <div
