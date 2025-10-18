@@ -15,7 +15,7 @@ const Portfolio = () => {
       <img
         src="/timeline-1.png"
         alt="pic hero"
-        className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-30 dark:opacity-95"
+        className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-10 dark:opacity-95"
       />
       <img
         src="/timeline-2.png"
