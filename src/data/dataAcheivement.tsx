@@ -4,8 +4,7 @@ export const acheivementData: AcheivementType[] = [
   {
     image: "/sertifikat/vuejs.jpeg",
     source: "Jagooit",
-    title:
-      "Bootcamp Vuejs Jagooit AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
+    title: "Bootcamp Vuejs Jagooit ",
     description:
       "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },

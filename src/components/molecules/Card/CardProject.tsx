@@ -16,8 +16,8 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
     <Swiper
       slidesPerView={1} // Default: 1 card untuk semua layar
       spaceBetween={20} // Jarak antar card
-      centeredSlides={true} // Pastikan card tengah selalu terlihat
-      loop={true} // Infinite loop agar tidak berhenti
+      centeredSlides={false} // Pastikan card tengah selalu terlihat
+      loop={false} // Infinite loop agar tidak berhenti
       speed={1200}
       autoplay={{
         delay: 4000, // Ganti slide setiap 4 detik

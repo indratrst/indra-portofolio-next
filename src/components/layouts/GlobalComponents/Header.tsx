@@ -59,9 +59,9 @@ export default function Header() {
           <div className="flex items-center justify-between  ">
             <div className="px-4 flex justify-center items-center ">
               <img
-                src="/fire.svg"
+                src="/logo-new-2.svg"
                 alt="pic hero"
-                className=" h-24  transform lg:scale-[1.7] "
+                className="h-14 transform lg:scale-[1.3] "
               />
               {/* <a
                 href="#home"
@@ -77,7 +77,7 @@ export default function Header() {
                 name="hamburger"
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="block absolute right-4 lg:hidden"
+                className="block absolute right-16 lg:hidden"
               >
                 <span className="hamburger-line origin-top-left transition duration-300"></span>
                 <span className="hamburger-line"></span>
@@ -109,7 +109,23 @@ export default function Header() {
                   </li>
                   <li className="group">
                     <a
-                      href="#portfolio"
+                      href="#experience"
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
+                    >
+                      Experience
+                    </a>
+                  </li>
+                  <li className="group">
+                    <a
+                      href="#project"
+                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
+                    >
+                      Project
+                    </a>
+                  </li>
+                  <li className="group">
+                    <a
+                      href="#achievement"
                       className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
                     >
                       Achievement
@@ -123,14 +139,7 @@ export default function Header() {
                       Timeline
                     </a>
                   </li>
-                  <li className="group">
-                    <a
-                      href="#project"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Project
-                    </a>
-                  </li>
+
                   <li className="flex items-center mt-3 lg:mt-0 justify-center">
                     <Toggle />
                   </li>

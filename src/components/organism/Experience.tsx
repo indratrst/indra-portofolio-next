@@ -9,8 +9,8 @@ const Experience: React.FC = () => {
   return (
     <>
       <section
-        id="portfolio"
-        className="pt-12 lg:pt-36 pb-9 bg-white dark:bg-dark"
+        id="experience"
+        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark"
       >
         <div className="2xl:container ">
           {/* <div className="w-full px-4">
@@ -29,7 +29,7 @@ const Experience: React.FC = () => {
           </div> */}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2  w-full  h-[500px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2  w-full lg:h-[500px]">
           <div className="w-full h-full text-dark  grid px-5 lg:px-52 pb-10">
             <div className="font-newSpirit leading-[1.1]">
               <h2 className="text-[50px] lg:text-[120px] text-primary">My</h2>
@@ -44,8 +44,9 @@ const Experience: React.FC = () => {
               <img
                 src="/dotted.svg"
                 alt="pic hero"
-                className="absolute  max-w-full mx-auto -ms-[75px] lg:-ms-[290px]  scale-[1.6] lg:-mt-9 transform lg:scale-[.6]"
+                className="absolute  max-w-full mx-auto -ms-[75px] lg:-ms-[290px]  scale-[.3] -mt-56 -right-16 lg:left-48  lg:mt-3 transform lg:scale-[.6]"
               />
+              {/* className="absolute max-w-full mx-auto -ms-[75px] lg:ms-[290px]  scale-[.3] -mt-56 -right-20 lg:mt-16 transform lg:scale-[.6]" */}
               {/* <h5>7 Kelas</h5>
                 <h5>7 Event</h5> */}
               {/* <p className="">
@@ -59,7 +60,7 @@ const Experience: React.FC = () => {
             {/* <CardExperience experiences={filteredExperience} /> */}
             <div className="w-full">
               <div className="w-full px-4">
-                <div className=" mx-auto  mb-2">
+                <div className="mx-auto mb-2">
                   <h2 className="font-bold text-sand  mb-4 text-2xl lg:text-2xl">
                     Experience
                   </h2>
@@ -133,7 +134,7 @@ const Experience: React.FC = () => {
                 <img
                   src="/dotted.svg"
                   alt="pic hero"
-                  className="absolute  max-w-full mx-auto -ms-[75px] lg:ms-[150px]  scale-[1.6] lg:-mt-64 transform  -rotate-180 lg:scale-[.6]"
+                  className="absolute  max-w-full mx-auto -ms-[75px] lg:ms-[150px]  scale-[1.6] lg:-mt-64 transform  -rotate-180 lg:scale-[.6] lg:opacity-100 opacity-0"
                 />
                 <ol className="relative border-l border-gray-400 dark:border-gray-700">
                   {/* <li className="mb-10 ml-4">

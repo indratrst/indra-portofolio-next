@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="relative h-[200px] overflow-hidden">
-      <img
+    <footer className="relative h-[150px] md:h-[200px] overflow-hidden bg-basic dark:bg-dark">
+      {/* <img
         src="/footer.svg"
-        alt="pic hero"
-        className="absolute -mt-12 -z-10 h-fit w-full object-cover bg-basic dark:bg-dark"
-      />
-      <div className="w-full pt-16 ">
-        <div className="flex items-center justify-center mb-5">
+        alt="Footer background"
+        className="absolute  object-cover w-full h-full top-0 left-0 scale-[1.1]"
+      /> */}
+      <div className="w-full pt-10 md:pt-16">
+        <div className="flex items-center justify-center lg:mb-5">
           {/* <!-- gmail --> */}
           <a
             href="mailto:tristia71@gmail.com"
@@ -116,13 +116,13 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <p className="font-medium text-sm text-slate-500 text-center">
-          Created BY{" "}
+
+        <p className="font-medium text-sm text-slate-500 text-center pt-5 lg:pt-0">
+          Created By{" "}
           <a href="" className="text-primary">
             {" "}
             Indra Tristia{" "}
           </a>{" "}
-          2022
         </p>
       </div>
       {/* <!-- </div> --> */}

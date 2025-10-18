@@ -4,17 +4,17 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-12 lg:pt-0 lg:pb-24 bg-basic dark:bg-dark transition-colors duration-500"
+      className="pt-12 lg:pt-0 pb-16 lg:pb-24 scroll-mt-72 bg-basic dark:bg-dark transition-colors duration-500"
     >
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full px-4 mb-10 lg:w-1/2" data-aos="fade-up">
             <div className="lg:mt-80 absolute lg:right-0">
-              <img
+              {/* <img
                 src="/hero-left.svg"
                 alt="pic hero"
                 className="relative -z-10 max-w-full mx-auto -ms-[75px] lg:ms-[230px] -mt-72 scale-[1.6] lg:-mt-[335px] transform lg:scale-[2.1]"
-              />
+              /> */}
             </div>
             <h4 className="font-bold uppercase text-reds text-lg mb-3">
               About Me

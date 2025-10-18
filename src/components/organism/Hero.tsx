@@ -60,9 +60,9 @@ export default function Hero({
       className="dark:bg-dark  transition-colors duration-500 bg-basic overflow-hidden"
     >
       <div className="container">
-        <div className="flex flex-wrap h-full lg:min-h-[100vh] items-center py-10 lg:pt-48">
+        <div className="flex flex-wrap h-full min-h-[90vh]  lg:min-h-[100vh] items-center py-10 lg:pt-48">
           <div
-            className="w-full md:px-5 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-1 self-start"
+            className="w-full md:px-5 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-1 self-start h-full"
             data-aos="fade-down"
           >
             {/* <div className="lg:mt-80 absolute lg:right-0">
@@ -135,15 +135,15 @@ export default function Hero({
 
           <div className="w-full self-start px-4 lg:w-1/2 ">
             <div className="-mt-20 relative lg:right-0" data-aos="fade-down">
-              {/* <img
-                src="/hero.png"
+              <img
+                src="/hero.svg"
                 alt="pic hero"
-                className="relative z-10 max-w-full mx-auto lg:-mt-72 transform md:scale-125"
-              /> */}
+                className="relative z-10 max-w-full mx-auto mt-16 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
+              />
               <img
                 src="/hero-group-right.svg"
                 alt="pic hero"
-                className="relative -z-10 max-w-full mx-auto -ms-[75px] lg:-ms-[210px] -mt-72 scale-[1.6] lg:mt-5 transform lg:scale-[2.3]"
+                className="absolute -z-10 max-w-full mx-auto -ms-[75px] lg:-ms-[210px] -mt-72 scale-[2.6] lg:-mt-72 transform lg:scale-[2.3] -left-28 lg:left-0 "
               />
               {/* <span className="absolute -bottom-24 md:-bottom-9 lg:-bottom-28  left-1/2 -translate-x-1/2 md:scale-125">
                 <svg
