@@ -7,6 +7,7 @@ import SvgArrowLeft from "../molecules/SvgArrowLeft";
 import SvgArrowRight from "../molecules/SvgArrowRight";
 import { acheivementData } from "@/data/dataAcheivement";
 import { AcheivementType } from "@/data/type";
+import Image from "next/image";
 
 interface acheivementProps {
   acheivements: AcheivementType[];
@@ -116,9 +117,9 @@ const Achievement: React.FC<acheivementProps> = () => {
                           </button>
 
                           <div className="p-6 border border-black dark:border-slate-500 sand_border bg-white dark:bg-dark rounded-xl z-20 h-full flex flex-col card-item">
-                            <img
+                            <Image
                               src={item.image}
-                              alt=""
+                              alt="sertifikat achievement"
                               onClick={() => openModal(item.image)}
                               className="aspect-auto w-full rounded object-cover"
                             />
@@ -149,7 +150,7 @@ const Achievement: React.FC<acheivementProps> = () => {
                 >
                   &times;
                 </button>
-                <img
+                <Image
                   src={selectedImage}
                   alt="Achievement"
                   className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] rounded-lg shadow-lg object-contain"

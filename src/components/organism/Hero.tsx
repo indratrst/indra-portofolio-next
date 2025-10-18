@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 // if (typeof window !== "undefined") {
@@ -122,9 +123,9 @@ export default function Hero({
             <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
               Life long{" "}
               <span className="text-base font-medium text-secondary mb-6 lg:text-lg">
-                Learner ! As a dedicated Frontend Developer, I'm passionate
-                about developing technlogy and continuously enhancing my skills
-                to create exceptional digital experiences.
+                Learner ! As a dedicated Frontend Developer, Im passionate about
+                developing technlogy and continuously enhancing my skills to
+                create exceptional digital experiences.
               </span>
             </p>
 
@@ -135,12 +136,12 @@ export default function Hero({
 
           <div className="w-full self-start px-4 lg:w-1/2 ">
             <div className="-mt-20 relative lg:right-0" data-aos="fade-down">
-              <img
+              <Image
                 src="/hero.svg"
                 alt="pic hero"
                 className="relative z-10 max-w-full mx-auto mt-16 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
               />
-              <img
+              <Image
                 src="/hero-group-right.svg"
                 alt="pic hero"
                 className="absolute -z-10 max-w-full mx-auto -ms-[75px] lg:-ms-[210px] -mt-72 scale-[2.6] lg:-mt-72 transform lg:scale-[2.3] -left-28 lg:left-0 "

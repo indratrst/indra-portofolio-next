@@ -4,6 +4,7 @@ import CategoryStack from "../CategoryStack";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, FreeMode } from "swiper/modules";
+import Image from "next/image";
 
 interface ProjectCardProps {
   projects: ProjectType[];
@@ -51,9 +52,10 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
             >
               {/* Gambar */}
               <div className="relative w-full md:max-w-[440px] h-fit max-h-[200px] -top-[40%] -left-[1%] shadow-lg z-10 rounded-t-md">
-                <img
+                <Image
                   src={project.image}
                   className="w-full max-w-full rounded-t-md"
+                  alt="project image"
                 />
               </div>
 

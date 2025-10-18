@@ -4,23 +4,24 @@ import { ProjectType } from "@/data/type";
 import CardProject from "../molecules/Card/CardProject";
 import { projectData } from "@/data/dataProject";
 import { useMemo } from "react";
+import Image from "next/image";
 
 const Project: React.FC = () => {
   const filteredProjects = useMemo(() => {
     return projectData;
-  }, [projectData]);
+  }, []);
   return (
     <section
       id="project"
       className="lg:pt-36 pb-9 bg-basic dark:bg-dark relative shadow-lg"
     >
       <div className="relative w-full mx-auto flex justify-center overflow-hidden py-10">
-        <img
+        <Image
           src="/project-left.svg"
           alt="pic hero"
           className="absolute -left-16 md:-left-24 lg:left-20 md:-mt-28  max-w-full mx-auto -ms-[75px] lg:-ms-[2px]   md:scale-[.5] scale-[.8] -top-9 -mt-28 lg:-mt-34 transform lg:scale-[.4] lg:opacity-100 opacity-95"
         />
-        <img
+        <Image
           src="/project-right.svg"
           alt="pic hero"
           className="absolute -right-32 lg:right-0 -bottom-16 md:-bottom-16 md:-right-48  max-w-full mx-auto -ms-[75px] lg:-ms-[2px]  scale-[.4] md:scale-[.5] lg:-mt-28 transform lg:scale-[.4] opacity-100"

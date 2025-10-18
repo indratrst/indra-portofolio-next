@@ -7,6 +7,7 @@ import "swiper/css/free-mode";
 import { Autoplay, FreeMode, Navigation } from "swiper/modules";
 import SvgArrowLeft from "../SvgArrowLeft";
 import SvgArrowRight from "../SvgArrowRight";
+import Image from "next/image";
 
 interface ExperienceCardProps {
   experiences: ExperienceType[];
@@ -62,9 +63,10 @@ const CardExperience: React.FC<ExperienceCardProps> = ({ experiences }) => {
                 {/* Wrapper untuk gambar dan teks */}
                 <div className="relative group ">
                   {/* Image */}
-                  <img
+                  <Image
                     src={item.image}
                     className="w-[899px] h-full transition-all duration-500 object-cover"
+                    alt="card experience image"
                   />
 
                   {/* Wrapper untuk title + description yang bertambah tinggi */}

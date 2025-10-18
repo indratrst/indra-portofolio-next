@@ -1,11 +1,9 @@
 import React, { useMemo } from "react";
 import CardExperience from "../molecules/Card/CardExperience";
 import { experienceData } from "@/data/dataExperience";
+import Image from "next/image";
 
 const Experience: React.FC = () => {
-  const filteredExperience = useMemo(() => {
-    return experienceData;
-  }, [experienceData]);
   return (
     <>
       <section
@@ -41,7 +39,7 @@ const Experience: React.FC = () => {
               </h2>
 
               <div className="grid gap-y-2 border-b-2 border-primary dark:border-reds border-dotted " />
-              <img
+              <Image
                 src="/dotted.svg"
                 alt="pic hero"
                 className="absolute  max-w-full mx-auto -ms-[75px] lg:-ms-[290px]  scale-[.3] -mt-56 -right-16 lg:left-48  lg:mt-3 transform lg:scale-[.6]"
@@ -131,7 +129,7 @@ const Experience: React.FC = () => {
                     Perjalanan karir yang dilalui setelah beberapa tahun.
                   </p> */}
                 </div>
-                <img
+                <Image
                   src="/dotted.svg"
                   alt="pic hero"
                   className="absolute  max-w-full mx-auto -ms-[75px] lg:ms-[150px]  scale-[1.6] lg:-mt-64 transform  -rotate-180 lg:scale-[.6] lg:opacity-100 opacity-0"

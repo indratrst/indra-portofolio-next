@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Toggle from "../../molecules/Toggles";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +59,7 @@ export default function Header() {
         <div className="2xl:container ">
           <div className="flex items-center justify-between  ">
             <div className="px-4 flex justify-center items-center ">
-              <img
+              <Image
                 src="/logo-new-2.svg"
                 alt="pic hero"
                 className="h-14 transform lg:scale-[1.3] "
