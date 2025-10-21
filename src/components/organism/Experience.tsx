@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
     <>
       <section
         id="experience"
-        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark relative"
+        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark relative overflow-hidden"
       >
         <div className="2xl:container ">
           {/* <div className="w-full px-4">
@@ -131,10 +131,11 @@ const Experience: React.FC = () => {
                   </p> */}
                 </div>
                 <Image
-                  fill
+                  width={300}
+                  height={300}
                   src="/dotted.svg"
                   alt="pic hero"
-                  className="absolute -ms-[75px] lg:ms-[790px]  scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.3] lg:opacity-100 hidden lg:block"
+                  className="absolute -ms-[75px] lg:ms-[190px] scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.6] lg:opacity-100 hidden lg:block"
                 />
                 <ol className="relative border-l border-gray-400 dark:border-gray-700">
                   {/* <li className="mb-10 ml-4">
