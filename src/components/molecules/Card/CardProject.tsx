@@ -53,6 +53,8 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
               {/* Gambar */}
               <div className="relative w-full md:max-w-[440px] h-fit max-h-[200px] -top-[40%] -left-[1%] shadow-lg z-10 rounded-t-md">
                 <Image
+                  width={500}
+                  height={500}
                   src={project.image}
                   className="w-full max-w-full rounded-t-md"
                   alt="project image"

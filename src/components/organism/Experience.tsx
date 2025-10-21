@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
     <>
       <section
         id="experience"
-        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark"
+        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark relative"
       >
         <div className="2xl:container ">
           {/* <div className="w-full px-4">
@@ -40,9 +40,10 @@ const Experience: React.FC = () => {
 
               <div className="grid gap-y-2 border-b-2 border-primary dark:border-reds border-dotted " />
               <Image
+                fill
                 src="/dotted.svg"
                 alt="pic hero"
-                className="absolute  max-w-full mx-auto -ms-[75px] lg:-ms-[290px]  scale-[.3] -mt-56 -right-16 lg:left-48  lg:mt-3 transform lg:scale-[.6]"
+                className="absolute ms-[95px] md:ms-[280px] lg:-ms-[780px]  scale-[.3] -mt-[400px]  md:-mt-64 lg:mt-64 transform md:scale-[.2] lg:scale-[.3]"
               />
               {/* className="absolute max-w-full mx-auto -ms-[75px] lg:ms-[290px]  scale-[.3] -mt-56 -right-20 lg:mt-16 transform lg:scale-[.6]" */}
               {/* <h5>7 Kelas</h5>
@@ -130,9 +131,10 @@ const Experience: React.FC = () => {
                   </p> */}
                 </div>
                 <Image
+                  fill
                   src="/dotted.svg"
                   alt="pic hero"
-                  className="absolute  max-w-full mx-auto -ms-[75px] lg:ms-[150px]  scale-[1.6] lg:-mt-64 transform  -rotate-180 lg:scale-[.6] lg:opacity-100 opacity-0"
+                  className="absolute -ms-[75px] lg:ms-[790px]  scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.3] lg:opacity-100 hidden lg:block"
                 />
                 <ol className="relative border-l border-gray-400 dark:border-gray-700">
                   {/* <li className="mb-10 ml-4">

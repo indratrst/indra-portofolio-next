@@ -64,6 +64,8 @@ const CardExperience: React.FC<ExperienceCardProps> = ({ experiences }) => {
                 <div className="relative group ">
                   {/* Image */}
                   <Image
+                    width={204}
+                    height={24}
                     src={item.image}
                     className="w-[899px] h-full transition-all duration-500 object-cover"
                     alt="card experience image"

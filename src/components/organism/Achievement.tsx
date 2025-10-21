@@ -27,14 +27,14 @@ const Achievement: React.FC<acheivementProps> = () => {
     setSelectedImage(null);
     setIsModalOpen(false);
   };
-  useEffect(() => {
-    const cards = document.querySelectorAll(".card-item");
-    let max = 0;
-    cards.forEach((c) => {
-      if (c.clientHeight > max) max = c.clientHeight;
-    });
-    cards.forEach((c) => ((c as HTMLElement).style.height = max + "px"));
-  }, []);
+  // useEffect(() => {
+  //   const cards = document.querySelectorAll(".card-item");
+  //   let max = 0;
+  //   cards.forEach((c) => {
+  //     if (c.clientHeight > max) max = c.clientHeight;
+  //   });
+  //   cards.forEach((c) => ((c as HTMLElement).style.height = max + "px"));
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => setOffset(window.scrollY);
@@ -110,20 +110,26 @@ const Achievement: React.FC<acheivementProps> = () => {
 
                     {acheivementData.map((item, index) => (
                       <SwiperSlide key={index} className="h-full">
-                        <div className="relative m-5 h-full">
+                        <div className="relative m-5 h-[350px]">
                           <span className="absolute -z-10 w-full h-full inset-1 bg-sand dark:bg-reds rounded-xl"></span>
                           <button className="absolute py-1 z-10 px-3 -left-4 -top-2 -rotate-[10deg] black_border bg-sand dark:bg-reds text-white font-bold">
                             {item.source}
                           </button>
 
-                          <div className="p-6 border border-black dark:border-slate-500 sand_border bg-white dark:bg-dark rounded-xl z-20 h-full flex flex-col card-item">
-                            <Image
-                              src={item.image}
-                              alt="sertifikat achievement"
-                              onClick={() => openModal(item.image)}
-                              className="aspect-auto w-full rounded object-cover"
-                            />
-                            <div className="text-dark dark:text-light font-medium text-md py-3 flex-grow">
+                          <div className="p-6 border border-black dark:border-slate-500 sand_border bg-white dark:bg-dark rounded-xl z-20 h-[350px] flex flex-col card-item">
+                            {/* Gambar 3/4 tinggi card */}
+                            <div className="relative w-full flex-grow basis-[55%]">
+                              <Image
+                                src={item.image}
+                                alt="sertifikat achievement"
+                                fill
+                                onClick={() => openModal(item.image)}
+                                className="rounded object-cover cursor-pointer"
+                              />
+                            </div>
+
+                            {/* Text 1/4 tinggi card */}
+                            <div className="text-dark dark:text-light font-medium text-md  flex-grow basis-[5%] flex items-center">
                               {item.title}
                             </div>
                           </div>
@@ -151,9 +157,11 @@ const Achievement: React.FC<acheivementProps> = () => {
                   &times;
                 </button>
                 <Image
+                  width={700}
+                  height={500}
                   src={selectedImage}
                   alt="Achievement"
-                  className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] rounded-lg shadow-lg object-contain"
+                  className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] rounded-lg  object-contain"
                 />
               </div>
             </div>

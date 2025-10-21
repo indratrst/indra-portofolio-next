@@ -16,16 +16,22 @@ const Portfolio = () => {
       className="pt-36 pb-32 bg-white dark:bg-basic relative z-10 overflow-hidden shadow-md mt-2 dark:mt-0 "
     >
       <Image
+        width={24}
+        height={24}
         src="/timeline-1.png"
         alt="pic hero"
         className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-10 dark:opacity-95"
       />
       <Image
+        width={24}
+        height={24}
         src="/timeline-2.png"
         alt="pic hero"
         className="absolute ms-[120px] lg:ms-[700px] inset-0 -z-10 scale-[.9] mt-[80em] md:mt-[30em] lg:mt-12 transform lg:scale-[.4] opacity-10 dark:opacity-95"
       />
       <Image
+        width={24}
+        height={24}
         src="/timeline-3.png"
         alt="pic hero"
         className="absolute inset-0 -z-10 -top-10 lg:-left-[250px] -ms-[120px] lg:-ms-[500px] mt-[161em] scale-[.9] lg:mt-[500px] transform lg:scale-[.3]  rotate-12 opacity-10 dark:opacity-95"

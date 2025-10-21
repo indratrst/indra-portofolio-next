@@ -137,14 +137,18 @@ export default function Hero({
           <div className="w-full self-start px-4 lg:w-1/2 ">
             <div className="-mt-20 relative lg:right-0" data-aos="fade-down">
               <Image
+                width={324}
+                height={24}
                 src="/hero.svg"
                 alt="pic hero"
                 className="relative z-10 max-w-full mx-auto mt-16 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
               />
               <Image
+                fill
+                priority
                 src="/hero-group-right.svg"
                 alt="pic hero"
-                className="absolute -z-10 max-w-full mx-auto -ms-[75px] lg:-ms-[210px] -mt-72 scale-[2.6] lg:-mt-72 transform lg:scale-[2.3] -left-28 lg:left-0 "
+                className="absolute -z-10  mx-auto -ms-[75px] md:-ms-52 lg:-ms-[210px] -mt-2 md:mt-12 lg:mt-9 scale-[1.6] md:scale-[1.9]  transform lg:scale-[2.3]   "
               />
               {/* <span className="absolute -bottom-24 md:-bottom-9 lg:-bottom-28  left-1/2 -translate-x-1/2 md:scale-125">
                 <svg

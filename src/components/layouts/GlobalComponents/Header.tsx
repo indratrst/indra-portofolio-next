@@ -61,6 +61,8 @@ export default function Header() {
             <div className="px-4 flex justify-center items-center ">
               <Image
                 src="/logo-new-2.svg"
+                width={300}
+                height={56}
                 alt="pic hero"
                 className="h-14 transform lg:scale-[1.3] "
               />
