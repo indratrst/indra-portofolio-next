@@ -43,7 +43,7 @@ const Experience: React.FC = () => {
                 fill
                 src="/dotted.svg"
                 alt="pic hero"
-                className="absolute ms-[95px] md:ms-[280px] lg:-ms-[780px]  scale-[.3] -mt-[400px]  md:-mt-64 lg:mt-64 transform md:scale-[.2] lg:scale-[.3]"
+                className="absolute ms-[95px] md:ms-[280px] lg:-ms-[780px]  scale-[.3] -mt-[430px]  md:-mt-64 lg:mt-64 transform md:scale-[.2] lg:scale-[.3]"
               />
               {/* className="absolute max-w-full mx-auto -ms-[75px] lg:ms-[290px]  scale-[.3] -mt-56 -right-20 lg:mt-16 transform lg:scale-[.6]" */}
               {/* <h5>7 Kelas</h5>
@@ -135,7 +135,7 @@ const Experience: React.FC = () => {
                   height={300}
                   src="/dotted.svg"
                   alt="pic hero"
-                  className="absolute -ms-[75px] lg:ms-[190px] scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.6] lg:opacity-100 hidden lg:block"
+                  className="absolute -ms-[75px] lg:ms-[190px] scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.7] lg:opacity-100 hidden lg:block"
                 />
                 <ol className="relative border-l border-gray-400 dark:border-gray-700">
                   {/* <li className="mb-10 ml-4">

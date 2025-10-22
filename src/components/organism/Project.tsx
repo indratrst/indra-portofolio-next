@@ -13,9 +13,9 @@ const Project: React.FC = () => {
   return (
     <section
       id="project"
-      className="lg:pt-36 pb-9 bg-basic dark:bg-dark relative shadow-lg"
+      className="pt-6 lg:pt-16 pb-9 bg-basic dark:bg-dark relative shadow-lg"
     >
-      <div className="relative w-full mx-auto flex  overflow-hidden py-10">
+      <div className="relative w-full mx-auto flex  overflow-hidden md:py-10 lg:py-0">
         {/* <Image
           width={400}
           height={50}
@@ -29,7 +29,7 @@ const Project: React.FC = () => {
           alt="pic hero"
           className="absolute  mx-auto -ms-[75px] lg:ms-[600px]  scale-[.4] md:scale-[.5] lg:mt-16 transform lg:scale-[.4] opacity-100"
         /> */}
-        <div className="max-w-xl mx-auto text-center md:mb-16 relative pt-1">
+        <div className="max-w-xl mx-auto text-center relative">
           <h4 className="font-semibold text-lg text-primary mb-2">Portfolio</h4>
 
           <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-light">

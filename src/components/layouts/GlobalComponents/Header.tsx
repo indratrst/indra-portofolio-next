@@ -56,9 +56,9 @@ export default function Header() {
             : "bg-basic backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
         }`}
       >
-        <div className="2xl:container ">
-          <div className="flex items-center justify-between  ">
-            <div className="px-4 flex justify-center items-center ">
+        <div className="2xl:container">
+          <div className="flex items-center justify-between">
+            <div className="lg:px-4 flex justify-center items-center">
               <Image
                 src="/logo-new-2.svg"
                 width={300}

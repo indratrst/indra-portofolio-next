@@ -32,12 +32,12 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
       }}
       onSlideChange={(swiper) => setHoveredIndex(swiper.realIndex)} // Update card tengah
       modules={[FreeMode, Autoplay]}
-      className="w-full h-[600px] flex justify-center"
+      className="w-full h-[50em]  md:h-[650px] flex justify-center"
     >
       {projects.map((project, index) => (
         <SwiperSlide
           key={index}
-          className="flex justify-center justify-items-center mt-32"
+          className="flex justify-center justify-items-center lg:mt-10"
         >
           <div
             className={`relative flex items-center w-full max-w-[500px] transition-all duration-1000  ease-in-out ${
@@ -46,24 +46,23 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
             onMouseEnter={() => setHoveredIndex(index)}
           >
             <div
-              className={`relative w-full h-[200px] mx-5 p-[20px] px-[34px] flex flex-col shadow-sand dark:shadow-primary shadow-md rounded-[15px]  transition-all  duration-1000 ease-in-out ${
-                hoveredIndex === index ? "h-[400px]" : ""
-              }`}
+              className={`relative w-full mx-5 p-[15px] px-[34px] flex flex-col shadow-sand dark:shadow-primary shadow-md rounded-[15px] transition-all duration-700 ease-in-out overflow-hidden
+    ${hoveredIndex === index ? "max-h-[1000px]" : "max-h-[250px]"}
+  `}
             >
               {/* Gambar */}
-              <div className="relative w-full md:max-w-[440px] h-fit max-h-[200px] -top-[40%] -left-[1%] shadow-lg z-10 rounded-t-md">
+              <div className="relative w-full md:max-w-[440px]  -left-[1%] shadow-lg z-10 rounded-t-md">
                 <Image
                   width={500}
                   height={500}
                   src={project.image}
-                  className="w-full max-w-full rounded-t-md"
+                  className="w-full  max-w-full rounded-t-md"
                   alt="project image"
                 />
               </div>
-
               {/* Deskripsi */}
               <div
-                className={`absolute inset-0 flex flex-col justify-center items-center p-[10px] px-[15px] text-center text-gray-900 transition-all  duration-1000 ease-in-out ${
+                className={`relative inset-0 flex flex-col justify-center items-center -top-[30%] p-[10px] px-[15px] text-center text-gray-900 transition-all  duration-1000 ease-in-out ${
                   hoveredIndex === index
                     ? "opacity-100 visible mt-7"
                     : "opacity-0 invisible"

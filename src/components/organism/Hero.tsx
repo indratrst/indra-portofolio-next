@@ -120,9 +120,9 @@ export default function Hero({
               {displayText}
               {showCursor && <span className="blinking-cursor"></span>}
             </span> */}
-            <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
+            <p className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
               Life long{" "}
-              <span className="text-base font-medium text-secondary mb-6 lg:text-lg">
+              <span className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
                 Learner ! As a dedicated Frontend Developer, Im passionate about
                 developing technlogy and continuously enhancing my skills to
                 create exceptional digital experiences.
@@ -141,7 +141,7 @@ export default function Hero({
                 height={24}
                 src="/hero.svg"
                 alt="pic hero"
-                className="relative z-10 max-w-full mx-auto mt-16 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
+                className="relative z-10 max-w-full mx-auto mt-24 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
               />
               <Image
                 fill

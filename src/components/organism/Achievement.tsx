@@ -124,7 +124,7 @@ const Achievement: React.FC<acheivementProps> = () => {
                                 alt="sertifikat achievement"
                                 fill
                                 onClick={() => openModal(item.image)}
-                                className="rounded object-cover cursor-pointer"
+                                className="rounded aspect-square object-scale-down cursor-pointer"
                               />
                             </div>
 
@@ -151,7 +151,7 @@ const Achievement: React.FC<acheivementProps> = () => {
                 onClick={(e) => e.stopPropagation()} // klik gambar tidak nutup modal
               >
                 <button
-                  className="absolute -top-14 -right-12 text-white text-3xl font-bold"
+                  className="absolute -top-60 lg:-top-14 -right-8 lg:-right-12 text-white text-3xl font-bold"
                   onClick={closeModal}
                 >
                   &times;
@@ -161,7 +161,7 @@ const Achievement: React.FC<acheivementProps> = () => {
                   height={500}
                   src={selectedImage}
                   alt="Achievement"
-                  className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] rounded-lg  object-contain"
+                  className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] -mt-52 lg:mt-0 rounded-lg  object-contain"
                 />
               </div>
             </div>
