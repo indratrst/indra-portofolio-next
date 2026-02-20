@@ -2,6 +2,20 @@ import { AcheivementType } from "./type";
 
 export const acheivementData: AcheivementType[] = [
   {
+    image: "/sertifikat/hackerrank.png",
+    source: "Hackerrank",
+    title: "Frontend Developer (React)",
+    description:
+      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
+  },
+  {
+    image: "/sertifikat/financial-literacy.png",
+    source: "Dicoding",
+    title: "Financial Literacy 101",
+    description:
+      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
+  },
+  {
     image: "/sertifikat/vuejs.jpeg",
     source: "Jagooit",
     title: "Bootcamp Vuejs Jagooit ",
