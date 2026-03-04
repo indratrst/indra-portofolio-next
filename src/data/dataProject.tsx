@@ -61,7 +61,7 @@ export const projectData: ProjectType[] = [
     categories: ["Vue", "Tailwind", "javascript"],
     title: "Mydigilearn",
     description:
-      "myDigilearn adalah platform corporate learning  yang dapat digunakan untuk berbagi dan belajar tentang berbagai topik dan keterampilan, khususnya di industri digital",
+      "Berperan sebagai Frontend Developer dalam membangun platform corporate learning berbasis Vue.js. Mengembangkan fitur berbagi konten dan modul pembelajaran interaktif khususnya untuk industri digital.",
     link: "https://mydigilearn.id/",
   },
   {
@@ -69,7 +69,7 @@ export const projectData: ProjectType[] = [
     categories: ["react", "next", "Tailwind", "typescript"],
     title: "Learnhub",
     description:
-      "Learnhub adalah website builder bagi konten kreator, lembaga, yayasan, organisasi dan komunitas untuk membuat Akademinya sendiri tanpa banyak tools dan tanpa coding.",
+      "Terlibat sebagai Frontend Developer dalam pengembangan website builder yang memungkinkan konten kreator, lembaga, dan komunitas membangun akademi online mereka sendiri tanpa coding, menggunakan React.js dan Next.js.",
     link: "https://learnhub.id/",
   },
   {
@@ -77,7 +77,7 @@ export const projectData: ProjectType[] = [
     categories: ["react", "Tailwind", "javascript"],
     title: "Torado",
     description:
-      "Torado adalah website company profile dari Torado Group, sebuah perusahaan yang bergerak di bidang food and beverage.",
+      "Membangun website company profile untuk Torado Group, perusahaan di bidang food and beverage, dengan fokus pada tampilan yang menarik, responsif, dan mencerminkan identitas brand.",
     link: "https://toradogroup.com/",
   },
 ];
