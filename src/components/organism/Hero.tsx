@@ -121,11 +121,10 @@ export default function Hero({
               {showCursor && <span className="blinking-cursor"></span>}
             </span> */}
             <p className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
-              Life long{" "}
               <span className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
-                Learner ! As a dedicated Frontend Developer, Im passionate about
-                developing technlogy and continuously enhancing my skills to
-                create exceptional digital experiences.
+                I&apos;m a Frontend Developer passionate about building clean,
+                responsive, and user-friendly web experiences. Continuously
+                learning and growing to deliver the best digital solutions.
               </span>
             </p>
 
