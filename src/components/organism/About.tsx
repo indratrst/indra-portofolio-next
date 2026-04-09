@@ -23,12 +23,12 @@ export default function About() {
               Let Me Introduce Myself.
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
-              Lulusan Smk Negeri 2 Cimahi jurusan Rpl (Rekayasa Perangkat Lunak)
-              tahun 2019. Sangat tertarik dalam Web Developer dan telah
-              mengikuti pelatihan dari Dicoding melalui program beasiswa
-              kolaborasi dengan Indosat Ooredoo (IDCamp) dan beberapa platform
-              lainnya dan juga telah terlibat di beberapa projek di berbagai
-              perusahaan.
+              Lulusan SMK Negeri 2 Cimahi jurusan RPL (Rekayasa Perangkat Lunak)
+              tahun 2019. Memiliki ketertarikan besar di bidang pengembangan web
+              dan telah mengikuti berbagai pelatihan, termasuk program beasiswa
+              dari Dicoding berkolaborasi dengan Indosat Ooredoo (IDCamp).
+              Selain itu, telah terlibat langsung dalam beberapa proyek nyata di
+              berbagai perusahaan sebagai Frontend Developer.
             </p>
           </div>
           <div
@@ -36,14 +36,12 @@ export default function About() {
             data-aos="fade-up"
           >
             <h3 className="font-semibold text-sand text-2xl mb-4 lg:text-3xl dark:text-light">
-              Lets Be Friend
+              Let&apos;s Connect
             </h3>
             <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
-              Anda dapat menemukan saya di berbagai platform online yang
-              berbeda. Di mana saya berinteraksi dengan teman-teman dan pengikut
-              saya. Dalam keseluruhan, saya memanfaatkan berbagai platform
-              online ini untuk tetap terhubung dengan orang lain dan
-              mengembangkan jaringan sosial
+              Jangan ragu untuk terhubung dengan saya di berbagai platform. Saya
+              terbuka untuk diskusi, kolaborasi, maupun sekadar berbagi
+              pengalaman seputar dunia teknologi dan pengembangan web.
             </p>
             <div className="flex items-center">
               {/* <!-- gmail --> */}

@@ -28,7 +28,7 @@ export default function Footer() {
 
           {/* <!-- Linkedin --> */}
           <a
-            href="https://www.instagram.com/indratrst/"
+            href="https://www.linkedin.com/in/indra-tristia/"
             target="_blank"
             className="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-400 text-slate-400  hover:border-sand hover:bg-sand dark:hover:border-primary dark:hover:bg-primary hover:text-white"
           >

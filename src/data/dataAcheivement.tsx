@@ -5,115 +5,83 @@ export const acheivementData: AcheivementType[] = [
     image: "/sertifikat/hackerrank.png",
     source: "Hackerrank",
     title: "Frontend Developer (React)",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/financial-literacy.png",
     source: "Dicoding",
     title: "Financial Literacy 101",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/vuejs.jpeg",
     source: "Jagooit",
     title: "Bootcamp Vuejs Jagooit ",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/jago-lev2.png",
     source: "Jagooit",
     title:
       "Bootcamp Intensif  Development With Framework [React Js,Laravel,Mysql]",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/jago-lev1.png",
     source: "Jagooit",
     title: "Bootcamp Intensif  Fundamental Programming",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/frontend-expert.png",
     source: "Dicoding",
     title: "Kelas Front End Web Developer [Beginner - Intermediate]",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/fundamental-fe.png",
     source: "Dicoding",
     title: "Kelas Front End Web Developer [Beginner - Intermediate]",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/frontend-pemula.png",
     source: "Dicoding",
     title: "Kelas Front End Web Developer [Beginner]",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/dasar-web.png",
     source: "Dicoding",
     title: "Kelas Front End Web Developer [Basic - Beginner]",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/dasar-js.png",
     source: "Dicoding",
     title: "Kelas Dasar Javascript",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
 
   {
     image: "/sertifikat/aws.png",
     source: "Dicoding",
     title: "Kelas Dasar Aws Cloud",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
 
   {
     image: "/sertifikat/backend-pemula.png",
     source: "Dicoding",
     title: "Kelas Backend Pemula",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/bdd.png",
     source: "Dicoding",
     title: "Event Baparekraf Developer Day 2023",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/dicoding-developer.jpg",
     source: "Dicoding",
     title: "Event Dicoding Developer Conference 2023",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/niagahoster.png",
     source: "Niagahoster",
     title: "Webinar Fundamental Front End Web Development",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
   {
     image: "/sertifikat/english-2020.png",
     source: "Sekolah Pintar",
     title: "Kelas Belajar Bahasa Inggris - Sekolah Pintar",
-    description:
-      "AI-powered Virtual Assistant that swiftly answers queries via text or image prompts",
   },
 ];

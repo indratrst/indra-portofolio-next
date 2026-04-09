@@ -75,7 +75,7 @@ const Experience: React.FC = () => {
                       2024 - 2025
                     </time>
                     <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      Pt Neuronworks Indonesia
+                      PT Neuronworks Indonesia
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                       Technical Support
@@ -87,7 +87,7 @@ const Experience: React.FC = () => {
                       2023 - 2024
                     </time>
                     <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      Pt Motiolabs Indonesia
+                      PT Motiolabs Indonesia
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                       Frontend Developer
@@ -99,7 +99,7 @@ const Experience: React.FC = () => {
                       2023 - 2025
                     </time>
                     <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      Pt Jagooit Talenta Indonesia
+                      PT Jagooit Talenta Indonesia
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                       Junior Programmer (Talent)
@@ -111,10 +111,10 @@ const Experience: React.FC = () => {
                       2018
                     </time>
                     <h3 className="text-lg font-semibold text-gray-500  dark:text-white">
-                      Pt Softindo Computech
+                      PT Softindo Computech
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Web Developer ( Intern )
+                      Web Developer Intern
                     </p>
                   </li>
                 </ol>
@@ -165,10 +165,10 @@ const Experience: React.FC = () => {
                   <li className="mb-10 ml-4">
                     <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-sand dark:border-gray-900 dark:bg-gray-700"></div>
                     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2019
+                      2016 – 2019
                     </time>
                     <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                      Smk Negeri 2 Cimahi
+                      SMK Negeri 2 Cimahi
                     </h3>
                     <p className="text-base font-normal text-gray-500 dark:text-gray-400">
                       RPL
