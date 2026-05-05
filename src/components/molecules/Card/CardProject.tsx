@@ -32,7 +32,7 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
       }}
       onSlideChange={(swiper) => setHoveredIndex(swiper.realIndex)} // Update card tengah
       modules={[FreeMode, Autoplay]}
-      className="w-full h-[50em]  md:h-[650px] flex justify-center"
+      className="w-full h-auto flex justify-center"
     >
       {projects.map((project, index) => (
         <SwiperSlide
@@ -47,7 +47,7 @@ const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
           >
             <div
               className={`relative w-full mx-5 p-[15px] px-[34px] flex flex-col shadow-sand dark:shadow-primary shadow-md rounded-[15px] transition-all duration-700 ease-in-out overflow-hidden
-    ${hoveredIndex === index ? "max-h-[1000px]" : "max-h-[250px]"}
+    ${hoveredIndex === index ? "scale-95 shadow-xl" : "scale-95 opacity-80"}
   `}
             >
               {/* Gambar */}
