@@ -23,11 +23,10 @@ export default function About() {
               Let Me Introduce Myself.
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
-              Lulusan SMK Negeri 2 Cimahi jurusan RPL (Rekayasa Perangkat Lunak)
-              tahun 2019. Memiliki ketertarikan besar di bidang pengembangan web
-              dan telah mengikuti berbagai pelatihan, termasuk program beasiswa
-              dari Dicoding berkolaborasi dengan Indosat Ooredoo (IDCamp).
-              Selain itu, telah terlibat langsung dalam beberapa proyek nyata di
+              Memiliki ketertarikan besar di bidang pengembangan web dan telah
+              mengikuti berbagai pelatihan, termasuk program beasiswa dari
+              Dicoding berkolaborasi dengan Indosat Ooredoo (IDCamp). Selain
+              itu, telah terlibat langsung dalam beberapa proyek nyata di
               berbagai perusahaan sebagai Frontend Developer.
             </p>
           </div>
