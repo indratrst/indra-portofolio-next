@@ -58,7 +58,7 @@ export default function Header() {
       >
         <div className="2xl:container">
           <div className="flex items-center justify-between">
-            <div className="lg:px-4 flex justify-center items-center">
+            <div className="lg:px-4 flex justify-center items-center px-9">
               {/* <Image
                 src="/logo-new-2.svg"
                 width={300}
