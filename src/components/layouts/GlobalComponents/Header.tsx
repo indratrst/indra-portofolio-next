@@ -59,19 +59,16 @@ export default function Header() {
         <div className="2xl:container">
           <div className="flex items-center justify-between">
             <div className="lg:px-4 flex justify-center items-center">
-              <Image
+              {/* <Image
                 src="/logo-new-2.svg"
                 width={300}
                 height={56}
                 alt="pic hero"
                 className="h-14 transform lg:scale-[1.3] "
-              />
-              {/* <a
-                href="#home"
-                className="font-bold text-lg text-primary block py-6"
-              >
+              /> */}
+              <h1 className="font-bold text-lg text-primary block py-6">
                 Indra Tristia
-              </a> */}
+              </h1>
             </div>
 
             <div className="flex items-center px-4">
