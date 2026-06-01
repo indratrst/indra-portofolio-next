@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Toggle from "../../molecules/Toggles";
 import Image from "next/image";
+import ToggleLanguage from "@/components/molecules/ToggleLanguage";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,6 +67,7 @@ export default function Header() {
                 alt="pic hero"
                 className="h-14 transform lg:scale-[1.3] "
               /> */}
+              <ToggleLanguage />
               <h1 className="font-bold text-lg text-primary block py-6">
                 Indra Tristia
               </h1>
