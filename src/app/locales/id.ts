@@ -9,7 +9,11 @@ export const id = {
 
   about: {
     title: "Tentang Saya",
+    subtitle: "Perkenalkan Diri Saya",
     description:
-      "Saya Front End Developer dengan pengalaman React, Next.js dan Vue.js.",
+      "Memiliki ketertarikan besar di bidang pengembangan web dan telah mengikuti berbagai pelatihan, termasuk program beasiswa dari Dicoding berkolaborasi dengan Indosat Ooredoo (IDCamp). Selain itu, telah terlibat langsung dalam beberapa proyek nyata di berbagai perusahaan sebagai Frontend Developer.",
+    subtitle2: "Mari Terhubung dan Wujudkan Ide Menjadi Solusi Digital!",
+    description2:
+      "Jangan ragu untuk menghubungi saya melalui berbagai platform di bawah ini. Saya terbuka untuk peluang kerja, kolaborasi proyek, maupun diskusi seputar teknologi, pengembangan perangkat lunak, dan pengembangan web.",
   },
 };
