@@ -1,175 +1,237 @@
-import React, { useEffect, useMemo, useState } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SvgArrowLeft from "../molecules/SvgArrowLeft";
-import SvgArrowRight from "../molecules/SvgArrowRight";
-import { acheivementData } from "@/data/dataAcheivement";
-import { AcheivementType } from "@/data/type";
+"use client";
+
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import { achievementCategories } from "@/data/dataAchievementGroup";
 
-interface acheivementProps {
-  acheivements: AcheivementType[];
-}
-
-const Achievement: React.FC<acheivementProps> = () => {
-  const [offset, setOffset] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+export default function Achievement() {
+  const [selectedCategory, setSelectedCategory] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const openModal = (imageUrl: string) => {
-    setSelectedImage(imageUrl);
-    setIsModalOpen(true);
-  };
+  const currentCategory = achievementCategories[selectedCategory];
 
-  const closeModal = () => {
-    setSelectedImage(null);
-    setIsModalOpen(false);
-  };
-  // useEffect(() => {
-  //   const cards = document.querySelectorAll(".card-item");
-  //   let max = 0;
-  //   cards.forEach((c) => {
-  //     if (c.clientHeight > max) max = c.clientHeight;
-  //   });
-  //   cards.forEach((c) => ((c as HTMLElement).style.height = max + "px"));
-  // }, []);
-
-  useEffect(() => {
-    const handleScroll = () => setOffset(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  const totalCertificates = useMemo(() => {
+    return achievementCategories.reduce(
+      (acc, category) => acc + category.items.length,
+      0
+    );
   }, []);
+
   return (
     <>
       <section
         id="achievement"
-        className="relative mt-1 dark:mt-0 pt-12 md:pt-36 pb-9 bg-white dark:bg-basic overflow-hidden shadow-lg"
+        className="relative overflow-hidden bg-zinc-950 py-32"
       >
-        <div
-          className="absolute inset-0 bg-right bg-no-repeat bg-[length:400px] lg:bg-[length:600px] bg-fixed "
-          style={{
-            backgroundImage: "url('/champion.svg')",
-            transform: `translateY(${offset * 0.4 - 1190}px)`, // parallax speed 0.3x
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-basic/50 dark:bg-slate-800/90"></div>
-        <div className="container">
-          <div className="flex flex-wrap">
-            <div className="w-full px-4 mb-1 lg:w-1/2" data-aos="fade-up">
-              <h4 className="font-bold  text-primary text-lg mb-3">
-                Achievement
-              </h4>
-              <h2 className="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-light">
-                My Achievement
-              </h2>
-              <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
-                Beberapa sertifikat yang telah saya dapatkan setelah
-                menyelesaikan kelas dan event
-              </p>
+        {/* Glow */}
+        <div className="absolute left-1/4 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-purple-500/10 blur-[120px]" />
+
+        <div className="container relative z-10 mx-auto px-4">
+          {/* Header */}
+          <div className="mx-auto mb-20 max-w-3xl text-center">
+            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400 backdrop-blur-xl">
+              Certifications & Achievements
+            </span>
+
+            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
+              Continuous Learning &
+              <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
+                {" "}
+                Professional Growth
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg text-zinc-400">
+              Certifications, bootcamps, conferences and learning experiences
+              that shaped my journey as a Frontend Developer.
+            </p>
+          </div>
+
+          {/* Stats */}
+          <div className="mb-16 grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+              <h3 className="text-4xl font-bold text-white">
+                {totalCertificates}+
+              </h3>
+              <p className="mt-2 text-zinc-400">Certificates</p>
             </div>
-            <div className="w-full lg:pt-1" data-aos="fade-up">
-              <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:items-stretch">
-                <div className="lg:col-span-2 lg:py-2">
-                  <div className="flex flex-row mb-4 items-start py-4">
-                    <div className="swiper-button-prev px-4">
-                      <button className="bg-slate-200/80 hover:bg-slate-400 text-black p-2  rounded-full shadow transition">
-                        <SvgArrowLeft />
-                      </button>
-                    </div>
-                    <div className="swiper-button-next px-4">
-                      <button className="bg-slate-200/80 hover:bg-slate-400 text-black p-2 rounded-full shadow transition">
-                        <SvgArrowRight />
-                      </button>
-                    </div>
-                  </div>
 
-                  <Swiper
-                    breakpoints={{
-                      320: { slidesPerView: 1, spaceBetween: 10 },
-                      640: { slidesPerView: 2, spaceBetween: 20 },
-                      768: { slidesPerView: 2, spaceBetween: 40 },
-                      1024: { slidesPerView: 3, spaceBetween: 50 },
-                    }}
-                    slidesPerView={1}
-                    spaceBetween={10}
-                    direction="horizontal"
-                    navigation={{
-                      prevEl: ".swiper-button-prev",
-                      nextEl: ".swiper-button-next",
-                    }}
-                    pagination={{
-                      clickable: true,
-                      el: ".custom-swiper-pagination",
-                    }}
-                    modules={[Pagination, Navigation]}
-                    className="w-full flex items-stretch"
-                  >
-                    <div className="custom-swiper-pagination flex mt-8 gap-1 lg:gap-4 justify-center" />
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+              <h3 className="text-4xl font-bold text-white">
+                {achievementCategories.length}
+              </h3>
+              <p className="mt-2 text-zinc-400">Categories</p>
+            </div>
 
-                    {acheivementData.map((item, index) => (
-                      <SwiperSlide key={index} className="h-full">
-                        <div className="relative m-5 h-[350px]">
-                          <span className="absolute -z-10 w-full h-full inset-1 bg-sand dark:bg-reds rounded-xl"></span>
-                          <button className="absolute py-1 z-10 px-3 -left-4 -top-2 -rotate-[10deg] black_border bg-sand dark:bg-reds text-white font-bold">
-                            {item.source}
-                          </button>
-
-                          <div className="p-6 border border-black dark:border-slate-500 sand_border bg-white dark:bg-dark rounded-xl z-20 h-[350px] flex flex-col card-item">
-                            {/* Gambar 3/4 tinggi card */}
-                            <div className="relative w-full flex-grow basis-[55%]">
-                              <Image
-                                src={item.image}
-                                alt="sertifikat achievement"
-                                fill
-                                onClick={() => openModal(item.image)}
-                                className="rounded aspect-square object-scale-down cursor-pointer"
-                              />
-                            </div>
-
-                            {/* Text 1/4 tinggi card */}
-                            <div className="text-dark dark:text-light font-medium text-md  flex-grow basis-[5%] flex items-center">
-                              {item.title}
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-              </div>
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
+              <h3 className="text-4xl font-bold text-white">2020+</h3>
+              <p className="mt-2 text-zinc-400">Learning Journey</p>
             </div>
           </div>
-          {isModalOpen && selectedImage && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
-              onClick={closeModal}
-            >
-              <div
-                className="relative bg-transparent"
-                onClick={(e) => e.stopPropagation()} // klik gambar tidak nutup modal
-              >
+
+          {/* Tabs */}
+          <div className="mb-12 flex justify-center">
+            <div className="relative flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-2 backdrop-blur-xl">
+              {achievementCategories.map((category, index) => (
                 <button
-                  className="absolute -top-60 lg:-top-14 -right-8 lg:-right-12 text-white text-3xl font-bold"
-                  onClick={closeModal}
+                  key={category.id}
+                  onClick={() => setSelectedCategory(index)}
+                  className={`relative z-10 rounded-xl px-5 py-3 text-sm font-medium transition-all ${selectedCategory === index
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-200"
+                    }`}
                 >
-                  &times;
+                  {category.icon} {category.label}
+
+                  {selectedCategory === index && (
+                    <motion.div
+                      layoutId="active-tab"
+                      transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.6,
+                      }}
+                      className="absolute inset-0 -z-10 rounded-xl border border-white/10 bg-white/10"
+                    />
+                  )}
                 </button>
-                <Image
-                  width={700}
-                  height={500}
-                  src={selectedImage}
-                  alt="Achievement"
-                  className="max-w-[70vw] lg:max-w-[100vw] max-h-[50vh] -mt-52 lg:mt-0 rounded-lg  object-contain"
-                />
-              </div>
+              ))}
             </div>
-          )}
+          </div>
+
+          {/* Current Category */}
+          <div className="mb-10 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-zinc-300 backdrop-blur-xl">
+              <span>{currentCategory.icon}</span>
+              <span>{currentCategory.label}</span>
+            </div>
+          </div>
+
+          {/* Certificates */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentCategory.id}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {currentCategory.items.map((item) => (
+                <div
+                  key={item.title}
+                  className="
+                    group
+                    overflow-hidden
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    backdrop-blur-xl
+                    transition-all
+                    duration-500
+                    hover:border-white/20
+                    hover:bg-white/[0.05]
+                  "
+                >
+                  <div
+                    className="relative aspect-[4/3] cursor-pointer overflow-hidden"
+                    onClick={() => setSelectedImage(item.image)}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="
+                        object-cover
+                        transition-transform
+                        duration-700
+                        group-hover:scale-105
+                      "
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400">
+                      {item.source}
+                    </span>
+
+                    <h4 className="mt-4 text-lg font-semibold text-white">
+                      {item.title}
+                    </h4>
+
+                    <button
+                      onClick={() => setSelectedImage(item.image)}
+                      className="mt-6 text-sm text-blue-400 transition hover:text-blue-300"
+                    >
+                      View Certificate →
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+          >
+            <motion.div
+              initial={{
+                scale: 0.95,
+                opacity: 0,
+              }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+              }}
+              exit={{
+                scale: 0.95,
+                opacity: 0,
+              }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-6xl"
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-4xl text-white"
+              >
+                ×
+              </button>
+
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={selectedImage}
+                  alt="Certificate"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
-};
-
-export default Achievement;
+}

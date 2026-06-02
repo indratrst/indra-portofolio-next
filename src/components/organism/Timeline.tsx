@@ -1,466 +1,296 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { BookOpen } from "lucide-react";
 
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import { Navigation, Pagination } from "swiper/modules";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import SvgArrowLeft from "../molecules/SvgArrowLeft";
-// import SvgArrowRight from "../molecules/SvgArrowRight";
+const learningJourney = [
+  {
+    id: "frontend",
+    category: "Frontend Developer",
+    items: [
+      {
+        period: "Jun - Jul 2022",
+        title: "Belajar Dasar Pemrograman Web",
+        description:
+          "Mempelajari HTML, CSS, semantic web, dan struktur website modern.",
+      },
+      {
+        period: "Jul - Aug 2022",
+        title: "Belajar Membuat Front-End Web untuk Pemula",
+        description:
+          "Membangun aplikasi web interaktif menggunakan JavaScript dan Web Storage.",
+      },
+      {
+        period: "Sep - Oct 2022",
+        title: "Belajar Fundamental Front-End Development",
+        description:
+          "Belajar ES6, Web Components, AJAX, Webpack dan integrasi API.",
+      },
+      {
+        period: "Nov 2022 - Jan 2023",
+        title: "Menjadi Front-End Web Developer Expert",
+        description:
+          "Membangun aplikasi yang responsif, accessible, maintainable dan performant.",
+      },
+    ],
+  },
 
-const Portfolio = () => {
+  {
+    id: "backend",
+    category: "Backend Developer",
+    items: [
+      {
+        period: "Jan 2023",
+        title: "AWS Cloud Practitioner Fundamentals",
+        description:
+          "Memahami layanan AWS, infrastruktur cloud dan konsep cloud computing.",
+      },
+      {
+        period: "Feb 2023",
+        title: "Dasar Pemrograman JavaScript",
+        description:
+          "Mempelajari JavaScript modern sebagai fondasi pengembangan backend Node.js.",
+      },
+      {
+        period: "Feb - Mar 2023",
+        title: "Backend Developer Pemula",
+        description:
+          "Membangun REST API menggunakan Node.js dan konsep backend modern.",
+      },
+    ],
+  },
+
+  {
+    id: "fullstack",
+    category: "Fullstack Bootcamp",
+    items: [
+      {
+        period: "Apr 2023",
+        title: "Fundamental Programming (Level 1)",
+        description:
+          "HTML, CSS, JavaScript, Bootstrap, Database dan React dasar.",
+      },
+      {
+        period: "May 2023",
+        title: "Development With Framework (Level 2)",
+        description:
+          "React.js, Laravel, MySQL, Express.js dan MongoDB dengan project akhir aplikasi booking tiket bioskop.",
+      },
+    ],
+  },
+];
+
+export default function LearningJourney() {
+  const [activeTrack, setActiveTrack] = useState("frontend");
+
+  const activeData = learningJourney.find(
+    (track) => track.id === activeTrack
+  );
+
   return (
     <section
       id="timeline"
-      className="pt-36 pb-32 bg-white dark:bg-basic relative z-10 overflow-hidden shadow-md mt-2 dark:mt-0 "
+      className="relative overflow-hidden bg-zinc-950 py-32"
     >
-      <Image
-        width={24}
-        height={24}
-        src="/timeline-1.png"
-        alt="pic hero"
-        className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-10 dark:opacity-95"
+      {/* Glow */}
+
+      <div className="absolute left-0 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
+
+      <div className="absolute right-0 bottom-0 h-96 w-96 bg-purple-500/10 blur-[120px]" />
+
+      {/* Grid */}
+
+      <div
+        className="
+          absolute inset-0
+          bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),
+          linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]
+          bg-[size:80px_80px]
+          [mask-image:radial-gradient(circle_at_center,black,transparent)]
+        "
       />
-      <Image
-        width={24}
-        height={24}
-        src="/timeline-2.png"
-        alt="pic hero"
-        className="absolute ms-[120px] lg:ms-[700px] inset-0 -z-10 scale-[.9] mt-[80em] md:mt-[30em] lg:mt-12 transform lg:scale-[.4] opacity-10 dark:opacity-95"
-      />
-      <Image
-        width={24}
-        height={24}
-        src="/timeline-3.png"
-        alt="pic hero"
-        className="absolute inset-0 -z-10 -top-10 lg:-left-[250px] -ms-[120px] lg:-ms-[500px] mt-[161em] scale-[.9] lg:mt-[500px] transform lg:scale-[.3]  rotate-12 opacity-10 dark:opacity-95"
-      />
-      <div className="absolute z-0 inset-0 bg-basic/50 dark:bg-slate-800/90 "></div>
 
-      <div className="container relative z-10">
-        {/* <img
-          src="/timeline-1.png"
-          alt="pic hero"
-          className="absolute inset-0 -z-10 -top-10 lg:-left-[170px]  -ms-[100px] md:-ms-[300px] lg:-ms-[500px] mt-[6em] scale-[1.2] lg:-mt-96 transform lg:scale-[.7] opacity-10 dark:opacity-95"
-        /> */}
-        <div className="w-full px-4">
-          <div className="mx-auto text-center mb-16">
-            <h4 className="font-semibold text-lg text-primary mb-2">
-              Timeline
-            </h4>
-            <h2 className="font-bold text-dark text-3xl mb-4 sm:text-3xl lg:text-4xl dark:text-white">
-              Front End Developer
-            </h2>
-            <p className="font-medium text-base text-secondary md:text-lg">
-              Kelas Front End ini saya ikuti dari beasiswa yang diadakan{" "}
-              <span className="text-navy font-bold dark:text-white">
-                {" "}
-                Dicoding{" "}
-              </span>{" "}
-              berkolaborasi dengan{" "}
-              <a
-                href="https://idcamp.ioh.co.id/"
-                className="text-orange-400 font-semibold"
-              >
-                Indosat Ooredoo (IDCamp)
-              </a>
-            </p>
-          </div>
+      <div className="container relative z-10 mx-auto px-4">
+        {/* Header */}
 
-          <div className="w-full px-4">
-            <ol className="sm:flex p-2 items-baseline md:overflow-x-scroll pb-2">
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Dasar Pemrograman Web
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Juni - Juli, 2022
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Di akhir pelatihan, peserta dapat Membangun website
-                    menggunakan HTML dan CSS.. Menerapkan struktur website yang
-                    baik menggunakan standar semantic HTML.
-                  </p>
-                </div>
-              </li>
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Membuat Front End Pemula
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Juli - Agustus, 2022
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Di akhir kelas, siswa dapat membuat aplikasi front-end web
-                    yang interaktif serta memiliki fitur penyimpanan menggunakan
-                    Web Storage.
-                  </p>
-                </div>
-              </li>
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Fundamental Front End Development
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    September - Oktober, 2022
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Di akhir kelas, siswa dapat membuat aplikasi front-end web
-                    dengan kode JavaScript standar ES6, menerapkan Web
-                    Components, Webpack, dan menampilkan data dinamis dari Web
-                    API menggunakan AJAX.
-                  </p>
-                </div>
-              </li>
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Menjadi Expert Front End Development
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    November 2022 - January, 2023
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Di akhir kelas, siswa dapat membuat aplikasi front-end web
-                    yang responsif, memiliki aksesibilitas yang baik, mudah
-                    di-maintenance, memiliki sifat native, dapat diuji, dan
-                    memiliki performa yang baik.
-                  </p>
-                </div>
-              </li>
-            </ol>
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400">
+            Learning Journey
+          </span>
 
-            <div className="pt-9 mx-auto text-center mb-16  ">
-              {/* <!-- <h4 className="font-semibold text-lg text-primary mb-2">Timeline</h4> --> */}
-              <h2 className="font-bold text-dark text-3xl mb-4 sm:text-3xl lg:text-4xl dark:text-white">
-                Back End Developer
-              </h2>
-              <p className="font-medium text-base text-secondary md:text-lg ">
-                Kelas Back End ini didapatkan dari beasiswa yang diadakan{" "}
-                <span className="text-navy font-bold dark:text-white">
-                  {" "}
-                  Dicoding{" "}
-                </span>{" "}
-                berkolaborasi dengan
-                <a
-                  href="https://www.dbs.com/spark/index/id_id/site/codingcamp/index.html"
-                  className="text-red-500 font-bold"
-                >
-                  <span className="text-navy dark:text-white">DBS</span>{" "}
-                  Foundation
-                </a>
-              </p>
-            </div>
-            <ol className="items-baseline p-3 sm:flex overflow-x-scroll">
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Dasar Amazon Web Service Cloud
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Januari, 2023
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Kelas ditujukan bagi pemula yang ingin memulai karirnya di
-                    bidang cloud computing dengan mengacu pada standar
-                    kompetensi internasional milik AWS. Di akhir kelas, siswa
-                    dapat memahami AWS Cloud dengan segala jenis layanan,
-                    infrastruktur global, hingga harganya.
-                  </p>
-                </div>
-              </li>
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Dasar Pemrograman Javascript
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Februari, 2023
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Kelas ini ditujukan untuk individu yang ingin melangkah
-                    menjadi seorang Web Developer/Back-end developer menggunakan
-                    teknologi Node.js menggunakan standar kompetensi industri
-                    yang divalidasi oleh AWS.Di akhir kelas, siswa dapat
-                    menguasai dasar JavaScript untuk pengembangan aplikasi web
-                    menggunakan Node.Js.
-                  </p>
-                </div>
-              </li>
-              <li className="relative mb-6 sm:mb-0">
-                <div className="flex items-center">
-                  <div
-                    className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-                   dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-                </div>
-                <div className="mt-3 sm:pr-8 md:w-96">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    Belajar Membuat Aplikasi Backend End Pemula
-                  </h3>
-                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                    Februari - Maret, 2023
-                  </time>
-                  <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                    Kelas ini didesain untuk siswa yang sudah paham dengan
-                    bahasa pemrograman JavaScript.Di akhir kelas, siswa dapat
-                    membuat RESTful API sederhana secara mandiri untuk mendukung
-                    fungsionalitas suatu aplikasi.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <div className="pt-9 mx-auto text-center mb-16">
-          {/* <!-- <h4 className="font-semibold text-lg text-primary mb-2">Timeline</h4> --> */}
-          <h2 className="font-bold text-dark text-3xl mb-4 sm:text-3xl lg:text-4xl dark:text-white">
-            Full stack Web Developer
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
+            Continuous
+            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+              {" "}
+              Learning
+            </span>
           </h2>
-          <p className="font-medium text-base text-secondary md:text-lg ">
-            Bootcamp intensif ini diadakan oleh{" "}
-            <span className="text-navy font-bold dark:text-white">
-              Pt Jagoo<span className="text-red-500 font-bold ">IT</span>
-              Talenta Indonesia
-            </span>{" "}
+
+          <p className="mt-6 text-lg text-zinc-400">
+            My journey through frontend development, backend engineering and
+            fullstack bootcamps.
           </p>
         </div>
 
-        <ol className="items-baseline mx-6 md:ps-9 lg:ps-14 p-3 sm:flex ">
-          <li className="relative mb-6 sm:mb-0">
-            <div className="flex items-center">
-              <div
-                className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-             dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
+        {/* Tabs */}
+
+        <div className="mb-20 flex justify-center">
+          <div
+            className="
+              flex flex-wrap gap-2
+              rounded-2xl
+              border border-white/10
+              bg-white/[0.03]
+              p-2
+              backdrop-blur-xl
+            "
+          >
+            {learningJourney.map((track) => (
+              <button
+                key={track.id}
+                onClick={() => setActiveTrack(track.id)}
+                className={`
+                  rounded-xl
+                  px-5
+                  py-3
+                  text-sm
+                  transition-all
+                  duration-300
+                  ${activeTrack === track.id
+                    ? "bg-gradient-to-r from-blue-500 to-green-500 text-white"
+                    : "text-zinc-400 hover:text-white"
+                  }
+                `}
               >
-                <svg
-                  aria-hidden="true"
-                  className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+                {track.category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline */}
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTrack}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -20,
+            }}
+            transition={{
+              duration: 0.3,
+            }}
+          >
+            <div className="mb-12 flex items-center gap-4">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+                <BookOpen className="h-5 w-5 text-blue-400" />
               </div>
-              <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-            </div>
-            <div className="mt-3 sm:pr-8 md:w-96">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Fundamental Programming
-                <br /> [Level 1]
+
+              <h3 className="text-2xl font-semibold text-white">
+                {activeData?.category}
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                April, 2023
-              </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                Pada level ini peserta bootcamp belajar secara online yang
-                dibimbing oleh tim dari Pt Jagoo IT. Mempelajari dasar
-                Html,Css,Javascript,Bootstrap,Database dan sedikit pengenalan
-                React Js yang diakhiri dengan tugas Search & Sort data
-                menggunakan React js:
-                {/* <a
-                  className="text-blue-500"
-                  href="https://github.com/indratrst/Searcher-Items"
-                >
-                  (Searcher-Items)
-                </a> */}
-              </p>
             </div>
-          </li>
-          <li className="relative mb-6 sm:mb-0">
-            <div className="flex items-center">
-              <div
-                className="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-blue-400
-             dark:bg-blue-900 sm:ring-8 dark:ring-blue-300 shrink-0"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="w-3 h-3 text-blue-800 dark:text-blue-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+
+            <div className="relative max-w-4xl">
+              {/* Vertical Line */}
+
+              <div className="absolute left-5 top-0 h-full w-px bg-white/10" />
+
+              <div className="space-y-10">
+                {activeData?.items.map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{
+                      opacity: 0,
+                      x: -20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.1,
+                    }}
+                    className="relative pl-16"
+                  >
+                    {/* Dot */}
+
+                    <div
+                      className="
+                        absolute
+                        left-0
+                        top-8
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        border-white/10
+                        bg-zinc-900
+                      "
+                    >
+                      <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-400 to-green-400" />
+                    </div>
+
+                    {/* Card */}
+
+                    <div
+                      className="
+                        rounded-3xl
+                        border
+                        border-white/10
+                        bg-white/[0.03]
+                        p-8
+                        backdrop-blur-xl
+                        transition-all
+                        duration-300
+                        hover:border-white/20
+                        hover:bg-white/[0.05]
+                      "
+                    >
+                      <span
+                        className="
+                          inline-flex
+                          rounded-full
+                          border
+                          border-white/10
+                          bg-white/5
+                          px-4
+                          py-2
+                          text-xs
+                          text-zinc-400
+                        "
+                      >
+                        {item.period}
+                      </span>
+
+                      <h4 className="mt-5 text-xl font-semibold text-white">
+                        {item.title}
+                      </h4>
+
+                      <p className="mt-4 leading-relaxed text-zinc-400">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <div className="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
             </div>
-            <div className="mt-3 sm:pr-8 md:w-96">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Development With Framework [Level 2]
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                Mei, 2023
-              </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                Pada awal level ini peserta dituntut untuk bisa membuat aplikasi
-                blog sederhana front end menggunakan React Js, Backend - Api
-                menggunakan Express Js dan database menggunakan Mongo DB. Dan
-                diakhir kelas ini peserta diwajibkan untuk membuat aplikasi
-                Booking Tiket Bioskop menggunakan framework React Js , Laravel ,
-                Mysql dan wajib di presentasikan di depan System Analyst{" "}
-              </p>
-            </div>
-          </li>
-        </ol>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
-};
-
-export default Portfolio;
+}

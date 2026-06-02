@@ -1,52 +1,83 @@
 "use client";
 
-import { ProjectType } from "@/data/type";
 import CardProject from "../molecules/Card/CardProject";
 import { projectData } from "@/data/dataProject";
-import { useMemo } from "react";
-import Image from "next/image";
 
-const Project: React.FC = () => {
-  const filteredProjects = useMemo(() => {
-    return projectData;
-  }, []);
+export default function Project() {
   return (
     <section
       id="project"
-      className="pt-6 lg:pt-16 pb-9 bg-basic dark:bg-dark relative shadow-lg"
+      className="
+        relative
+        overflow-hidden
+        bg-zinc-950
+        py-24
+        lg:py-36
+      "
     >
-      <div className="relative w-full mx-auto flex  overflow-hidden md:py-10 lg:py-0">
-        {/* <Image
-          width={400}
-          height={50}
-          src="/project-left.svg"
-          alt="pic hero"
-          className="absolute  md:-mt-28  -ms-[75px] lg:ms-[100px] transform  scale-[.8] lg:scale-[.4]  md:scale-[.5] lg:opacity-100 opacity-95"
-        />
-        <Image
-          fill
-          src="/project-right.svg"
-          alt="pic hero"
-          className="absolute  mx-auto -ms-[75px] lg:ms-[600px]  scale-[.4] md:scale-[.5] lg:mt-16 transform lg:scale-[.4] opacity-100"
-        /> */}
-        <div className="max-w-xl mx-auto text-center relative">
-          <h4 className="font-semibold text-lg text-primary mb-2">Portfolio</h4>
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-blue-500/10 blur-[180px]" />
 
-          <h2 className="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-light">
-            Project
+      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] bg-purple-500/10 blur-[180px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center mb-20">
+          <span
+            className="
+              inline-flex
+              items-center
+              rounded-full
+              border
+              border-white/10
+              bg-white/5
+              px-4
+              py-2
+              text-sm
+              text-zinc-300
+              backdrop-blur-md
+            "
+          >
+            Featured Projects
+          </span>
+
+          <h2
+            className="
+              mt-8
+              text-5xl
+              md:text-6xl
+              lg:text-7xl
+              font-medium
+              tracking-tighter
+              leading-[0.95]
+              text-white
+            "
+          >
+            Selected
+            <br />
+
+            <span
+              className="
+                bg-gradient-to-br
+                from-white
+                via-white
+                to-[#75ff7c]
+                bg-clip-text
+                text-transparent
+              "
+            >
+              Projects
+            </span>
           </h2>
-          <p className="font-medium text-base text-secondary md:text-lg px-6">
-            Beberapa project yang pernah terlibat dengan berbagai kebutuhan dan
-            fitur yang memungkinkan kita untuk mempermudah aktivitas.
+
+          <p className="mt-6 text-lg text-zinc-400">
+            A collection of web applications and digital products
+            built using modern frontend technologies.
           </p>
         </div>
-      </div>
 
-      <div className="px-4 md:px-4 lg:px-0">
-        <CardProject projects={filteredProjects} />
+        <CardProject projects={projectData} />
       </div>
     </section>
   );
-};
-
-export default Project;
+}

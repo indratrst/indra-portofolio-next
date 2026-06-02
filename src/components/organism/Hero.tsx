@@ -1,71 +1,234 @@
-"use client";
-
-import { useLanguage } from "@/contexts/languageContext";
-import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Download } from "lucide-react";
 
-export default function Hero() {
-  const { messages } = useLanguage();
+export default function HeroSection() {
   return (
     <section
       id="home"
-      className="dark:bg-dark  transition-colors duration-500 bg-basic overflow-hidden"
+      className="relative overflow-hidden pt-24 lg:pt-20"
     >
-      <div className="container">
-        <div className="flex flex-wrap h-full min-h-[90vh]  lg:min-h-[100vh] items-center py-10 lg:pt-48">
-          <div
-            className="w-full md:px-5 lg:w-1/2 flex flex-col flex-shrink-0 gap-y-1 self-start h-full"
-            data-aos="fade-down"
-          >
-            <h2 className="w-fit text-dark text-5xl lg:text-[85px] dark:text-light leading-[1.1]  tracking-wide font-founderGrotesk">
-              {" "}
-              {messages?.hero?.title}👋
-              <br />
-              <span className="text-[36px] lg:text-[30px]  text-base font-semibold text-primary">
-                {messages?.hero?.span}
-              </span>
-              Indra Tristia
-            </h2>
+      {/* Background Blur */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/20 blur-[180px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-300/20 blur-[180px]" />
 
-            <p className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
-              <span className="text-sm md:text-base font-medium text-secondary mb-6 lg:text-lg">
-                {messages?.hero?.description}
+      <div className="container mx-auto px-6 lg:px-12 py-28 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT */}
+          <div>
+            <span className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-zinc-300">
+              ✨ Available for Freelance Projects
+            </span>
+
+            <h1
+              className="
+    text-5xl
+    sm:text-6xl
+    lg:text-7xl
+    xl:text-8xl
+    font-medium
+    tracking-tighter
+    leading-[0.9]
+    text-white
+  "
+              style={{
+                maskImage:
+                  "linear-gradient(180deg, black 0%, black 85%, transparent 100%)",
+                WebkitMaskImage:
+                  "linear-gradient(180deg, black 0%, black 85%, transparent 100%)",
+              }}
+            >
+              I&apos;m
+              <br />
+
+              <span
+                className="
+      bg-gradient-to-br
+      from-white
+      via-white
+      to-[#00ccff42]
+      bg-clip-text
+      text-transparent
+    "
+              >
+                Indra Tristia
               </span>
+            </h1>
+            <p className="mt-6 text-zinc-400 text-lg max-w-xl">
+              Frontend Developer specializing in React.js, Next.js,
+              and modern web technologies. Creating responsive,
+              high-performance, and user-friendly digital products.
             </p>
 
-            <Link
-              href="mailto:tristia71@gmail.com"
-              className="relative z-20 inline-block self-start text-base font-semibold bg-primary py-3 px-8 rounded-full text-white hover:shadow-lg hover:opacity-90 transition duration-400 ease-in-out cursor-pointer"
-            >
-              {messages?.hero?.button}
-            </Link>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+              >
+                View Projects
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                href="/cv.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition"
+              >
+                Download CV
+                <Download size={18} />
+              </Link>
+            </div>
+
+            {/* TRUST LOGOS */}
+            {/* <div className="mt-14">
+              <p className="text-zinc-500 text-sm mb-4">
+                Technologies I Work With
+              </p>
+
+              <div className="flex flex-wrap gap-6 text-zinc-400">
+                <span>React</span>
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Tailwind CSS</span>
+                <span>Node.js</span>
+              </div>
+            </div> */}
           </div>
 
-          <div className="w-full self-start px-4 lg:w-1/2 relative z-0">
-            <div
-              className="relative w-full min-h-[400px] -mt-20 lg:right-0"
-              data-aos="fade-down"
-            >
-              <Image
-                width={324}
-                height={24}
-                src="/hero.svg"
-                alt="pic hero"
-                className="relative z-10 max-w-full mx-auto mt-24 lg:mt-2 lg:-bottom-14 lg:-right-20 transform md:scale-125"
-              />
-              <div className="absolute inset-0 z-0 pointer-events-none">
-                <Image
-                  fill
-                  priority
-                  src="/hero-group-right.svg"
-                  alt="pic hero"
-                  className="object-contain mx-auto -ms-[75px] md:-ms-52 lg:-ms-[170px] -mt-2 md:mt-12 lg:mt-9 scale-[1.6] md:scale-[1.9] transform lg:scale-[2.3]"
-                />
+          {/* RIGHT */}
+          <div className="space-y-6">
+            {/* Main Card */}
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent" />
+
+              <div className="relative z-10">
+
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <p className="text-zinc-500 text-sm">
+                      Professional Overview
+                    </p>
+
+                    <h3 className="text-2xl font-semibold text-white mt-1">
+                      Frontend Developer
+                    </h3>
+                  </div>
+
+                  <div className="flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1">
+                    <span className="h-2 w-2 rounded-full bg-green-500" />
+                    <span className="text-xs text-green-400">
+                      Available
+                    </span>
+                  </div>
+                </div>
+
+                {/* Main Number */}
+                <div className="mb-8">
+                  {/* <h2 className="text-6xl font-bold text-white">
+                    20+
+                  </h2> */}
+
+                  {/* <p className="text-zinc-400 mt-1">
+                    Projects Delivered
+                  </p> */}
+                </div>
+
+                {/* Expertise */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+
+                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                    <p className="text-zinc-500 text-xs uppercase">
+                      Expertise
+                    </p>
+
+                    <p className="text-white mt-2 font-medium">
+                      React & Next.js
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
+                    <p className="text-zinc-500 text-xs uppercase">
+                      Experience
+                    </p>
+
+                    <p className="text-white mt-2 font-medium">
+                      2+ Years
+                    </p>
+                  </div>
+
+                </div>
+
+                {/* Description */}
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    Experienced in transforming UI/UX designs into
+                    responsive, scalable, and maintainable web
+                    applications using React.js, Next.js,
+                    TypeScript, and modern frontend technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Technologies Card */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
+
+              <p className="text-sm text-zinc-500 mb-5">
+                Technologies & Tools
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+
+                {[
+                  "React",
+                  "Next.js",
+                  "TypeScript",
+                  "Tailwind",
+                  "Prisma",
+                  "PostgreSQL",
+                  "NodeJS",
+                  "Git",
+                ].map((tech) => (
+                  <span
+                    key={tech}
+                    className="
+            rounded-full
+            border
+            border-white/10
+            bg-black/20
+            px-4
+            py-2
+            text-sm
+            text-zinc-300
+          "
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StatCard({
+  value,
+  label,
+}: {
+  value: string;
+  label: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5">
+      <h4 className="text-2xl font-bold text-white">
+        {value}
+      </h4>
+      <p className="text-zinc-400 text-sm mt-1">
+        {label}
+      </p>
+    </div>
   );
 }

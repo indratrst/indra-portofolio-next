@@ -1,92 +1,95 @@
-import { ProjectType } from "@/data/type";
-import React, { useState } from "react";
-import CategoryStack from "../CategoryStack";
-import { Swiper, SwiperSlide } from "swiper/react";
+"use client";
 
-import { Autoplay, FreeMode } from "swiper/modules";
 import Image from "next/image";
+import { ProjectType } from "@/data/type";
+import CategoryStack from "../CategoryStack";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   projects: ProjectType[];
 }
 
-const CardProject: React.FC<ProjectCardProps> = ({ projects }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(1); // Default ke index tengah
-
+export default function CardProject({
+  projects,
+}: ProjectCardProps) {
   return (
-    <Swiper
-      slidesPerView={1} // Default: 1 card untuk semua layar
-      spaceBetween={20} // Jarak antar card
-      centeredSlides={false} // Pastikan card tengah selalu terlihat
-      loop={false} // Infinite loop agar tidak berhenti
-      speed={1200}
-      autoplay={{
-        delay: 4000, // Ganti slide setiap 4 detik
-        disableOnInteraction: true, // Jangan berhenti meskipun user klik/swipe
-      }}
-      breakpoints={{
-        1024: {
-          slidesPerView: 3, // Hanya di desktop (≥1024px), tampilkan 3 card
-          spaceBetween: 40,
-        },
-      }}
-      onSlideChange={(swiper) => setHoveredIndex(swiper.realIndex)} // Update card tengah
-      modules={[FreeMode, Autoplay]}
-      className="w-full h-auto flex justify-center"
-    >
+    <div className="grid gap-8 lg:grid-cols-2">
       {projects.map((project, index) => (
-        <SwiperSlide
+        <div
           key={index}
-          className="flex justify-center justify-items-center lg:mt-10"
+          className="
+            group
+            overflow-hidden
+            rounded-3xl
+            border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl
+            transition-all
+            duration-500
+            hover:border-white/20
+            hover:bg-white/[0.07]
+          "
         >
-          <div
-            className={`relative flex items-center w-full max-w-[500px] transition-all duration-1000  ease-in-out ${
-              hoveredIndex === index ? "mt-7" : ""
-            }`}
-            onMouseEnter={() => setHoveredIndex(index)}
-          >
+          {/* Image */}
+          <div className="relative overflow-hidden">
+            <Image
+              width={1200}
+              height={700}
+              src={project.image}
+              alt={project.title}
+              className="
+                h-auto
+                w-full
+                transition-transform
+                duration-700
+                group-hover:scale-105
+              "
+            />
+
             <div
-              className={`relative w-full mx-5 p-[15px] px-[34px] flex flex-col shadow-sand dark:shadow-primary shadow-md rounded-[15px] transition-all duration-700 ease-in-out overflow-hidden
-    ${hoveredIndex === index ? "scale-95 shadow-xl" : "scale-95 opacity-80"}
-  `}
-            >
-              {/* Gambar */}
-              <div className="relative w-full md:max-w-[440px]  -left-[1%] shadow-lg z-10 rounded-t-md">
-                <Image
-                  width={500}
-                  height={500}
-                  src={project.image}
-                  className="w-full  max-w-full rounded-t-md"
-                  alt="project image"
-                />
-              </div>
-              {/* Deskripsi */}
-              <div
-                className={`relative inset-0 flex flex-col justify-center items-center -top-[30%] p-[10px] px-[15px] text-center text-gray-900 transition-all  duration-1000 ease-in-out ${
-                  hoveredIndex === index
-                    ? "opacity-100 visible mt-7"
-                    : "opacity-0 invisible"
-                }`}
-              >
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {project.title}
-                </h5>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  {project.description}
-                </p>
-                <h4 className="font-semibold mt-3 text-gray-700 dark:text-gray-400">
-                  Tech Stack :
-                </h4>
-                <div className="flex gap-x-2 flex-wrap justify-center">
-                  <CategoryStack categories={project.categories} />
-                </div>
-              </div>
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-black/30
+                via-transparent
+                to-transparent
+              "
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+            <div className="flex items-start justify-between gap-4">
+              <h3 className="text-2xl font-semibold text-white">
+                {project.title}
+              </h3>
+
+              <ArrowUpRight
+                className="
+                  text-zinc-500
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                "
+                size={22}
+              />
+            </div>
+
+            <p className="mt-4 text-zinc-400 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <CategoryStack
+                categories={project.categories}
+              />
             </div>
           </div>
-        </SwiperSlide>
+        </div>
       ))}
-    </Swiper>
+    </div>
   );
-};
-
-export default CardProject;
+}
