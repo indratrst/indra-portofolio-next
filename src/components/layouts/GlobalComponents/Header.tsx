@@ -92,17 +92,16 @@ export default function Header() {
             duration-500
             rounded-2xl
             border
-            ${isAtTop
-              ? "border-transparent bg-transparent"
-              : "border-white/10 bg-white/5 backdrop-blur-xl"
+            ${
+              isAtTop
+                ? "border-transparent bg-transparent"
+                : "border-white/10 bg-white/5 backdrop-blur-xl"
             }
           `}
         >
           <div className="flex items-center justify-between px-5 py-4">
             {/* LEFT */}
             <div className="flex items-center gap-4">
-              <ToggleLanguage />
-
               <Link href="/">
                 <div className="flex items-center gap-3 cursor-pointer">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -112,9 +111,7 @@ export default function Header() {
                       Indra Tristia
                     </h1>
 
-                    <p className="text-xs text-zinc-500">
-                      Frontend Developer
-                    </p>
+                    <p className="text-xs text-zinc-500">Frontend Developer</p>
                   </div>
                 </div>
               </Link>
@@ -147,7 +144,9 @@ export default function Header() {
                 <Toggle />
               </div> */}
 
-              <a
+              <ToggleLanguage />
+
+              {/* <a
                 href="#contact"
                 className="
                   hidden
@@ -168,7 +167,7 @@ export default function Header() {
               >
                 Contact Me
                 <ArrowRight size={16} />
-              </a>
+              </a> */}
 
               {/* MOBILE BUTTON */}
               <button
@@ -188,11 +187,7 @@ export default function Header() {
                   backdrop-blur-xl
                 "
               >
-                {isMenuOpen ? (
-                  <X size={18} />
-                ) : (
-                  <Menu size={18} />
-                )}
+                {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
             </div>
           </div>
@@ -232,7 +227,7 @@ export default function Header() {
                   ))}
                 </ul>
 
-                <div className="mt-4 flex justify-between items-center border-t border-white/10 pt-4">
+                {/* <div className="mt-4 flex justify-between items-center border-t border-white/10 pt-4">
                   <Toggle />
 
                   <a
@@ -253,7 +248,7 @@ export default function Header() {
                     Contact
                     <ArrowRight size={14} />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           )}
