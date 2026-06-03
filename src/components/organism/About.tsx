@@ -1,6 +1,9 @@
 "use client";
 
+import { useLanguage } from "@/contexts/languageContext";
+
 export default function About() {
+  const { messages } = useLanguage();
   return (
     <section
       id="about"
@@ -17,17 +20,13 @@ export default function About() {
               /> */}
             </div>
             <h4 className="font-bold uppercase text-reds text-lg mb-3">
-              About Me
+              {messages.about.title}
             </h4>
             <h2 className="font-bold text-sand text-3xl mb-5 max-w-md lg:text-4xl dark:text-light">
-              Let Me Introduce Myself.
+              {messages.about.subtitle}
             </h2>
             <p className="font-medium text-base text-secondary max-w-xl lg:text-lg">
-              Memiliki ketertarikan besar di bidang pengembangan web dan telah
-              mengikuti berbagai pelatihan, termasuk program beasiswa dari
-              Dicoding berkolaborasi dengan Indosat Ooredoo (IDCamp). Selain
-              itu, telah terlibat langsung dalam beberapa proyek nyata di
-              berbagai perusahaan sebagai Frontend Developer.
+              {messages.about.description}
             </p>
           </div>
           <div
@@ -35,12 +34,10 @@ export default function About() {
             data-aos="fade-up"
           >
             <h3 className="font-semibold text-sand text-2xl mb-4 lg:text-3xl dark:text-light">
-              Let&apos;s Connect
+              {messages.about.subtitle2}
             </h3>
             <p className="text-base font-medium text-secondary mb-6 lg:text-lg">
-              Jangan ragu untuk terhubung dengan saya di berbagai platform. Saya
-              terbuka untuk diskusi, kolaborasi, maupun sekadar berbagi
-              pengalaman seputar dunia teknologi dan pengembangan web.
+              {messages.about.description2}
             </p>
             <div className="flex items-center">
               {/* <!-- gmail --> */}

@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Menu, X, ArrowRight } from "lucide-react";
 import Toggle from "../../molecules/Toggles";
-import Image from "next/image";
+import ToggleLanguage from "@/components/molecules/ToggleLanguage";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,12 +12,11 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsAtTop(window.scrollY === 0);
+      setIsAtTop(window.scrollY < 20);
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -24,131 +25,235 @@ export default function Header() {
   useEffect(() => {
     const handleAnchorClick = (event: MouseEvent) => {
       const target = event.target as HTMLAnchorElement;
+
       if (
         target.tagName === "A" &&
         target.getAttribute("href")?.startsWith("#")
       ) {
         event.preventDefault();
+
         const id = target.getAttribute("href")?.substring(1);
+
         if (id) {
           const element = document.getElementById(id);
+
           if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }
         }
+
+        setIsMenuOpen(false);
       }
     };
 
     document.addEventListener("click", handleAnchorClick);
 
-    // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("click", handleAnchorClick);
     };
   }, []);
 
+  const navItems = [
+    {
+      label: "Home",
+      href: "#home",
+    },
+    {
+      label: "About",
+      href: "#about",
+    },
+    {
+      label: "Experience",
+      href: "#experience",
+    },
+    {
+      label: "Projects",
+      href: "#project",
+    },
+    {
+      label: "Achievements",
+      href: "#achievement",
+    },
+    {
+      label: "Timeline",
+      href: "#timeline",
+    },
+  ];
+
   return (
-    <>
-      <div
-        className={`sticky top-0 left-0 w-full flex items-center z-[9999]  transition-colors duration-1000  ${
-          isAtTop
-            ? "bg-basic border-b-0 dark:bg-dark dark:border-dark"
-            : "bg-basic backdrop-blur-md border-b-[2px] border-l-2  dark:bg-dark dark:border-dark"
-        }`}
-      >
-        <div className="2xl:container">
-          <div className="flex items-center justify-between">
-            <div className="lg:px-4 flex justify-center items-center px-9">
-              {/* <Image
-                src="/logo-new-2.svg"
-                width={300}
-                height={56}
-                alt="pic hero"
-                className="h-14 transform lg:scale-[1.3] "
-              /> */}
-              <h1 className="font-bold text-lg text-primary block py-6">
-                Indra Tristia
-              </h1>
+    <header className="fixed top-0 left-0 right-0 z-[9999]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-5">
+        <div
+          className={`
+            transition-all
+            duration-500
+            rounded-2xl
+            border
+            ${
+              isAtTop
+                ? "border-transparent bg-transparent"
+                : "border-white/10 bg-white/5 backdrop-blur-xl"
+            }
+          `}
+        >
+          <div className="flex items-center justify-between px-5 py-4">
+            {/* LEFT */}
+            <div className="flex items-center gap-4">
+              <Link href="/">
+                <div className="flex items-center gap-3 cursor-pointer">
+                  <div className="h-2 w-2 rounded-full bg-green-500" />
+
+                  <div>
+                    <h1 className="text-white font-medium tracking-tight">
+                      Indra Tristia
+                    </h1>
+
+                    <p className="text-xs text-zinc-500">Frontend Developer</p>
+                  </div>
+                </div>
+              </Link>
             </div>
 
-            <div className="flex items-center px-4">
+            {/* DESKTOP NAVIGATION */}
+            <nav className="hidden lg:block">
+              <ul className="flex items-center gap-8">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="
+                        text-sm
+                        text-zinc-400
+                        transition-colors
+                        hover:text-white
+                      "
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* RIGHT */}
+            <div className="flex items-center gap-3">
+              {/* <div className="hidden lg:flex">
+                <Toggle />
+              </div> */}
+
+              <ToggleLanguage />
+
+              {/* <a
+                href="#contact"
+                className="
+                  hidden
+                  lg:flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  bg-white
+                  px-5
+                  py-2.5
+                  text-sm
+                  font-medium
+                  text-black
+                  transition-all
+                  hover:scale-[1.02]
+                  active:scale-[0.98]
+                "
+              >
+                Contact Me
+                <ArrowRight size={16} />
+              </a> */}
+
+              {/* MOBILE BUTTON */}
               <button
-                id="hamburger"
-                name="hamburger"
-                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="block absolute right-16 lg:hidden"
+                className="
+                  lg:hidden
+                  flex
+                  items-center
+                  justify-center
+                  h-10
+                  w-10
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  text-white
+                  backdrop-blur-xl
+                "
               >
-                <span className="hamburger-line origin-top-left transition duration-300"></span>
-                <span className="hamburger-line"></span>
-                <span className="hamburger-line origin-bottom-left transition duration-300"></span>
+                {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
-
-              <nav
-                id="nav-menu"
-                className={`absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:rounded-none lg:shadow-none dark:bg-dark dark:lg:bg-transparent dark:shadow-red-900 ${
-                  isMenuOpen ? "block" : "hidden"
-                }`}
-              >
-                <ul className="block lg:flex">
-                  <li className="group">
-                    <a
-                      href="#home"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Beranda
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a
-                      href="#about"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      About Me
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a
-                      href="#experience"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Experience
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a
-                      href="#project"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Project
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a
-                      href="#achievement"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Achievement
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a
-                      href="#timeline"
-                      className="text-dark mx-6 dark:text-light flex text-base py-2 group-hover:text-sand border-b-2 border-b-transparent  group-hover:border-b-sand "
-                    >
-                      Timeline
-                    </a>
-                  </li>
-
-                  <li className="flex items-center mt-3 lg:mt-0 justify-center">
-                    <Toggle />
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
+
+          {/* MOBILE MENU */}
+          {isMenuOpen && (
+            <div className="lg:hidden px-4 pb-4">
+              <div
+                className="
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-zinc-900/90
+                  backdrop-blur-xl
+                  p-4
+                "
+              >
+                <ul className="space-y-2">
+                  {navItems.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        className="
+                          block
+                          rounded-xl
+                          px-4
+                          py-3
+                          text-zinc-300
+                          transition-colors
+                          hover:bg-white/5
+                          hover:text-white
+                        "
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* <div className="mt-4 flex justify-between items-center border-t border-white/10 pt-4">
+                  <Toggle />
+
+                  <a
+                    href="#contact"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-2
+                      rounded-full
+                      bg-white
+                      px-4
+                      py-2
+                      text-sm
+                      font-medium
+                      text-black
+                    "
+                  >
+                    Contact
+                    <ArrowRight size={14} />
+                  </a>
+                </div> */}
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </>
+    </header>
   );
 }

@@ -1,187 +1,263 @@
-import React, { useMemo } from "react";
-import CardExperience from "../molecules/Card/CardExperience";
-import { experienceData } from "@/data/dataExperience";
-import Image from "next/image";
+"use client";
 
-const Experience: React.FC = () => {
+const experiences = [
+  {
+    period: "2024 - 2025",
+    role: "Technical Support",
+    company: "PT Neuronworks Indonesia",
+    description:
+      "Providing technical support, troubleshooting, and assisting clients in resolving application and infrastructure issues.",
+  },
+  {
+    period: "2023 - 2024",
+    role: "Frontend Developer",
+    company: "PT Motiolabs Indonesia",
+    description:
+      "Developed responsive web applications using React.js, Next.js, and modern frontend technologies.",
+  },
+  {
+    period: "2023 - 2025",
+    role: "Junior Programmer (Talent)",
+    company: "PT Jagooit Talenta Indonesia",
+    description:
+      "Participated in software development programs and collaborated on various web application projects.",
+  },
+  {
+    period: "2018",
+    role: "Web Developer Intern",
+    company: "PT Softindo Computech",
+    description:
+      "Built and maintained web-based applications while learning professional software development workflows.",
+  },
+];
+
+const educations = [
+  {
+    year: "2022",
+    institution: "Dicoding Indonesia",
+    major: "Front End Developer Learning Path",
+  },
+  {
+    year: "2016 - 2019",
+    institution: "SMKN 2 Cimahi",
+    major: "Rekayasa Perangkat Lunak (Software Engineering)",
+  },
+];
+
+export default function Experience() {
   return (
-    <>
-      <section
-        id="experience"
-        className="pt-12 pb-8 md:pb-14 lg:pb-12 lg:py-36 scroll-mt-24  bg-white dark:bg-dark relative overflow-hidden"
-      >
-        <div className="2xl:container ">
-          {/* <div className="w-full px-4">
-            <div className="max-w-xl mx-auto text-center mb-16 grid gap-y-2">
-              <h4 className="font-semibold text-lg text-primary mb-2">
-                Experience
-              </h4>
-              <h2 className="font-bold text-dark text-3xl  sm:text-4xl lg:text-5xl dark:text-light">
-                My Experience
-              </h2>
-              <p className="font-medium text-base text-secondary md:text-lg ">
-                Beberapa sertifikat yang telah saya dapatkan setelah
-                menyelesaikan kelas dan event pada beberapa platform
-              </p>
-            </div>
-          </div> */}
+    <section
+      id="experience"
+      className="relative overflow-hidden bg-zinc-950 py-24 lg:py-36 scroll-mt-24"
+    >
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-blue-500/10 blur-[180px]" />
+      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] bg-purple-500/10 blur-[180px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* Header */}
+        <div className="mx-auto max-w-3xl text-center mb-20">
+          <span
+            className="
+              inline-flex
+              items-center
+              rounded-full
+              border
+              border-white/10
+              bg-white/5
+              px-4
+              py-2
+              text-sm
+              text-zinc-300
+              backdrop-blur-md
+            "
+          >
+            Professional Journey
+          </span>
+
+          <h2
+            className="
+              mt-8
+              text-5xl
+              md:text-6xl
+              lg:text-7xl
+              font-medium
+              tracking-tighter
+              leading-[0.95]
+              text-white
+            "
+          >
+            Experience &
+            <br />
+
+            <span
+              className="
+                bg-gradient-to-br
+                from-white
+                via-white
+                to-[#75ff7c]
+                bg-clip-text
+                text-transparent
+              "
+            >
+              Education
+            </span>
+          </h2>
+
+          <p className="mt-6 text-zinc-400 text-lg">
+            My professional journey in frontend development,
+            technical support, and continuous learning.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2  w-full lg:h-[500px]">
-          <div className="w-full h-full text-dark  grid px-5 lg:px-52 pb-10">
-            <div className="font-newSpirit leading-[1.1]">
-              <h2 className="text-[50px] lg:text-[120px] text-primary">My</h2>
-              <h2
-                className="text-[60px] lg:text-[120px] text-dark
-             dark:text-white"
+        {/* Content */}
+        <div className="grid gap-10 lg:grid-cols-2">
+          {/* Experience */}
+          <div>
+            <h3 className="mb-6 text-2xl font-semibold text-white">
+              Experience
+            </h3>
+
+            <div className="space-y-5">
+              {experiences.map((item, index) => (
+                <div
+                  key={index}
+                  className="
+                    group
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    backdrop-blur-xl
+                    p-6
+                    transition-all
+                    duration-300
+                    hover:border-white/20
+                    hover:bg-white/[0.07]
+                  "
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-sm text-zinc-500">
+                        {item.period}
+                      </p>
+
+                      <h4 className="mt-2 text-xl font-semibold text-white">
+                        {item.role}
+                      </h4>
+
+                      <p className="mt-1 text-zinc-400">
+                        {item.company}
+                      </p>
+
+                      <p className="mt-4 text-sm leading-relaxed text-zinc-500">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    <div
+                      className="
+                        mt-2
+                        h-3
+                        w-3
+                        rounded-full
+                        bg-green-500
+                        shadow-[0_0_20px_rgba(34,197,94,0.8)]
+                      "
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education */}
+          <div>
+            <h3 className="mb-6 text-2xl font-semibold text-white">
+              Education
+            </h3>
+
+            <div className="space-y-5">
+              {educations.map((item, index) => (
+                <div
+                  key={index}
+                  className="
+                    rounded-3xl
+                    border
+                    border-white/10
+                    bg-white/5
+                    backdrop-blur-xl
+                    p-6
+                    transition-all
+                    duration-300
+                    hover:border-white/20
+                    hover:bg-white/[0.07]
+                  "
+                >
+                  <p className="text-sm text-zinc-500">
+                    {item.year}
+                  </p>
+
+                  <h4 className="mt-2 text-xl font-semibold text-white">
+                    {item.institution}
+                  </h4>
+
+                  <p className="mt-2 text-zinc-400">
+                    {item.major}
+                  </p>
+                </div>
+              ))}
+
+              {/* Additional Summary Card */}
+              <div
+                className="
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-gradient-to-br
+                  from-white/10
+                  to-white/[0.02]
+                  backdrop-blur-xl
+                  p-6
+                "
               >
-                Journey
-              </h2>
+                <p className="text-sm uppercase tracking-wider text-zinc-500">
+                  Focus Areas
+                </p>
 
-              <div className="grid gap-y-2 border-b-2 border-primary dark:border-reds border-dotted " />
-              <Image
-                fill
-                src="/dotted.svg"
-                alt="pic hero"
-                className="absolute ms-[95px] md:ms-[280px] lg:-ms-[780px]  scale-[.3] -mt-[430px]  md:-mt-64 lg:mt-64 transform md:scale-[.2] lg:scale-[.3]"
-              />
-              {/* className="absolute max-w-full mx-auto -ms-[75px] lg:ms-[290px]  scale-[.3] -mt-56 -right-20 lg:mt-16 transform lg:scale-[.6]" */}
-              {/* <h5>7 Kelas</h5>
-                <h5>7 Event</h5> */}
-              {/* <p className="">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Inventore earum excepturi tenetur accusamus repudiandae
-                architecto quia alias quidem autem temporibus.
-              </p> */}
-            </div>
-          </div>
-          <div className="w-full  h-full md:flex px-10">
-            {/* <CardExperience experiences={filteredExperience} /> */}
-            <div className="w-full">
-              <div className="w-full px-4">
-                <div className="mx-auto mb-2">
-                  <h2 className="font-bold text-sand  mb-4 text-2xl lg:text-2xl">
-                    Experience
-                  </h2>
-                  {/* <p className="font-medium text-base text-secondary md:text-lg ">
-                    Perjalanan karir yang dilalui setelah beberapa tahun
-                    kebelakang.
-                  </p> */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {[
+                    "React",
+                    "Next.js",
+                    "TypeScript",
+                    "Tailwind CSS",
+                    "REST API",
+                    "Responsive Design",
+                    "UI Development",
+                    "Git",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="
+                        rounded-full
+                        border
+                        border-white/10
+                        bg-white/5
+                        px-3
+                        py-2
+                        text-sm
+                        text-zinc-300
+                      "
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-                <ol className="relative border-l border-gray-400 dark:border-gray-700">
-                  <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-white   dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2024 - 2025
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      PT Neuronworks Indonesia
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Technical Support
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2023 - 2024
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      PT Motiolabs Indonesia
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Frontend Developer
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2023 - 2025
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-500 dark:text-white">
-                      PT Jagooit Talenta Indonesia
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Junior Programmer (Talent)
-                    </p>
-                  </li>
-                  <li className="ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2018
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-500  dark:text-white">
-                      PT Softindo Computech
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Web Developer Intern
-                    </p>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="mt-10 lg:mt-0 w-full">
-              <div className="w-full px-4">
-                <div className=" mx-auto  mb-2">
-                  <h2 className="font-bold text-sand text-2xl mb-4  lg:text-2xl">
-                    Education
-                  </h2>
-                  {/* <p className="font-medium text-base text-secondary md:text-lg ">
-                    Perjalanan karir yang dilalui setelah beberapa tahun.
-                  </p> */}
-                </div>
-                <Image
-                  width={300}
-                  height={300}
-                  src="/dotted.svg"
-                  alt="pic hero"
-                  className="absolute -ms-[75px] lg:ms-[190px] scale-[1.6] lg:-mt-64 transform -rotate-180 lg:scale-[.7] lg:opacity-100 hidden lg:block"
-                />
-                <ol className="relative border-l border-gray-400 dark:border-gray-700">
-                  {/* <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-gray-400 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2023
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                      Pt Jagooit Talenta Indonesia
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Full Stack Web Developer
-                    </p>
-                  </li> */}
-                  <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-sand dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2022
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                      Dicoding
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      Front End Developer
-                    </p>
-                  </li>
-                  <li className="mb-10 ml-4">
-                    <div className="absolute w-3 h-3 bg-sand rounded-full mt-1.5 -left-1.5 border border-sand dark:border-gray-900 dark:bg-gray-700"></div>
-                    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                      2016 – 2019
-                    </time>
-                    <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                      SMK Negeri 2 Cimahi
-                    </h3>
-                    <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                      RPL
-                    </p>
-                  </li>
-                </ol>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
-};
-
-export default Experience;
+}

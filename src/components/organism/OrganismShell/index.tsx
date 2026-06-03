@@ -17,12 +17,12 @@ export const OrganismShell = () => {
   }, []);
   return (
     <>
-      <div className="border-none md:border-none">
-        <Hero text={""} />
-        <About />
+      <div className="border-none md:border-none bg-[#0A0A0A] min-h-screen">
+        <Hero />
+        {/* <About /> */}
         <Experience />
         <Project />
-        <Achievement acheivements={[]} />
+        <Achievement />
         <Portfolio />
       </div>
 
