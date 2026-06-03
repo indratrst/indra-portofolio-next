@@ -56,7 +56,7 @@ export default function Footer() {
             <h2 className="mt-8 text-5xl font-bold tracking-tight text-white md:text-7xl ">
               Let&apos;s Build
               <br />
-              <span className="bg-gradient-to-r from-blue-700 to-red-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white to-blue-900 bg-clip-text text-transparent">
                 Something Great
               </span>
               <br />
