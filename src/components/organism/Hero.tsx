@@ -65,7 +65,7 @@ export default function HeroSection() {
               </Link> */}
 
               <Link
-                href="/mailto:indratrst@gmail.com"
+                href="mailto:indratrst@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition"
               >
                 Contact Me

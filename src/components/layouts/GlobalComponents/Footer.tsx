@@ -183,10 +183,13 @@ export default function Footer() {
             flex-col
             items-center
             justify-between
-            gap-4
+            gap-2
             md:border-t
             border-white/10
-            py-8
+            mt-12
+            md:mt-0
+            py-2
+            md:py-8
             text-sm
             text-zinc-500
             md:flex-row
