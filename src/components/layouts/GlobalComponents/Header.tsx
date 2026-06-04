@@ -62,10 +62,6 @@ export default function Header() {
       href: "#home",
     },
     {
-      label: "About",
-      href: "#about",
-    },
-    {
       label: "Experience",
       href: "#experience",
     },
