@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Indra Tristia",
-    description: "Frontend Developer Portfolio",
+    description:
+      "Frontend Developer specializing in React.js, Next.js, TypeScript, and modern web technologies. Explore my projects, experience, and technical skills.",
     images: ["https://indratrst-portofolio.vercel.app/preview.png"],
   },
 
@@ -47,7 +48,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Indra Tristia - Frontend Developer",
-    description: "Portfolio Indra Tristia, Frontend Developer",
+    description:
+      "Frontend Developer specializing in React.js, Next.js, TypeScript, and modern web technologies. Explore my projects, experience, and technical skills.",
     url: "https://indratrst-portofolio.vercel.app/",
     siteName: "Indra Portfolio",
     images: [
