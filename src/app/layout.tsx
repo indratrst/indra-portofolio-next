@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Indra Tristia",
     description:
       "Frontend Developer specializing in React.js, Next.js, TypeScript, and modern web technologies. Explore my projects, experience, and technical skills.",
-    images: ["https://indratrst-portofolio.vercel.app/preview.png"],
+    images: ["https://indratrst-portofolio.vercel.app/preview.jpg"],
   },
 
   authors: [
@@ -54,9 +54,10 @@ export const metadata: Metadata = {
     siteName: "Indra Portfolio",
     images: [
       {
-        url: "https://indratrst-portofolio.vercel.app/preview.png",
+        url: "https://indratrst-portofolio.vercel.app/preview.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
       },
     ],
     locale: "id_ID",
@@ -64,8 +65,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/ico.png",
-    shortcut: "/ico.png",
+    icon: "/ico.jpg",
+    shortcut: "/ico.jpg",
   },
 };
 
