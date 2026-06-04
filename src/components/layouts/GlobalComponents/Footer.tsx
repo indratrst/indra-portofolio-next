@@ -144,8 +144,8 @@ export default function Footer() {
               select-none
               text-left
               font-bold
-              tracking-[-0.08em]
-              text-white/[0.04]
+              tracking-[-0.04em]
+              text-white/[0.13]
               text-[90px]
               sm:text-[120px]
               md:text-[180px]
@@ -163,7 +163,7 @@ export default function Footer() {
               text-center
               font-bold
               tracking-[-0.08em]
-              text-white/[0.04]
+              text-white/[0.17]
               text-[90px]
               sm:text-[120px]
               md:text-[180px]
