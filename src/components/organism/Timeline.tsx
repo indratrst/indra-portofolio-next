@@ -79,14 +79,30 @@ const learningJourney = [
       },
     ],
   },
+  {
+    id: "ai",
+    category: "AI & Machine Learning",
+    items: [
+      {
+        period: "Apr 2026",
+        title: "Ai Praktis Untuk Produktifitas",
+        description:
+          "Artificial Intelligence (AI) untuk meningkatkan produktivitas dengan tools seperti ChatGPT, Gemini, Claude",
+      },
+      {
+        period: "May 2026",
+        title: "Belajar Penggunaan Generative Ai",
+        description:
+          "Mempelajari penggunaan Generative AI untuk berbagai keperluan seperti pembuatan konten, desain, dan pengembangan aplikasi",
+      },
+    ],
+  },
 ];
 
 export default function LearningJourney() {
   const [activeTrack, setActiveTrack] = useState("frontend");
 
-  const activeData = learningJourney.find(
-    (track) => track.id === activeTrack
-  );
+  const activeData = learningJourney.find((track) => track.id === activeTrack);
 
   return (
     <section
@@ -157,9 +173,10 @@ export default function LearningJourney() {
                   text-sm
                   transition-all
                   duration-300
-                  ${activeTrack === track.id
-                    ? "bg-gradient-to-r from-blue-500 to-green-500 text-white"
-                    : "text-zinc-400 hover:text-white"
+                  ${
+                    activeTrack === track.id
+                      ? "bg-gradient-to-r from-blue-500 to-green-500 text-white"
+                      : "text-zinc-400 hover:text-white"
                   }
                 `}
               >

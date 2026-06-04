@@ -12,7 +12,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT */}
           <div>
-            <span className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-zinc-300">
+            <span className="inline-flex items-center px-4 py-2 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-zinc-300">
               ✨ Available for Freelance Projects
             </span>
 
@@ -161,10 +161,11 @@ export default function HeroSection() {
 
               <div className="flex flex-wrap gap-2">
                 {[
-                  "React",
-                  "Next.js",
+                  "ReactJS",
+                  "VueJS",
+                  "NextJS",
                   "TypeScript",
-                  "Tailwind",
+                  "Tailwindcss",
                   "Prisma",
                   "PostgreSQL",
                   "NodeJS",

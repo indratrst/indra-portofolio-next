@@ -6,9 +6,45 @@ import { LanguageProvider } from "@/contexts/languageContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Indra Tristia - Frontend Developer",
+  metadataBase: new URL("https://indratrst-portofolio.vercel.app"),
+  title: {
+    default: "Indra Tristia | Frontend Developer",
+    template: "%s | Indra Tristia",
+  },
   description:
-    "Portfolio Indra Tristia, Frontend Developer menggunakan React & Next.js",
+    "Frontend Developer specializing in React.js, Next.js, TypeScript, and modern web technologies. Explore my projects, experience, and technical skills.",
+
+  keywords: [
+    "Indra Tristia",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "JavaScript",
+    "Web Developer",
+    "Frontend Engineer",
+    "Portfolio",
+  ],
+  twitter: {
+    card: "summary_large_image",
+    title: "Indra Tristia",
+    description: "Frontend Developer Portfolio",
+    images: ["https://indratrst-portofolio.vercel.app/preview.png"],
+  },
+
+  authors: [
+    {
+      name: "Indra Tristia",
+    },
+  ],
+  creator: "Indra Tristia",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Indra Tristia - Frontend Developer",
     description: "Portfolio Indra Tristia, Frontend Developer",
@@ -22,14 +58,8 @@ export const metadata: Metadata = {
       },
     ],
     locale: "id_ID",
+    alternateLocale: ["en_US"],
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Indra Tristia",
-    description: "Frontend Developer Portfolio",
-    images: ["https://indratrst-portofolio.vercel.app/preview.png"],
   },
   icons: {
     icon: "/ico.png",
