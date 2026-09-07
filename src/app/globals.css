@@ -273,3 +273,36 @@ body {
     opacity: 0;
   }
 } */
+
+@keyframes image-real {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  50%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes image-illustration {
+  0%,
+  40% {
+    opacity: 0;
+  }
+  50%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-image-real {
+  animation: image-real 7s ease-in-out infinite;
+}
+.animate-image-illustration {
+  animation: image-illustration 7s ease-in-out infinite;
+}

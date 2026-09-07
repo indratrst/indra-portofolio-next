@@ -137,7 +137,7 @@ export default function LearningJourney() {
 
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
             Continuous
-            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">
               {" "}
               Learning
             </span>
@@ -175,7 +175,7 @@ export default function LearningJourney() {
                   duration-300
                   ${
                     activeTrack === track.id
-                      ? "bg-gradient-to-r from-blue-500 to-green-500 text-white"
+                      ? "bg-gradient-to-r from-blue-500 to-blue-800 text-white"
                       : "text-zinc-400 hover:text-white"
                   }
                 `}

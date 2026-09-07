@@ -37,7 +37,7 @@ export default function Achievement() {
 
             <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
               Continuous Learning &
-              <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                 {" "}
                 Professional Growth
               </span>
@@ -102,12 +102,12 @@ export default function Achievement() {
           </div>
 
           {/* Current Category */}
-          <div className="mb-10 flex justify-center">
+          {/* <div className="mb-10 flex justify-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-zinc-300 backdrop-blur-xl">
               <span>{currentCategory.icon}</span>
               <span>{currentCategory.label}</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Certificates */}
           <AnimatePresence mode="wait">

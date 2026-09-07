@@ -95,9 +95,9 @@ export default function Header() {
             }
           `}
         >
-          <div className="flex items-center justify-between px-5 py-4">
+          <div className="flex flex-row items-center justify-between px-12 py-4">
             {/* LEFT */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
               <Link href="/">
                 <div className="flex items-center gap-3 cursor-pointer">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -135,7 +135,7 @@ export default function Header() {
             </nav>
 
             {/* RIGHT */}
-            <div className="flex items-center gap-3">
+            <div className="md:hidden flex items-center gap-3">
               {/* <div className="hidden lg:flex">
                 <Toggle />
               </div> */}
