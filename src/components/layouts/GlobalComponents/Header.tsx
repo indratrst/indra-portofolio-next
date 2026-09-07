@@ -140,8 +140,7 @@ export default function Header() {
                 <Toggle />
               </div> */}
 
-              <ToggleLanguage />
-
+              {/* <ToggleLanguage /> */}
               {/* <a
                 href="#contact"
                 className="
