@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowBigDown, ArrowBigDownDash, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -85,15 +85,15 @@ export default function Hero() {
           </div>
 
           {/* Main typography */}
-          <div className="flex flex-col justify-center pb-16 pt-14 lg:col-span-9 lg:col-start-3 lg:pb-2 lg:pt-52">
+          <div className="flex flex-col justify-center pb-16 pt-14 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
             <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
-              <span className="block">
+              <span className="block pb-4">
                 I&apos;m<span className="text-[#0d4dbb]"></span>
               </span>
             </h1>
 
-            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[9.2vw]">
-              <span className="block pl-[7vw] lg:pl-[7svw]">Frontend</span>
+            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[8.2vw]">
+              <span className="block pl-[7vw] lg:pl-[2svw]">Frontend</span>
               <span className="block pl-[7vw] lg:pl-[20svw]">
                 Developer<span className="text-[#0d4dbb]">.</span>
               </span>
@@ -101,7 +101,7 @@ export default function Hero() {
 
             <div className="pointer-events-none absolute right-[10vw] top-[18%] z-0 hidden lg:block">
               {" "}
-              <div className="relative h-[260px] w-[260px] overflow-hidden rounded-full shadow-2xl">
+              <div className="relative h-[460px] w-[460px] overflow-hidden rounded-full shadow-2xl">
                 {" "}
                 {/* REAL PHOTO */}{" "}
                 <Image
@@ -109,7 +109,7 @@ export default function Hero() {
                   alt="Portrait of Indra Tristia"
                   fill
                   priority
-                  sizes="260px"
+                  sizes="460px"
                   className="absolute inset-0 object-cover animate-image-real scale-110"
                 />{" "}
                 {/* ILLUSTRATED PHOTO */}{" "}
@@ -118,7 +118,7 @@ export default function Hero() {
                   alt="Illustrated portrait of Indra Tristia"
                   fill
                   priority
-                  sizes="260px"
+                  sizes="460px"
                   className="absolute inset-0 object-cover animate-image-illustration"
                 />{" "}
               </div>{" "}
@@ -146,7 +146,7 @@ export default function Hero() {
                 </p> */}
               </div>
 
-              <div className="sm:text-right lg:col-span-3 lg:col-start-10">
+              <div className="sm:text-right lg:col-span-3 lg:col-start-12 pb-8 whitespace-nowrap">
                 <Link
                   href="#contact"
                   className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em]"
@@ -168,8 +168,8 @@ export default function Hero() {
         {/* ------------------------------------------------ */}
 
         <div className="flex items-center justify-between border-t border-[#D8D6D0] py-5">
-          <span className="text-[10px] uppercase tracking-[0.16em] text-[#999999]">
-            <p className="text-[10px] uppercase tracking-[0.15em] text-[#999999]">
+          <span className="text-[10px] uppercase tracking-[0.16em] text-[#303030]">
+            <p className="text-[10px] uppercase tracking-[0.15em] text-[#303030]">
               Based in
             </p>
 
@@ -178,10 +178,15 @@ export default function Hero() {
             </p>
           </span>
 
-          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-[#777777]">
+          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-[#303030]">
             Scroll
             <span className="block h-8 w-px bg-[#111111]" />
-            <div className="animate-bounce">↓</div>
+             <ArrowBigDownDash
+                    size={15}
+                    strokeWidth={6.5}
+                    color="#0d4dbb  "
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 animate-bounce"
+                  />
           </div>
         </div>
       </div>
