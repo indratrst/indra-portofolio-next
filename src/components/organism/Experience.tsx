@@ -3,7 +3,7 @@
 interface ExperienceItem {
   number: string;
   role: string;
-  period: string;
+  company: string;
   description: string;
   details: string[];
 }
@@ -12,35 +12,36 @@ const experiences: ExperienceItem[] = [
   {
     number: "01",
     role: "Freelance Front-End Developer",
-    period: "Present",
+    company: "PT Neuronworks Indonesia",
     description:
-      "Working on front-end projects by translating UI/UX designs into responsive and polished web interfaces.",
-    details: ["UI/UX Slicing", "Responsive Development", "Vue.js", "React.js"],
+      "Providing technical support, troubleshooting, and assisting clients in resolving application and infrastructure issues.",
+    details: ["PHP", "Git", "Dbeaver", "SqlDeveloper"],
   },
   {
     number: "02",
     role: "Front-End Developer",
-    period: "Previous",
+    company: "PT Motiolabs Indonesia",
     description:
-      "Developing web interfaces with a focus on responsive layouts, reusable components, and visual consistency.",
+      "Developed responsive web applications using Vue.js React.js, Next.js, and modern frontend technologies..",
     details: [
       "Front-End Development",
       "Component Architecture",
       "Tailwind CSS",
       "JavaScript",
+      "Typescript",
     ],
   },
   {
     number: "03",
-    role: "Technical Support",
-    period: "Previous",
+    role: "Web Developer Intern",
+    company: "PT Softindo Computech",
     description:
-      "Providing technical support and troubleshooting to help maintain reliable day-to-day technology operations.",
+      "Built and maintained web-based applications while learning professional software development workflows..",
     details: [
-      "Technical Troubleshooting",
-      "User Support",
-      "System Maintenance",
-      "Problem Solving",
+      "Laravel",
+      "Php",
+      "PostgreSQL",
+      "Laragon",
     ],
   },
 ];
@@ -49,21 +50,21 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
+      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
     >
       {/* Subtle Editorial Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
         <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1440px] flex-col px-5 sm:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] flex-col px-5 sm:px-8 lg:px-36">
         
         {/* Editorial Section Header */}
         <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
           <div>
             {/* Category Badge / Sub-label */}
             <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
-              05 / Experience
+              02 / Experience
             </p>
 
             {/* Display Heading */}
@@ -82,7 +83,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Experiences List */}
-        <div className="mt-12 flex flex-col divide-y divide-[#D8D6D0]">
+        <div className="mt-12 flex flex-col divide-y divide-[#D8D6D0] max-w-[1440px] mx-auto">
           {experiences.map((experience) => (
             <article
               key={experience.number}
@@ -90,12 +91,12 @@ export default function ExperienceSection() {
             >
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
                 
-                {/* Kolom Kiri: Metadata (Index & Period) */}
+                {/* Kolom Kiri: Metadata (Index & company) */}
                 <div className="lg:col-span-3">
-                  <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+                  <div className="flex items-center gap-4 text-xs uppercase tracking-[0.14em] text-[#777777]">
                     <span>{experience.number}</span>
                     <span className="h-px w-6 bg-[#D8D6D0]" />
-                    <span className="text-[#0d4dbb]">{experience.period}</span>
+                    <span className="text-[#0d4dbb]">{experience.company}</span>
                   </div>
                 </div>
 
@@ -131,7 +132,7 @@ export default function ExperienceSection() {
         {/* Bottom Editorial Footer */}
         <div className="mt-auto border-t border-[#D8D6D0] pt-6">
           <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
-            Continuous Growth & Learning
+            Experience of work
           </p>
         </div>
 

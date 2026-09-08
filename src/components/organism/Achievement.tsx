@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { achievementCategories } from "@/data/dataAchievementGroup";
+import { ArrowUpRight, X } from "lucide-react";
 
 export default function Achievement() {
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -22,69 +23,77 @@ export default function Achievement() {
     <>
       <section
         id="achievement"
-        className="bg-[#F4F3EF] text-[#111111] py-24 md:py-32 border-b border-[#D8D6D0]"
+        className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
       >
-        <div className="container mx-auto px-5 md:px-12">
+        {/* Subtle Editorial Grid Background */}
+        <div className="pointer-events-none absolute inset-0 opacity-40">
+          <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
+        </div>
+
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-36">
           
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#111111] pb-8 mb-16 gap-6">
+          {/* Editorial Section Header */}
+          <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-[#777777]">
-                05 / CERTIFICATIONS & LEARNING
-              </span>
-              <h2 className="mt-3 text-4xl md:text-6xl font-bold uppercase tracking-tight text-[#111111]">
-                PROFESSIONAL <br />
-                <span className="text-[#0d4dbb]">GROWTH</span>
+              <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+                04 / Certifications
+              </p>
+              <h2 className="mt-6 max-w-[1250px] text-[13vw] font-medium leading-[0.85] tracking-[-0.075em] sm:text-[10vw] lg:text-[6.5vw]">
+                Professional <br />
+                <span className="block pl-[4vw] lg:pl-[6vw]">
+                  Growth<span className="text-[#0d4dbb]">.</span>
+                </span>
               </h2>
             </div>
-            <p className="max-w-md text-base text-[#777777] font-normal leading-relaxed">
+
+            <p className="mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
               Certifications, bootcamps, and structured learning experiences that continuously refine my skills as a developer.
             </p>
           </div>
 
-          {/* Minimal Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16 pb-12 border-b border-[#D8D6D0]">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
+          {/* Editorial Stats Bar */}
+          <div className="grid grid-cols-2 border-b border-[#D8D6D0] py-10 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Certificates Earned
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 {totalCertificates}+
-              </div>
-              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
-                CERTIFICATES EARNED
-              </div>
+              </p>
             </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
+            <div className="lg:col-span-4">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Specialization Domains
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 {achievementCategories.length}
-              </div>
-              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
-                SPECIALIZATION DOMAINS
-              </div>
+              </p>
             </div>
-            <div className="col-span-2 md:col-span-1">
-              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
+            <div className="col-span-2 mt-6 lg:col-span-4 lg:mt-0">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Learning Journey
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 2020+
-              </div>
-              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
-                LEARNING JOURNEY
-              </div>
+              </p>
             </div>
           </div>
 
-          {/* Category Filter Tabs */}
-          <div className="flex flex-wrap gap-3 mb-12">
+          {/* Category Filter Tabs (Editorial Pill Badges) */}
+          <div className="flex flex-wrap gap-2 pt-10 pb-8">
             {achievementCategories.map((category, index) => {
               const isActive = selectedCategory === index;
               return (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(index)}
-                  className={`px-5 py-2.5 text-xs font-mono uppercase tracking-wider transition-all duration-200 border ${
+                  className={`border px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] transition-colors duration-200 ${
                     isActive
-                      ? "bg-[#111111] text-[#F4F3EF] border-[#111111]"
-                      : "bg-transparent text-[#777777] border-[#D8D6D0] hover:border-[#111111] hover:text-[#111111]"
+                      ? "border-[#111111] bg-[#111111] text-[#F4F3EF]"
+                      : "border-[#D8D6D0] bg-[#EBE9E3] text-[#303030] hover:border-[#111111]"
                   }`}
                 >
-                  {category.label} ({category.items.length})
+                  {category.label} [{category.items.length}]
                 </button>
               );
             })}
@@ -98,56 +107,68 @@ export default function Achievement() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+              className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
             >
-              {currentCategory.items.map((item) => (
-                <div
+              {currentCategory.items.map((item, idx) => (
+                <article
                   key={item.title}
-                  className="group flex flex-col bg-[#EAE8E2] border border-[#D8D6D0] overflow-hidden transition-all duration-300 hover:border-[#111111]"
+                  className="group relative flex flex-col border border-[#D8D6D0] bg-[#EBE9E3] p-5 transition-colors duration-300 hover:border-[#111111]"
                 >
                   {/* Image Container */}
                   <div
-                    className="relative aspect-[16/10] bg-[#D8D6D0] cursor-pointer overflow-hidden"
+                    className="relative aspect-[16/10] w-full overflow-hidden bg-[#D8D6D0] cursor-pointer"
                     onClick={() => setSelectedImage(item.image)}
                   >
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-300" />
                   </div>
 
-                  {/* Content Info */}
-                  <div className="p-6 flex flex-col justify-between flex-grow">
+                  {/* Card Details */}
+                  <div className="mt-5 flex flex-1 flex-col justify-between">
                     <div>
-                      <span className="inline-block text-[10px] font-mono uppercase tracking-widest text-[#777777] mb-2 border-b border-[#D8D6D0] pb-1">
-                        {item.source}
-                      </span>
-                      <h3 className="text-lg font-bold text-[#111111] leading-snug group-hover:text-[#0d4dbb] transition-colors">
+                      <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.14em] text-[#777777]">
+                        <span>0{idx + 1}</span>
+                        <span className="h-px w-4 bg-[#D8D6D0]" />
+                        <span>{item.source}</span>
+                      </div>
+                      <h3 className="mt-3 text-lg font-medium tracking-tight text-[#111111] transition-colors duration-300 group-hover:text-[#0d4dbb]">
                         {item.title}
                       </h3>
                     </div>
 
                     <button
                       onClick={() => setSelectedImage(item.image)}
-                      className="mt-6 flex items-center justify-between w-full pt-4 border-t border-[#D8D6D0] text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#0d4dbb] transition-colors"
+                      className="group/btn mt-6 flex items-center justify-between border-t border-[#D8D6D0] pt-4 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
                     >
-                      <span>VIEW CERTIFICATE</span>
-                      <span className="text-base transition-transform duration-200 group-hover:translate-x-1">
-                        →
-                      </span>
+                      <span>View Certificate</span>
+                      <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.5}
+                        className="transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
+                      />
                     </button>
                   </div>
-                </div>
+                </article>
               ))}
             </motion.div>
           </AnimatePresence>
+
+          {/* Bottom Footer */}
+          <div className="mt-auto border-t border-[#D8D6D0] pt-6">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
+              Verified Digital Credentials
+            </p>
+          </div>
+
         </div>
       </section>
 
-      {/* Minimal Lightbox Modal */}
+      {/* Lightbox Modal (Editorial Style) */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -155,35 +176,37 @@ export default function Achievement() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/90 backdrop-blur-sm p-4 md:p-10"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/80 backdrop-blur-sm p-5 sm:p-8 lg:p-12"
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
+              exit={{ scale: 0.96, opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl bg-[#F4F3EF] border border-[#D8D6D0] p-4 md:p-6"
+              className="relative w-full max-w-5xl border border-[#D8D6D0] bg-[#F4F3EF] p-5 sm:p-8"
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#D8D6D0]">
-                <span className="text-xs font-mono uppercase text-[#777777]">
-                  PREVIEW CERTIFICATE
+              <div className="flex items-center justify-between border-b border-[#D8D6D0] pb-4 mb-6">
+                <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                  Preview Certificate
                 </span>
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#0d4dbb] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
                 >
-                  [ CLOSE ESC ]
+                  <span>Close</span>
+                  <X size={15} strokeWidth={1.5} />
                 </button>
               </div>
 
-              {/* Image */}
-              <div className="relative aspect-[16/10] w-full bg-[#EAE8E2]">
+              {/* Preview Display */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EBE9E3]">
                 <Image
                   src={selectedImage}
                   alt="Certificate Preview"
                   fill
+                  sizes="100vw"
                   className="object-contain"
                 />
               </div>

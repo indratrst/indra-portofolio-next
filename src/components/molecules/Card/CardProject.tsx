@@ -74,7 +74,7 @@ export default function CardProject({ projects }: ProjectCardProps) {
                   <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.14em] text-[#777777]">
                     <span>{formattedIndex}</span>
                     <span className="h-px w-6 bg-[#D8D6D0]" />
-                    <span>Selected Work</span>
+                    <span></span>
                   </div>
 
                   {/* Judul Project */}
@@ -101,7 +101,7 @@ export default function CardProject({ projects }: ProjectCardProps) {
 
                 {/* Tech Stack & Link CTA */}
                 <div className="mt-8">
-                  <div className="pb-6">
+                  <div className="pb-6 flex gap-2">
                     <CategoryStack categories={project.categories} />
                   </div>
 

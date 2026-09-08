@@ -24,125 +24,76 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-zinc-950 border-t border-white/10">
+    <footer className="relative overflow-hidden bg-[#F4F3EF] text-[#111111] border-t border-white/10">
       {/* Glow */}
-      <div className="absolute left-0 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
 
-      <div className="absolute right-0 bottom-0 h-96 w-96 bg-purple-500/10 blur-[120px]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className=" relative z-10 mx-auto px-8 md:px-28">
         {/* CTA */}
 
-        <div className="py-32">
+        <div className="py-10 lg:py-16">
           <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="max-w-4xl"
+            transition={{ duration: 0.6 }}
+            className="max-w-[1250px]"
           >
-
-            <h2 className="mt-8 text-5xl font-bold tracking-tight text-white md:text-7xl ">
-              Let&apos;s Build
-              <br />
-              <span className="bg-gradient-to-r from-white to-blue-900 bg-clip-text text-transparent">
-                Something Great
-              </span>
-              <br />
-              <span
-                className=" bg-gradient-to-br
-      from-white
-      via-white
-      to-[#077fff42]
-      bg-clip-text
-      text-transparent"
-              >
-                Together.
-              </span>
+            <h2 className="text-[12vw] font-medium leading-[0.85] tracking-[-0.075em] sm:text-[9vw] lg:text-[6vw]">
+              Let&apos;s Build <br />
+              <span className="block  lg:pl-[6vw]">
+                Something Great <span className="text-[#0d4dbb]">.</span>
+            </span>  
             </h2>
 
-            <p className="mt-8 max-w-2xl text-lg text-zinc-400">
-              Frontend Developer specializing in React, Next.js, TypeScript and
-              modern web experiences.
+            <p className="mt-6 max-w-lg text-sm uppercase tracking-[0.08em] text-[#303030]">
+              Frontend Developer specializing in React, Next.js, TypeScript, and modern web experiences.
             </p>
           </motion.div>
 
-          {/* Links */}
-
-          <div className="mt-16 flex flex-wrap gap-4">
-            {links.map((link) => {
-              const Icon = link.icon;
-
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  className="
-                    group
-                    flex
-                    items-center
-                    gap-3
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    px-6
-                    py-4
-                    text-zinc-300
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    hover:border-white/20
-                    hover:bg-white/[0.05]
-                    z-20
-                  "
+          {/* Social Links (Editorial Badges) */}
+          <div className="mt-10 flex flex-wrap gap-3">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 border border-[#D8D6D0] bg-[#EBE9E3] px-5 py-3 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-all duration-300 hover:border-[#111111] hover:text-[#0d4dbb]"
+              >
+                <svg
+                  role="img"
+                  className="fill-current"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    role="img"
-                    className="fill-current"
-                    width="20"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d={link.icon} />
-                  </svg>
+                  <path d={link.icon} />
+                </svg>
 
-                  <span>{link.name}</span>
+                <span>{link.name}</span>
 
-                  <ArrowUpRight
-                    size={16}
-                    className="
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:-translate-y-1
-                    "
-                  />
-                </Link>
-              );
-            })}
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={1.5}
+                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </Link>
+            ))}
           </div>
         </div>
 
         {/* Massive Brand */}
 
-        <div className="absolute bottom-0 md:right-36 md:border-t border-white/10 py-16">
+        <div className="absolute bottom-0 md:right-36 md:border-t border-white/10 md:py-16">
           <div
             className="
               select-none
               text-left
               font-bold
               tracking-[-0.04em]
-              text-white/[0.13]
+              text-blue-900/[0.13]
               text-[90px]
               sm:text-[120px]
               md:text-[180px]
@@ -160,7 +111,7 @@ export default function Footer() {
               text-center
               font-bold
               tracking-[-0.08em]
-              text-white/[0.17]
+              text-black/[0.17]
               text-[90px]
               sm:text-[120px]
               md:text-[180px]

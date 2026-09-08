@@ -150,7 +150,7 @@ export default function Hero() {
 
               <div className="sm:text-right lg:col-span-3 lg:col-start-12 md:pb-8 whitespace-nowrap">
                 <Link
-                  href="#contact"
+                  href="mailto:indratrst@gmail.com"
                   className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em]"
                 >
                   Start a conversation
