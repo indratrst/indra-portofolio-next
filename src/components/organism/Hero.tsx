@@ -130,9 +130,9 @@ export default function Hero() {
             </h1>
             </div>
 
-            <div className="pointer-events-none absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[22%] md:top-[18%] z-0opacity-100 lg:block">
+            <div className="pointer-events-none  absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[28%] md:top-[18%] md:opacity-100 lg:block">
               {" "}
-              <div className="relative h-[360px] w-[360px] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
+              <div className="relative -z-30 h-[35vh] w-[70vw] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
                 {" "}
                 {/* REAL PHOTO */}{" "}
                 <Image
@@ -155,9 +155,9 @@ export default function Hero() {
               </div>{" "}
 
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-10">
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-20 md:grid-cols-12 md:gap-10">
 
-              <div className="sm:text-right lg:col-span-3 lg:col-start-12 lg:pb-8">
+              <div className="sm:text-right md:col-span-3 md:col-start-8 lg:col-start-12 md:pb-8">
                 <Link
                   href="mailto:indratrst@gmail.com"
                   className="group inline-flex items-center gap-2 whitespace-nowrap text-[11px] uppercase tracking-[0.15em] text-[#111111]"
