@@ -23,7 +23,7 @@ export default function Achievement() {
     <>
       <section
         id="achievement"
-        className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
+        className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
       >
         {/* Subtle Editorial Grid Background */}
         <div className="pointer-events-none absolute inset-0 opacity-40">

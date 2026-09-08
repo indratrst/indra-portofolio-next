@@ -93,6 +93,36 @@ const learningJourney = [
         description:
           "Mempelajari penggunaan Generative AI untuk berbagai keperluan seperti pembuatan konten, desain, dan pengembangan aplikasi",
       },
+      {
+        period: "Jul 2026",
+        title: "Prompt Engineering untuk Software Developer",
+        description:
+          "Mempelajari teknik prompting untuk mengoptimalkan hasil dari model AI generatif, khususnya dalam konteks pengembangan software.",
+      },
+      {
+        period: "Jul 2026",
+        title: "Belajar Dasar AI",
+        description:
+          "Mempelajari konsep dasar AI, termasuk machine learning, neural networks, dan algoritma AI yang umum digunakan.",
+      },
+      {
+        period: "Jul 2026",
+        title: "Memulai Pemrograman dengan Python",
+        description:
+          "Mempelajari dasar-dasar pemrograman menggunakan bahasa Python, termasuk sintaks, struktur data, dan pemrograman berorientasi objek.",
+      },
+      {
+        period: "Aug 2026",
+        title: "Belajar Fundamental Generative AI",
+        description:
+          "Mempelajari konsep dan teknik dasar dalam pengembangan model AI generatif, termasuk arsitektur model dan aplikasi praktisnya. menggunakan model AI generatif untuk membuat konten kreatif (gambar) menggunakan bahasa pemrogaman python ",
+      },
+       {
+        period: "Sep 2026",
+        title: "Machine Learning Operations (MLOps)",
+        description:
+          "Mempelajari praktik terbaik dalam mengelola siklus hidup model machine learning, termasuk deployment, monitoring, dan pemeliharaan model AI dalam produksi.",
+      },
     ],
   },
 ];
@@ -105,7 +135,7 @@ export default function LearningJourney() {
   return (
     <section
       id="timeline"
-      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
     >
       {/* Editorial Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
@@ -214,7 +244,7 @@ export default function LearningJourney() {
         {/* Bottom Editorial Footer */}
         <div className="mt-auto border-t border-[#D8D6D0] pt-6">
           <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
-            Structured Self-Improvement
+            Timeline Self-Improvement
           </p>
         </div>
       </div>

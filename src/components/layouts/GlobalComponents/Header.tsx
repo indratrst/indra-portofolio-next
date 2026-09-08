@@ -24,15 +24,17 @@ export default function Header() {
 
   useEffect(() => {
     const handleAnchorClick = (event: MouseEvent) => {
-      const target = event.target as HTMLAnchorElement;
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest("a");
 
-      if (
-        target.tagName === "A" &&
-        target.getAttribute("href")?.startsWith("#")
-      ) {
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+
+      if (href?.startsWith("#")) {
         event.preventDefault();
 
-        const id = target.getAttribute("href")?.substring(1);
+        const id = href.substring(1);
 
         if (id) {
           const element = document.getElementById(id);
@@ -42,6 +44,7 @@ export default function Header() {
               behavior: "smooth",
               block: "start",
             });
+            window.history.pushState(null, "", `#${id}`);
           }
         }
 

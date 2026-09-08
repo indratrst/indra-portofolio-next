@@ -23,8 +23,17 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
 body {
   font-family: "Fira-Code", sans-serif;
+}
+
+section {
+  scroll-margin-top: 7rem;
 }
 
 .navbar-fixed {

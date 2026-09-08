@@ -11,7 +11,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     number: "01",
-    role: "Freelance Front-End Developer",
+    role: "Technical Support",
     company: "PT Neuronworks Indonesia",
     description:
       "Providing technical support, troubleshooting, and assisting clients in resolving application and infrastructure issues.",
@@ -50,7 +50,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
     >
       {/* Subtle Editorial Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">

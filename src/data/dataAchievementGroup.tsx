@@ -135,6 +135,31 @@ export const achievementCategories = [
         source: "Dicoding",
         title: "Belajar Penggunaan Generative Ai",
       },
+      {
+        image: "/sertifikat/Prompt.jpeg",
+        source: "Dicoding",
+        title: "Prompt Engineering untuk Software Developer",
+      },
+      {
+        image: "/sertifikat/Fundamental-ai.jpeg",
+        source: "Dicoding",
+        title: "Belajar Dasar AI",
+      },
+      {
+        image: "/sertifikat/python.jpeg",
+        source: "Dicoding",
+        title: "Memulai Pemrograman dengan Python",
+      },
+        {
+        image: "/sertifikat/genAi.jpeg",
+        source: "Dicoding",
+        title: "Belajar Fundamental Generative AI",
+      },
+       {
+        image: "/sertifikat/mlops.jpeg",
+        source: "Dicoding",
+        title: "Machine Learning Operations (MLOps)",
+      },
     ],
   },
 ];

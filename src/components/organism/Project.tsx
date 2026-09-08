@@ -7,7 +7,7 @@ export default function Project() {
   return (
     <section
       id="project"
-      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-10"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-10"
     >
       {/* Subtle editorial grid background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">

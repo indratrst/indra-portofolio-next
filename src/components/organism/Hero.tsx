@@ -1,15 +1,31 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowBigDown, ArrowBigDownDash, ArrowUpRight } from "lucide-react";
+import {
+  ArrowBigDown,
+  ArrowBigDownDash,
+  ArrowUpRight,
+  Menu,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Hero() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#project" },
+    { label: "Achievements", href: "#achievement" },
+    { label: "Timeline", href: "#timeline" },
+  ];
 
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111]"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111]"
     >
       {/* Subtle editorial grid */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
@@ -21,52 +37,65 @@ export default function Hero() {
         {/* HERO HEADER                                      */}
         {/* ------------------------------------------------ */}
 
-        <header className="flex items-center justify-between border-b border-[#D8D6D0] py-5">
-          <Link
-            href="/"
-            className="text-[35px] font-semibold uppercase tracking-[-0.011em]"
-          >
-            Indra
-          </Link>
-
-          <nav className="hidden items-center gap-10 md:flex">
+        <header className="relative z-20">
+          <div className="flex items-center justify-between border-b border-[#D8D6D0] py-4 sm:py-5">
             <Link
-              href="#work"
-              className="text-[11px] uppercase tracking-[0.14em] text-[#777777] transition-colors hover:text-[#111111]"
+              href="#home"
+              className="text-[28px] font-semibold uppercase tracking-[-0.011em] sm:text-[35px]"
             >
-              Work
+              Indra
             </Link>
 
-            <Link
-              href="#about"
-              className="text-[11px] uppercase tracking-[0.14em] text-[#777777] transition-colors hover:text-[#111111]"
-            >
-              About
-            </Link>
+            <nav className="hidden items-center gap-8 md:flex">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-[11px] uppercase tracking-[0.14em] text-[#777777] transition-colors duration-200 hover:text-[#111111]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
-            <Link
-              href="#contact"
-              className="text-[11px] uppercase tracking-[0.14em] text-[#777777] transition-colors hover:text-[#111111]"
+            <button
+              type="button"
+              aria-label="Toggle mobile navigation"
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D8D6D0] bg-[#F5F4F1] text-[#111111] shadow-sm transition-all duration-200 hover:border-[#111111] md:hidden"
             >
-              Contact
-            </Link>
-          </nav>
+              {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
 
-          <Link
-            href="#contact"
-            className="text-[11px] uppercase tracking-[0.14em] md:hidden"
-          >
-            Menu
-          </Link>
+          {isMenuOpen && (
+            <div className="pt-3 absolute right-0 md:hidden">
+              <div className="rounded-2xl border border-[#D8D6D0] bg-[#F7F6F3]/90 p-3 shadow-[0_16px_40px_rgba(17,17,17,0.06)] backdrop-blur-xl">
+                <nav className="space-y-1">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block rounded-xl px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] text-[#303030] transition-colors duration-200 hover:bg-[#EAE7E1] hover:text-[#111111]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          )}
         </header>
 
         {/* ------------------------------------------------ */}
         {/* HERO CONTENT                                     */}
         {/* ------------------------------------------------ */}
 
-        <div className="grid flex-1 grid-cols-1 lg:grid-cols-12">
-          {/* Eyebrow */}
-          <div className=" lg:col-span-2 pt-5 lg:pt-9">
+        <div className="grid flex-1 grid-cols-1 pt-8 sm:pt-10 lg:grid-cols-12 lg:pt-0">
+        {/* Eyebrow */}
+          <div className="lg:col-span-2 pt-5 lg:pt-9">
             {/* <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#777777]">
               Tristia
             </p> */}
@@ -86,7 +115,7 @@ export default function Hero() {
 
           {/* Main typography */}
           <div className="flex flex-col justify-center pb-1 pt-52 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
-            <div className="relative top-36 md:top-16 md:block">
+            <div className="relative top-0 md:top-16 md:block">
             <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
               <span className="block pb-2">
                 I&apos;m<span className="text-[#0d4dbb]"></span>
@@ -101,7 +130,7 @@ export default function Hero() {
             </h1>
             </div>
 
-            <div className="pointer-events-none absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[22%] md:top-[18%] z-0 opacity-40 lg:opacity-100 lg:block">
+            <div className="pointer-events-none absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[22%] md:top-[18%] z-0opacity-100 lg:block">
               {" "}
               <div className="relative h-[360px] w-[360px] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
                 {" "}
@@ -126,32 +155,12 @@ export default function Hero() {
               </div>{" "}
 
             </div>
-            {/* Bottom metadata */}
-            <div className="mt-16 grid grid-cols-1 gap-10 pt-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12">
-              <div className="lg:col-span-3">
-                {/* <p className="text-[10px] uppercase tracking-[0.15em] text-[#999999]">
-                  Based in
-                </p> */}
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-10">
 
-                {/* <p className="mt-2 text-sm uppercase tracking-[0.08em]">
-                  Indonesia
-                </p> */}
-              </div>
-
-              <div className="lg:col-span-3">
-                {/* <p className="text-[10px] uppercase tracking-[0.15em] text-[#999999]">
-                  Availability
-                </p>
-
-                <p className="mt-2 text-sm uppercase tracking-[0.08em]">
-                  Available for freelance
-                </p> */}
-              </div>
-
-              <div className="sm:text-right lg:col-span-3 lg:col-start-12 md:pb-8 whitespace-nowrap">
+              <div className="sm:text-right lg:col-span-3 lg:col-start-12 lg:pb-8">
                 <Link
                   href="mailto:indratrst@gmail.com"
-                  className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em]"
+                  className="group inline-flex items-center gap-2 whitespace-nowrap text-[11px] uppercase tracking-[0.15em] text-[#111111]"
                 >
                   Start a conversation
                   <ArrowUpRight
@@ -165,17 +174,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ------------------------------------------------ */}
-        {/* SCROLL INDICATOR                                 */}
-        {/* ------------------------------------------------ */}
-
-        <div className="flex items-center justify-between border-t border-[#D8D6D0] py-5">
+        <div className="flex items-center justify-between border-t border-[#D8D6D0] py-4 sm:py-5">
           <span className="text-[10px] uppercase tracking-[0.16em] text-[#303030]">
             <p className="text-[10px] uppercase tracking-[0.15em] text-[#303030]">
               Based in
             </p>
-
-            <p className="mt-2 text-sm uppercase tracking-[0.08em]">
+            <p className="mt-2 text-sm uppercase tracking-[0.08em] text-[#303030]">
               Indonesia
             </p>
           </span>
@@ -183,12 +187,12 @@ export default function Hero() {
           <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-[#303030]">
             Scroll
             <span className="block h-8 w-px bg-[#111111]" />
-             <ArrowBigDownDash
-                    size={15}
-                    strokeWidth={6.5}
-                    color="#0d4dbb  "
-                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 animate-bounce"
-                  />
+            <ArrowBigDownDash
+              size={15}
+              strokeWidth={6.5}
+              color="#0d4dbb"
+              className="animate-bounce transition-transform duration-300"
+            />
           </div>
         </div>
       </div>
