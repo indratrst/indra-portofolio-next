@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { achievementCategories } from "@/data/dataAchievementGroup";
+import { ArrowUpRight, X } from "lucide-react";
 
 export default function Achievement() {
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -22,172 +23,152 @@ export default function Achievement() {
     <>
       <section
         id="achievement"
-        className="relative overflow-hidden bg-zinc-950 py-32"
+        className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
       >
-        {/* Glow */}
-        <div className="absolute left-1/4 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-purple-500/10 blur-[120px]" />
+        {/* Subtle Editorial Grid Background */}
+        <div className="pointer-events-none absolute inset-0 opacity-40">
+          <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
+        </div>
 
-        <div className="container relative z-10 mx-auto px-4">
-          {/* Header */}
-          <div className="mx-auto mb-20 max-w-3xl text-center">
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400 backdrop-blur-xl">
-              Certifications & Achievements
-            </span>
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-36">
+          
+          {/* Editorial Section Header */}
+          <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+                04 / Certifications
+              </p>
+              <h2 className="mt-6 max-w-[1250px] text-[13vw] font-medium leading-[0.85] tracking-[-0.075em] sm:text-[10vw] lg:text-[6.5vw]">
+                Professional <br />
+                <span className="block pl-[4vw] lg:pl-[6vw]">
+                  Growth<span className="text-[#0d4dbb]">.</span>
+                </span>
+              </h2>
+            </div>
 
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
-              Continuous Learning &
-              <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
-                {" "}
-                Professional Growth
-              </span>
-            </h2>
-
-            <p className="mt-6 text-lg text-zinc-400">
-              Certifications, bootcamps, conferences and learning experiences
-              that shaped my journey as a Frontend Developer.
+            <p className="mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
+              Certifications, bootcamps, and structured learning experiences that continuously refine my skills as a developer.
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="mb-16 grid gap-6 md:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">
+          {/* Editorial Stats Bar */}
+          <div className="grid grid-cols-2 border-b border-[#D8D6D0] py-10 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Certificates Earned
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 {totalCertificates}+
-              </h3>
-              <p className="mt-2 text-zinc-400">Certificates</p>
+              </p>
             </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">
+            <div className="lg:col-span-4">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Specialization Domains
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 {achievementCategories.length}
-              </h3>
-              <p className="mt-2 text-zinc-400">Categories</p>
+              </p>
             </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">2020+</h3>
-              <p className="mt-2 text-zinc-400">Learning Journey</p>
+            <div className="col-span-2 mt-6 lg:col-span-4 lg:mt-0">
+              <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                Learning Journey
+              </span>
+              <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+                2020+
+              </p>
             </div>
           </div>
 
-          {/* Tabs */}
-          <div className="mb-12 flex justify-center">
-            <div className="relative flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-2 backdrop-blur-xl">
-              {achievementCategories.map((category, index) => (
+          {/* Category Filter Tabs (Editorial Pill Badges) */}
+          <div className="flex flex-wrap gap-2 pt-10 pb-8">
+            {achievementCategories.map((category, index) => {
+              const isActive = selectedCategory === index;
+              return (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(index)}
-                  className={`relative z-10 rounded-xl px-5 py-3 text-sm font-medium transition-all ${selectedCategory === index
-                    ? "text-white"
-                    : "text-zinc-400 hover:text-zinc-200"
-                    }`}
+                  className={`border px-3 py-1.5 text-[10px] uppercase tracking-[0.12em] transition-colors duration-200 ${
+                    isActive
+                      ? "border-[#111111] bg-[#111111] text-[#F4F3EF]"
+                      : "border-[#D8D6D0] bg-[#EBE9E3] text-[#303030] hover:border-[#111111]"
+                  }`}
                 >
-                  {category.icon} {category.label}
-
-                  {selectedCategory === index && (
-                    <motion.div
-                      layoutId="active-tab"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.2,
-                        duration: 0.6,
-                      }}
-                      className="absolute inset-0 -z-10 rounded-xl border border-white/10 bg-white/10"
-                    />
-                  )}
+                  {category.label} [{category.items.length}]
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Current Category */}
-          <div className="mb-10 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-zinc-300 backdrop-blur-xl">
-              <span>{currentCategory.icon}</span>
-              <span>{currentCategory.label}</span>
-            </div>
-          </div>
-
-          {/* Certificates */}
+          {/* Certificates Grid */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentCategory.id}
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
             >
-              {currentCategory.items.map((item) => (
-                <div
+              {currentCategory.items.map((item, idx) => (
+                <article
                   key={item.title}
-                  className="
-                    group
-                    overflow-hidden
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    backdrop-blur-xl
-                    transition-all
-                    duration-500
-                    hover:border-white/20
-                    hover:bg-white/[0.05]
-                  "
+                  className="group relative flex flex-col border border-[#D8D6D0] bg-[#EBE9E3] p-5 transition-colors duration-300 hover:border-[#111111]"
                 >
+                  {/* Image Container */}
                   <div
-                    className="relative aspect-[4/3] cursor-pointer overflow-hidden"
+                    className="relative aspect-[16/10] w-full overflow-hidden bg-[#D8D6D0] cursor-pointer"
                     onClick={() => setSelectedImage(item.image)}
                   >
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="
-                        object-cover
-                        transition-transform
-                        duration-700
-                        group-hover:scale-105
-                      "
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
 
-                  <div className="p-6">
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400">
-                      {item.source}
-                    </span>
-
-                    <h4 className="mt-4 text-lg font-semibold text-white">
-                      {item.title}
-                    </h4>
+                  {/* Card Details */}
+                  <div className="mt-5 flex flex-1 flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.14em] text-[#777777]">
+                        <span>0{idx + 1}</span>
+                        <span className="h-px w-4 bg-[#D8D6D0]" />
+                        <span>{item.source}</span>
+                      </div>
+                      <h3 className="mt-3 text-lg font-medium tracking-tight text-[#111111] transition-colors duration-300 group-hover:text-[#0d4dbb]">
+                        {item.title}
+                      </h3>
+                    </div>
 
                     <button
                       onClick={() => setSelectedImage(item.image)}
-                      className="mt-6 text-sm text-blue-400 transition hover:text-blue-300"
+                      className="group/btn mt-6 flex items-center justify-between border-t border-[#D8D6D0] pt-4 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
                     >
-                      View Certificate →
+                      <span>View Certificate</span>
+                      <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.5}
+                        className="transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
+                      />
                     </button>
                   </div>
-                </div>
+                </article>
               ))}
             </motion.div>
           </AnimatePresence>
+
+          {/* Bottom Footer */}
+          <div className="mt-auto border-t border-[#D8D6D0] pt-6">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
+              Verified Digital Credentials
+            </p>
+          </div>
+
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Lightbox Modal (Editorial Style) */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -195,36 +176,37 @@ export default function Achievement() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/80 backdrop-blur-sm p-5 sm:p-8 lg:p-12"
           >
             <motion.div
-              initial={{
-                scale: 0.95,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-              exit={{
-                scale: 0.95,
-                opacity: 0,
-              }}
+              initial={{ scale: 0.96, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-6xl"
+              className="relative w-full max-w-5xl border border-[#D8D6D0] bg-[#F4F3EF] p-5 sm:p-8"
             >
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-4xl text-white"
-              >
-                ×
-              </button>
+              {/* Modal Header */}
+              <div className="flex items-center justify-between border-b border-[#D8D6D0] pb-4 mb-6">
+                <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
+                  Preview Certificate
+                </span>
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
+                >
+                  <span>Close</span>
+                  <X size={15} strokeWidth={1.5} />
+                </button>
+              </div>
 
-              <div className="relative aspect-video w-full">
+              {/* Preview Display */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EBE9E3]">
                 <Image
                   src={selectedImage}
-                  alt="Certificate"
+                  alt="Certificate Preview"
                   fill
+                  sizes="100vw"
                   className="object-contain"
                 />
               </div>

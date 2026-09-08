@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectType } from "@/data/type";
 import CategoryStack from "../CategoryStack";
 import { ArrowUpRight } from "lucide-react";
@@ -9,87 +10,123 @@ interface ProjectCardProps {
   projects: ProjectType[];
 }
 
-export default function CardProject({
-  projects,
-}: ProjectCardProps) {
+export default function CardProject({ projects }: ProjectCardProps) {
   return (
-    <div className="grid gap-8 lg:grid-cols-2">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          className="
-            group
-            overflow-hidden
-            rounded-3xl
-            border
-            border-white/10
-            bg-white/5
-            backdrop-blur-xl
-            transition-all
-            duration-500
-            hover:border-white/20
-            hover:bg-white/[0.07]
-          "
-        >
-          {/* Image */}
-          <div className="relative overflow-hidden">
-            <Image
-              width={1200}
-              height={700}
-              src={project.image}
-              alt={project.title}
-              className="
-                h-auto
-                w-full
-                transition-transform
-                duration-700
-                group-hover:scale-105
-              "
-            />
+    <div className="flex flex-col gap-20 py-8">
+      {projects.map((project, index) => {
+        const formattedIndex = String(index + 1).padStart(2, "0");
+        // Cek genap/ganjil untuk membuat pola selang-seling (zig-zag)
+        const isEven = index % 2 !== 0;
 
-            <div
-              className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black/30
-                via-transparent
-                to-transparent
-              "
-            />
-          </div>
+        return (
+          <article
+            key={index}
+            className="group relative border-b border-[#D8D6D0] pb-16"
+          >
+            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+              
+              {/* KOLOM GAMBAR (Ukuran diperkecil: lg:col-span-5) */}
+              <div
+                className={`lg:col-span-5 ${
+                  isEven ? "lg:order-2" : "lg:order-1"
+                }`}
+              >
+                {project.link ? (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block overflow-hidden"
+                  >
+                    <div className="relative  w-full overflow-hidden bg-[#EBE9E3]">
+                      <Image
+                        width={1440}
+                        height={600}
+                        src={project.image}
+                        alt={project.title}
+                        priority={index === 0}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out "
+                      />
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="relative aspect-video w-full overflow-hidden bg-[#EBE9E3]">
+                    <Image
+                      width={1200}
+                      height={600}
+                      src={project.image}
+                      alt={project.title}
+                      priority={index === 0}
+                      className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                )}
+              </div>
 
-          {/* Content */}
-          <div className="p-6">
-            <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-semibold text-white">
-                {project.title}
-              </h3>
+              {/* KOLOM KONTEN TEKS (lg:col-span-7) */}
+              <div
+                className={`flex flex-col justify-between lg:col-span-7 ${
+                  isEven ? "lg:order-1 lg:pr-8" : "lg:order-2 lg:pl-8"
+                }`}
+              >
+                <div>
+                  {/* Nomor Urut & Category */}
+                  <div className="flex items-center gap-4 text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+                    <span>{formattedIndex}</span>
+                    <span className="h-px w-6 bg-[#D8D6D0]" />
+                    <span></span>
+                  </div>
 
-              <ArrowUpRight
-                className="
-                  text-zinc-500
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
-                size={22}
-              />
+                  {/* Judul Project */}
+                  <h3 className="mt-4 text-2xl font-medium tracking-tight text-[#111111] sm:text-3xl lg:text-4xl">
+                    {project.link ? (
+                      <Link
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-[#0d4dbb]"
+                      >
+                        {project.title}
+                      </Link>
+                    ) : (
+                      project.title
+                    )}
+                  </h3>
+
+                  {/* Deskripsi */}
+                  <p className="mt-4 text-sm leading-relaxed text-[#303030]">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tech Stack & Link CTA */}
+                <div className="mt-8">
+                  <div className="pb-6 flex gap-2">
+                    <CategoryStack categories={project.categories} />
+                  </div>
+
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
+                    >
+                      View Project
+                      <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.5}
+                        className="transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
+                      />
+                    </Link>
+                  )}
+                </div>
+              </div>
+
             </div>
-
-            <p className="mt-4 text-zinc-400 leading-relaxed">
-              {project.description}
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              <CategoryStack
-                categories={project.categories}
-              />
-            </div>
-          </div>
-        </div>
-      ))}
+          </article>
+        );
+      })}
     </div>
   );
 }

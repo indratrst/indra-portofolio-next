@@ -10,7 +10,7 @@ export const AppShell = (props: AppShellProps) => {
   const { children } = props;
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {children}
       <Footer />
     </>

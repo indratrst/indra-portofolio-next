@@ -35,7 +35,6 @@ const learningJourney = [
       },
     ],
   },
-
   {
     id: "backend",
     category: "Backend Developer",
@@ -60,7 +59,6 @@ const learningJourney = [
       },
     ],
   },
-
   {
     id: "fullstack",
     category: "Fullstack Bootcamp",
@@ -95,6 +93,36 @@ const learningJourney = [
         description:
           "Mempelajari penggunaan Generative AI untuk berbagai keperluan seperti pembuatan konten, desain, dan pengembangan aplikasi",
       },
+      {
+        period: "Jul 2026",
+        title: "Prompt Engineering untuk Software Developer",
+        description:
+          "Mempelajari teknik prompting untuk mengoptimalkan hasil dari model AI generatif, khususnya dalam konteks pengembangan software.",
+      },
+      {
+        period: "Jul 2026",
+        title: "Belajar Dasar AI",
+        description:
+          "Mempelajari konsep dasar AI, termasuk machine learning, neural networks, dan algoritma AI yang umum digunakan.",
+      },
+      {
+        period: "Jul 2026",
+        title: "Memulai Pemrograman dengan Python",
+        description:
+          "Mempelajari dasar-dasar pemrograman menggunakan bahasa Python, termasuk sintaks, struktur data, dan pemrograman berorientasi objek.",
+      },
+      {
+        period: "Aug 2026",
+        title: "Belajar Fundamental Generative AI",
+        description:
+          "Mempelajari konsep dan teknik dasar dalam pengembangan model AI generatif, termasuk arsitektur model dan aplikasi praktisnya. menggunakan model AI generatif untuk membuat konten kreatif (gambar) menggunakan bahasa pemrogaman python ",
+      },
+       {
+        period: "Sep 2026",
+        title: "Machine Learning Operations (MLOps)",
+        description:
+          "Mempelajari praktik terbaik dalam mengelola siklus hidup model machine learning, termasuk deployment, monitoring, dan pemeliharaan model AI dalam produksi.",
+      },
     ],
   },
 ];
@@ -107,206 +135,118 @@ export default function LearningJourney() {
   return (
     <section
       id="timeline"
-      className="relative overflow-hidden bg-zinc-950 py-32"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
     >
-      {/* Glow */}
+      {/* Editorial Grid Background */}
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
+      </div>
 
-      <div className="absolute left-0 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-36">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+              07 / Roadmap & Learning
+            </p>
+            <h2 className="mt-6 max-w-[1250px] text-[13vw] font-medium leading-[0.85] tracking-[-0.075em] sm:text-[10vw] lg:text-[6.5vw]">
+              Learning <br />
+              <span className="block pl-[4vw] lg:pl-[6vw]">
+                Journey<span className="text-[#0d4dbb]">.</span>
+              </span>
+            </h2>
+          </div>
 
-      <div className="absolute right-0 bottom-0 h-96 w-96 bg-purple-500/10 blur-[120px]" />
-
-      {/* Grid */}
-
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),
-          linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]
-          bg-[size:80px_80px]
-          [mask-image:radial-gradient(circle_at_center,black,transparent)]
-        "
-      />
-
-      <div className="container relative z-10 mx-auto px-4">
-        {/* Header */}
-
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400">
-            Learning Journey
-          </span>
-
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
-            Continuous
-            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-              {" "}
-              Learning
-            </span>
-          </h2>
-
-          <p className="mt-6 text-lg text-zinc-400">
-            My journey through frontend development, backend engineering and
-            fullstack bootcamps.
+          <p className="mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
+            My journey through frontend development, backend engineering, fullstack bootcamps, and modern AI tools.
           </p>
         </div>
 
-        {/* Tabs */}
-
-        <div className="mb-20 flex justify-center">
-          <div
-            className="
-              flex flex-wrap gap-2
-              rounded-2xl
-              border border-white/10
-              bg-white/[0.03]
-              p-2
-              backdrop-blur-xl
-            "
-          >
-            {learningJourney.map((track) => (
+        {/* Category Filter Tabs (Editorial Pill Badges) */}
+        <div className="flex flex-wrap gap-2 pt-10 pb-8 border-b border-[#D8D6D0] max-w-[1440px] mx-auto">
+          {learningJourney.map((track) => {
+            const isActive = activeTrack === track.id;
+            return (
               <button
                 key={track.id}
                 onClick={() => setActiveTrack(track.id)}
-                className={`
-                  rounded-xl
-                  px-5
-                  py-3
-                  text-sm
-                  transition-all
-                  duration-300
-                  ${
-                    activeTrack === track.id
-                      ? "bg-gradient-to-r from-blue-500 to-green-500 text-white"
-                      : "text-zinc-400 hover:text-white"
-                  }
-                `}
+                className={`border px-3.5 py-2 text-[10px] uppercase tracking-[0.12em] transition-colors duration-200 ${
+                  isActive
+                    ? "border-[#111111] bg-[#111111] text-[#F4F3EF]"
+                    : "border-[#D8D6D0] bg-[#EBE9E3] text-[#303030] hover:border-[#111111]"
+                }`}
               >
-                {track.category}
+                {track.category} [{track.items.length}]
               </button>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Timeline */}
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTrack}
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -20,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
-          >
-            <div className="mb-12 flex items-center gap-4">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                <BookOpen className="h-5 w-5 text-blue-400" />
+        {/* Timeline Items */}
+        <div className="mt-12">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTrack}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              {/* Active Track Title */}
+              <div className="mb-8 flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+                <BookOpen size={16} strokeWidth={1.5} className="text-[#0d4dbb]" />
+                <span className="text-[#111111] font-medium">
+                  {activeData?.category}
+                </span>
+                <span className="h-px w-8 bg-[#D8D6D0]" />
               </div>
 
-              <h3 className="text-2xl font-semibold text-white">
-                {activeData?.category}
-              </h3>
-            </div>
+              {/* Editorial Timeline Container */}
+              <div className="relative max-w-5xl pl-4 sm:pl-8">
+                {/* Vertical Line */}
+                <div className="absolute left-0 top-0 h-full w-px bg-[#D8D6D0]" />
 
-            <div className="relative max-w-4xl">
-              {/* Vertical Line */}
-
-              <div className="absolute left-5 top-0 h-full w-px bg-white/10" />
-
-              <div className="space-y-10">
-                {activeData?.items.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{
-                      opacity: 0,
-                      x: -20,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.1,
-                    }}
-                    className="relative pl-16"
-                  >
-                    {/* Dot */}
-
-                    <div
-                      className="
-                        absolute
-                        left-0
-                        top-8
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-zinc-900
-                      "
+                <div className="flex flex-col gap-8">
+                  {activeData?.items.map((item, index) => (
+                    <motion.article
+                      key={item.title}
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.08 }}
+                      className="group relative border border-[#D8D6D0] bg-[#EBE9E3] p-6 transition-colors duration-300 hover:border-[#111111]"
                     >
-                      <div className="h-3 w-3 rounded-full bg-gradient-to-r from-blue-400 to-green-400" />
-                    </div>
+                      {/* Timeline Node Dot */}
+                      <div className="absolute -left-[21px] sm:-left-[37px] top-7 h-2.5 w-2.5 border border-[#111111] bg-[#0d4dbb]" />
 
-                    {/* Card */}
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-center gap-4">
+                          <span className="border border-[#D8D6D0] bg-[#F4F3EF] px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-[#777777]">
+                            {item.period}
+                          </span>
+                        </div>
 
-                    <div
-                      className="
-                        rounded-3xl
-                        border
-                        border-white/10
-                        bg-white/[0.03]
-                        p-8
-                        backdrop-blur-xl
-                        transition-all
-                        duration-300
-                        hover:border-white/20
-                        hover:bg-white/[0.05]
-                      "
-                    >
-                      <span
-                        className="
-                          inline-flex
-                          rounded-full
-                          border
-                          border-white/10
-                          bg-white/5
-                          px-4
-                          py-2
-                          text-xs
-                          text-zinc-400
-                        "
-                      >
-                        {item.period}
-                      </span>
+                        <h4 className="mt-2 text-xl font-medium tracking-tight text-[#111111] sm:text-2xl transition-colors duration-300 group-hover:text-[#0d4dbb]">
+                          {item.title}
+                        </h4>
 
-                      <h4 className="mt-5 text-xl font-semibold text-white">
-                        {item.title}
-                      </h4>
-
-                      <p className="mt-4 leading-relaxed text-zinc-400">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+                        <p className="text-sm leading-relaxed text-[#303030]">
+                          {item.description}
+                        </p>
+                      </div>
+                    </motion.article>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Bottom Editorial Footer */}
+        <div className="mt-auto border-t border-[#D8D6D0] pt-6">
+          <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
+            Timeline Self-Improvement
+          </p>
+        </div>
       </div>
     </section>
   );

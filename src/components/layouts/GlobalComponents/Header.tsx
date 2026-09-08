@@ -24,15 +24,17 @@ export default function Header() {
 
   useEffect(() => {
     const handleAnchorClick = (event: MouseEvent) => {
-      const target = event.target as HTMLAnchorElement;
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest("a");
 
-      if (
-        target.tagName === "A" &&
-        target.getAttribute("href")?.startsWith("#")
-      ) {
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+
+      if (href?.startsWith("#")) {
         event.preventDefault();
 
-        const id = target.getAttribute("href")?.substring(1);
+        const id = href.substring(1);
 
         if (id) {
           const element = document.getElementById(id);
@@ -42,6 +44,7 @@ export default function Header() {
               behavior: "smooth",
               block: "start",
             });
+            window.history.pushState(null, "", `#${id}`);
           }
         }
 
@@ -95,9 +98,9 @@ export default function Header() {
             }
           `}
         >
-          <div className="flex items-center justify-between px-5 py-4">
+          <div className="flex flex-row items-center justify-between px-12 py-4">
             {/* LEFT */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
               <Link href="/">
                 <div className="flex items-center gap-3 cursor-pointer">
                   <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -135,7 +138,7 @@ export default function Header() {
             </nav>
 
             {/* RIGHT */}
-            <div className="flex items-center gap-3">
+            <div className="md:hidden flex items-center gap-3">
               {/* <div className="hidden lg:flex">
                 <Toggle />
               </div> */}

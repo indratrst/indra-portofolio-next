@@ -1,262 +1,141 @@
 "use client";
 
-const experiences = [
+interface ExperienceItem {
+  number: string;
+  role: string;
+  company: string;
+  description: string;
+  details: string[];
+}
+
+const experiences: ExperienceItem[] = [
   {
-    period: "2024 - 2025",
+    number: "01",
     role: "Technical Support",
     company: "PT Neuronworks Indonesia",
     description:
       "Providing technical support, troubleshooting, and assisting clients in resolving application and infrastructure issues.",
+    details: ["PHP", "Git", "Dbeaver", "SqlDeveloper"],
   },
   {
-    period: "2023 - 2024",
-    role: "Frontend Developer",
+    number: "02",
+    role: "Front-End Developer",
     company: "PT Motiolabs Indonesia",
     description:
-      "Developed responsive web applications using React.js, Next.js, and modern frontend technologies.",
+      "Developed responsive web applications using Vue.js React.js, Next.js, and modern frontend technologies..",
+    details: [
+      "Front-End Development",
+      "Component Architecture",
+      "Tailwind CSS",
+      "JavaScript",
+      "Typescript",
+    ],
   },
   {
-    period: "2023 - 2025",
-    role: "Junior Programmer (Talent)",
-    company: "PT Jagooit Talenta Indonesia",
-    description:
-      "Participated in software development programs and collaborated on various web application projects.",
-  },
-  {
-    period: "2018",
+    number: "03",
     role: "Web Developer Intern",
     company: "PT Softindo Computech",
     description:
-      "Built and maintained web-based applications while learning professional software development workflows.",
+      "Built and maintained web-based applications while learning professional software development workflows..",
+    details: [
+      "Laravel",
+      "Php",
+      "PostgreSQL",
+      "Laragon",
+    ],
   },
 ];
 
-const educations = [
-  {
-    year: "2022",
-    institution: "Dicoding Indonesia",
-    major: "Front End Developer Learning Path",
-  },
-  {
-    year: "2016 - 2019",
-    institution: "SMKN 2 Cimahi",
-    major: "Rekayasa Perangkat Lunak (Software Engineering)",
-  },
-];
-
-export default function Experience() {
+export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-zinc-950 py-24 lg:py-36 scroll-mt-24"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
     >
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 h-[400px] w-[400px] bg-blue-500/10 blur-[180px]" />
-      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] bg-purple-500/10 blur-[180px]" />
+      {/* Subtle Editorial Grid Background */}
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
+      </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center mb-20">
-          <span
-            className="
-              inline-flex
-              items-center
-              rounded-full
-              border
-              border-white/10
-              bg-white/5
-              px-4
-              py-2
-              text-sm
-              text-zinc-300
-              backdrop-blur-md
-            "
-          >
-            Professional Journey
-          </span>
+      <div className="relative z-10 mx-auto flex min-h-[100svh] flex-col px-5 sm:px-8 lg:px-36">
+        
+        {/* Editorial Section Header */}
+        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+          <div>
+            {/* Category Badge / Sub-label */}
+            <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
+              02 / Experience
+            </p>
 
-          <h2
-            className="
-              mt-8
-              text-5xl
-              md:text-6xl
-              lg:text-7xl
-              font-medium
-              tracking-tighter
-              leading-[0.95]
-              text-white
-            "
-          >
-            Experience &
-            <br />
+            {/* Display Heading */}
+            <h2 className="mt-6 max-w-[1250px] text-[13vw] font-medium leading-[0.85] tracking-[-0.075em] sm:text-[10vw] lg:text-[6.5vw]">
+              Work <br />
+              <span className="block pl-[4vw] lg:pl-[6vw]">
+                History<span className="text-[#0d4dbb]">.</span>
+              </span>
+            </h2>
+          </div>
 
-            <span
-              className="
-                bg-gradient-to-br
-                from-white
-                via-white
-                to-[#75ff7c]
-                bg-clip-text
-                text-transparent
-              "
-            >
-              Education
-            </span>
-          </h2>
-
-          <p className="mt-6 text-zinc-400 text-lg">
-            My professional journey in frontend development,
-            technical support, and continuous learning.
+          {/* Editorial Description */}
+          <p className="mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
+            A timeline of the work and experience that shaped how I build digital interfaces.
           </p>
         </div>
 
-        {/* Content */}
-        <div className="grid gap-10 lg:grid-cols-2">
-          {/* Experience */}
-          <div>
-            <h3 className="mb-6 text-2xl font-semibold text-white">
-              Experience
-            </h3>
-
-            <div className="space-y-5">
-              {experiences.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                    group
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    backdrop-blur-xl
-                    p-6
-                    transition-all
-                    duration-300
-                    hover:border-white/20
-                    hover:bg-white/[0.07]
-                  "
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm text-zinc-500">
-                        {item.period}
-                      </p>
-
-                      <h4 className="mt-2 text-xl font-semibold text-white">
-                        {item.role}
-                      </h4>
-
-                      <p className="mt-1 text-zinc-400">
-                        {item.company}
-                      </p>
-
-                      <p className="mt-4 text-sm leading-relaxed text-zinc-500">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    <div
-                      className="
-                        mt-2
-                        h-3
-                        w-3
-                        rounded-full
-                        bg-green-500
-                        shadow-[0_0_20px_rgba(34,197,94,0.8)]
-                      "
-                    />
+        {/* Experiences List */}
+        <div className="mt-12 flex flex-col divide-y divide-[#D8D6D0] max-w-[1440px] mx-auto">
+          {experiences.map((experience) => (
+            <article
+              key={experience.number}
+              className="group relative py-12 transition-colors duration-300 hover:bg-[#EBE9E3]/50"
+            >
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+                
+                {/* Kolom Kiri: Metadata (Index & company) */}
+                <div className="lg:col-span-3">
+                  <div className="flex items-center gap-4 text-xs uppercase tracking-[0.14em] text-[#777777]">
+                    <span>{experience.number}</span>
+                    <span className="h-px w-6 bg-[#D8D6D0]" />
+                    <span className="text-[#0d4dbb]">{experience.company}</span>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Education */}
-          <div>
-            <h3 className="mb-6 text-2xl font-semibold text-white">
-              Education
-            </h3>
-
-            <div className="space-y-5">
-              {educations.map((item, index) => (
-                <div
-                  key={index}
-                  className="
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    backdrop-blur-xl
-                    p-6
-                    transition-all
-                    duration-300
-                    hover:border-white/20
-                    hover:bg-white/[0.07]
-                  "
-                >
-                  <p className="text-sm text-zinc-500">
-                    {item.year}
-                  </p>
-
-                  <h4 className="mt-2 text-xl font-semibold text-white">
-                    {item.institution}
-                  </h4>
-
-                  <p className="mt-2 text-zinc-400">
-                    {item.major}
+                {/* Kolom Tengah: Role & Deskripsi */}
+                <div className="lg:col-span-5">
+                  <h3 className="text-2xl font-medium tracking-tight text-[#111111] transition-colors duration-300 group-hover:text-[#0d4dbb] sm:text-3xl lg:text-4xl">
+                    {experience.role}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-[#303030]">
+                    {experience.description}
                   </p>
                 </div>
-              ))}
 
-              {/* Additional Summary Card */}
-              <div
-                className="
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-gradient-to-br
-                  from-white/10
-                  to-white/[0.02]
-                  backdrop-blur-xl
-                  p-6
-                "
-              >
-                <p className="text-sm uppercase tracking-wider text-zinc-500">
-                  Focus Areas
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {[
-                    "React",
-                    "Next.js",
-                    "TypeScript",
-                    "Tailwind CSS",
-                    "REST API",
-                    "Responsive Design",
-                    "UI Development",
-                    "Git",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-white/5
-                        px-3
-                        py-2
-                        text-sm
-                        text-zinc-300
-                      "
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                {/* Kolom Kanan: Detail Tags (Pill Badges) */}
+                <div className="lg:col-span-4 lg:col-start-9">
+                  <div className="flex flex-wrap gap-2">
+                    {experience.details.map((detail) => (
+                      <span
+                        key={detail}
+                        className="border border-[#D8D6D0] bg-[#EBE9E3] px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-[#303030]"
+                      >
+                        {detail}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
               </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
+
+        {/* Bottom Editorial Footer */}
+        <div className="mt-auto border-t border-[#D8D6D0] pt-6">
+          <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
+            Experience of work
+          </p>
+        </div>
+
       </div>
     </section>
   );

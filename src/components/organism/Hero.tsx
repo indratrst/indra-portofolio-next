@@ -1,206 +1,201 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Download, PhoneForwarded } from "lucide-react";
+import {
+  ArrowBigDown,
+  ArrowBigDownDash,
+  ArrowUpRight,
+  Menu,
+  X,
+} from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
-export default function HeroSection() {
+export default function Hero() {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#project" },
+    { label: "Achievements", href: "#achievement" },
+    { label: "Timeline", href: "#timeline" },
+  ];
+
   return (
-    <section id="home" className="relative overflow-hidden pt-24 lg:pt-20">
-      {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-400/20 blur-[180px]" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-300/20 blur-[180px]" />
+    <section
+      id="home"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111]"
+    >
+      {/* Subtle editorial grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <div className="mx-auto h-full max-w-full border-x border-[#D8D6D0]" />
+      </div>
 
-      <div className="container mx-auto px-6 lg:px-12 py-28 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* LEFT */}
-          <div>
-            <span className="inline-flex items-center px-4 py-2 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-zinc-300">
-              ✨ Available for Freelance Projects
-            </span>
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-12">
+        {/* ------------------------------------------------ */}
+        {/* HERO HEADER                                      */}
+        {/* ------------------------------------------------ */}
 
-            <h1
-              className="
-    text-5xl
-    sm:text-6xl
-    lg:text-7xl
-    xl:text-8xl
-    font-medium
-    tracking-tighter
-    leading-[0.9]
-    text-white
-  "
-              style={{
-                maskImage:
-                  "linear-gradient(180deg, black 0%, black 85%, transparent 100%)",
-                WebkitMaskImage:
-                  "linear-gradient(180deg, black 0%, black 85%, transparent 100%)",
-              }}
+        <header className="relative z-20">
+          <div className="flex items-center justify-between border-b border-[#D8D6D0] py-4 sm:py-5">
+            <Link
+              href="#home"
+              className="text-[28px] font-semibold uppercase tracking-[-0.011em] sm:text-[35px]"
             >
-              I&apos;m
-              <br />
-              <span
-                className="
-      bg-gradient-to-br
-      from-white
-      via-white
-      to-[#00ccff42]
-      bg-clip-text
-      text-transparent
-    "
-              >
-                Indra Tristia
-              </span>
-            </h1>
-            <p className="mt-6 text-zinc-400 text-lg max-w-xl">
-              Frontend Developer specializing in React.js, Next.js, and modern
-              web technologies. Creating responsive, high-performance, and
-              user-friendly digital products.
-            </p>
+              Indra
+            </Link>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              {/* <Link
-                href="#project"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
-              >
-                View Projects
-                <ArrowRight size={18} />
-              </Link> */}
+            <nav className="hidden items-center gap-8 md:flex">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-[11px] uppercase tracking-[0.14em] text-[#777777] transition-colors duration-200 hover:text-[#111111]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
-              <Link
-                href="mailto:indratrst@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md text-white hover:bg-white/10 transition"
-              >
-                Contact Me
-                <PhoneForwarded size={18} />
-              </Link>
-            </div>
-
-            {/* TRUST LOGOS */}
-            {/* <div className="mt-14">
-              <p className="text-zinc-500 text-sm mb-4">
-                Technologies I Work With
-              </p>
-
-              <div className="flex flex-wrap gap-6 text-zinc-400">
-                <span>React</span>
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Node.js</span>
-              </div>
-            </div> */}
+            <button
+              type="button"
+              aria-label="Toggle mobile navigation"
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D8D6D0] bg-[#F5F4F1] text-[#111111] shadow-sm transition-all duration-200 hover:border-[#111111] md:hidden"
+            >
+              {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
           </div>
 
-          {/* RIGHT */}
-          <div className="space-y-6">
-            {/* Main Card */}
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent" />
-
-              <div className="relative z-10">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <p className="text-zinc-500 text-sm">
-                      Professional Overview
-                    </p>
-
-                    <h3 className="text-2xl font-semibold text-white mt-1">
-                      Frontend Developer
-                    </h3>
-                  </div>
-
-                  <div className="flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1">
-                    <span className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="text-xs text-green-400">Available</span>
-                  </div>
-                </div>
-
-                {/* Main Number */}
-                <div className="mb-8">
-                  {/* <h2 className="text-6xl font-bold text-white">
-                    20+
-                  </h2> */}
-
-                  {/* <p className="text-zinc-400 mt-1">
-                    Projects Delivered
-                  </p> */}
-                </div>
-
-                {/* Expertise */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <p className="text-zinc-500 text-xs uppercase">Expertise</p>
-
-                    <p className="text-white mt-2 font-medium">
-                      React & Next.js
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <p className="text-zinc-500 text-xs uppercase">
-                      Experience
-                    </p>
-
-                    <p className="text-white mt-2 font-medium">2+ Years</p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-5">
-                  <p className="text-zinc-300 text-sm leading-relaxed">
-                    Experienced in transforming UI/UX designs into responsive,
-                    scalable, and maintainable web applications using React.js,
-                    Next.js, TypeScript, and modern frontend technologies.
-                  </p>
-                </div>
+          {isMenuOpen && (
+            <div className="pt-3 absolute right-0 md:hidden">
+              <div className="rounded-2xl border border-[#D8D6D0] bg-[#F7F6F3]/90 p-3 shadow-[0_16px_40px_rgba(17,17,17,0.06)] backdrop-blur-xl">
+                <nav className="space-y-1">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block rounded-xl px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] text-[#303030] transition-colors duration-200 hover:bg-[#EAE7E1] hover:text-[#111111]"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
               </div>
             </div>
+          )}
+        </header>
 
-            {/* Technologies Card */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-              <p className="text-sm text-zinc-500 mb-5">Technologies & Tools</p>
+        {/* ------------------------------------------------ */}
+        {/* HERO CONTENT                                     */}
+        {/* ------------------------------------------------ */}
 
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "ReactJS",
-                  "VueJS",
-                  "NextJS",
-                  "TypeScript",
-                  "Tailwindcss",
-                  "Prisma",
-                  "PostgreSQL",
-                  "NodeJS",
-                  "Git",
-                ].map((tech) => (
-                  <span
-                    key={tech}
-                    className="
-            rounded-full
-            border
-            border-white/10
-            bg-black/20
-            px-4
-            py-2
-            text-sm
-            text-zinc-300
-          "
-                  >
-                    {tech}
-                  </span>
-                ))}
+        <div className="grid flex-1 grid-cols-1 pt-8 sm:pt-10 lg:grid-cols-12 lg:pt-0">
+        {/* Eyebrow */}
+          <div className="lg:col-span-2 pt-5 lg:pt-9">
+            {/* <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#777777]">
+              Tristia
+            </p> */}
+            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] md:text-[12vw] lg:text-[7.2vw]">
+              <span className="block">
+                Tristia<span className="text-[#0d4dbb]"></span>
+              </span>
+              {/* <span className="block pl-[7vw] lg:pl-[10svw]">
+                Indra Tristia<span className="text-[#0d4dbb]">.</span>
+              </span> */}
+            </h1>
+
+            {/* <p className="mt-3 text-[11px] uppercase tracking-[0.12em] text-[#999999]">
+              01 / 04
+            </p> */}
+          </div>
+
+          {/* Main typography */}
+          <div className="flex flex-col justify-center pb-1 pt-52 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
+            <div className="relative top-0 md:top-16 md:block">
+            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
+              <span className="block pb-2">
+                I&apos;m<span className="text-[#0d4dbb]"></span>
+              </span>
+            </h1>
+
+            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[8.2vw]">
+              <span className="block pl-[7vw] lg:pl-[2svw]">Frontend</span>
+              <span className="block pl-[18vw] lg:pl-[20svw]">
+                Developer<span className="text-[#0d4dbb]">.</span>
+              </span>
+            </h1>
+            </div>
+
+            <div className="pointer-events-none absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[22%] md:top-[18%] z-0opacity-100 lg:block">
+              {" "}
+              <div className="relative h-[360px] w-[360px] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
+                {" "}
+                {/* REAL PHOTO */}{" "}
+                <Image
+                  src="/profile-real.jpg"
+                  alt="Portrait of Indra Tristia"
+                  fill
+                  priority
+                  sizes="460px"
+                  className="absolute inset-0 object-cover animate-image-real scale-110"
+                />{" "}
+                {/* ILLUSTRATED PHOTO */}{" "}
+                <Image
+                  src="/profile.jpg"
+                  alt="Illustrated portrait of Indra Tristia"
+                  fill
+                  priority
+                  sizes="460px"
+                  className="absolute inset-0 object-cover animate-image-illustration"
+                />{" "}
+              </div>{" "}
+
+            </div>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-10">
+
+              <div className="sm:text-right lg:col-span-3 lg:col-start-12 lg:pb-8">
+                <Link
+                  href="mailto:indratrst@gmail.com"
+                  className="group inline-flex items-center gap-2 whitespace-nowrap text-[11px] uppercase tracking-[0.15em] text-[#111111]"
+                >
+                  Start a conversation
+                  <ArrowUpRight
+                    size={15}
+                    strokeWidth={1.5}
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </Link>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="flex items-center justify-between border-t border-[#D8D6D0] py-4 sm:py-5">
+          <span className="text-[10px] uppercase tracking-[0.16em] text-[#303030]">
+            <p className="text-[10px] uppercase tracking-[0.15em] text-[#303030]">
+              Based in
+            </p>
+            <p className="mt-2 text-sm uppercase tracking-[0.08em] text-[#303030]">
+              Indonesia
+            </p>
+          </span>
+
+          <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-[#303030]">
+            Scroll
+            <span className="block h-8 w-px bg-[#111111]" />
+            <ArrowBigDownDash
+              size={15}
+              strokeWidth={6.5}
+              color="#0d4dbb"
+              className="animate-bounce transition-transform duration-300"
+            />
+          </div>
+        </div>
       </div>
     </section>
-  );
-}
-
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5">
-      <h4 className="text-2xl font-bold text-white">{value}</h4>
-      <p className="text-zinc-400 text-sm mt-1">{label}</p>
-    </div>
   );
 }
