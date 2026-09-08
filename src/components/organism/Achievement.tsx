@@ -22,162 +22,122 @@ export default function Achievement() {
     <>
       <section
         id="achievement"
-        className="relative overflow-hidden bg-zinc-950 py-32"
+        className="bg-[#F4F3EF] text-[#111111] py-24 md:py-32 border-b border-[#D8D6D0]"
       >
-        {/* Glow */}
-        <div className="absolute left-1/4 top-0 h-96 w-96 bg-blue-500/10 blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-purple-500/10 blur-[120px]" />
-
-        <div className="container relative z-10 mx-auto px-4">
-          {/* Header */}
-          <div className="mx-auto mb-20 max-w-3xl text-center">
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400 backdrop-blur-xl">
-              Certifications & Achievements
-            </span>
-
-            <h2 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
-              Continuous Learning &
-              <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
-                {" "}
-                Professional Growth
+        <div className="container mx-auto px-5 md:px-12">
+          
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#111111] pb-8 mb-16 gap-6">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-[#777777]">
+                05 / CERTIFICATIONS & LEARNING
               </span>
-            </h2>
-
-            <p className="mt-6 text-lg text-zinc-400">
-              Certifications, bootcamps, conferences and learning experiences
-              that shaped my journey as a Frontend Developer.
+              <h2 className="mt-3 text-4xl md:text-6xl font-bold uppercase tracking-tight text-[#111111]">
+                PROFESSIONAL <br />
+                <span className="text-[#0d4dbb]">GROWTH</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-base text-[#777777] font-normal leading-relaxed">
+              Certifications, bootcamps, and structured learning experiences that continuously refine my skills as a developer.
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="mb-16 grid gap-6 md:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">
+          {/* Minimal Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16 pb-12 border-b border-[#D8D6D0]">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
                 {totalCertificates}+
-              </h3>
-              <p className="mt-2 text-zinc-400">Certificates</p>
+              </div>
+              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
+                CERTIFICATES EARNED
+              </div>
             </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
                 {achievementCategories.length}
-              </h3>
-              <p className="mt-2 text-zinc-400">Categories</p>
+              </div>
+              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
+                SPECIALIZATION DOMAINS
+              </div>
             </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl">
-              <h3 className="text-4xl font-bold text-white">2020+</h3>
-              <p className="mt-2 text-zinc-400">Learning Journey</p>
+            <div className="col-span-2 md:col-span-1">
+              <div className="text-4xl md:text-5xl font-bold text-[#111111]">
+                2020+
+              </div>
+              <div className="text-xs uppercase tracking-wider text-[#777777] mt-1">
+                LEARNING JOURNEY
+              </div>
             </div>
           </div>
 
-          {/* Tabs */}
-          <div className="mb-12 flex justify-center">
-            <div className="relative flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-2 backdrop-blur-xl">
-              {achievementCategories.map((category, index) => (
+          {/* Category Filter Tabs */}
+          <div className="flex flex-wrap gap-3 mb-12">
+            {achievementCategories.map((category, index) => {
+              const isActive = selectedCategory === index;
+              return (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(index)}
-                  className={`relative z-10 rounded-xl px-5 py-3 text-sm font-medium transition-all ${selectedCategory === index
-                    ? "text-white"
-                    : "text-zinc-400 hover:text-zinc-200"
-                    }`}
+                  className={`px-5 py-2.5 text-xs font-mono uppercase tracking-wider transition-all duration-200 border ${
+                    isActive
+                      ? "bg-[#111111] text-[#F4F3EF] border-[#111111]"
+                      : "bg-transparent text-[#777777] border-[#D8D6D0] hover:border-[#111111] hover:text-[#111111]"
+                  }`}
                 >
-                  {category.icon} {category.label}
-
-                  {selectedCategory === index && (
-                    <motion.div
-                      layoutId="active-tab"
-                      transition={{
-                        type: "spring",
-                        bounce: 0.2,
-                        duration: 0.6,
-                      }}
-                      className="absolute inset-0 -z-10 rounded-xl border border-white/10 bg-white/10"
-                    />
-                  )}
+                  {category.label} ({category.items.length})
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Current Category */}
-          {/* <div className="mb-10 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-zinc-300 backdrop-blur-xl">
-              <span>{currentCategory.icon}</span>
-              <span>{currentCategory.label}</span>
-            </div>
-          </div> */}
-
-          {/* Certificates */}
+          {/* Certificates Grid */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentCategory.id}
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
             >
               {currentCategory.items.map((item) => (
                 <div
                   key={item.title}
-                  className="
-                    group
-                    overflow-hidden
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    backdrop-blur-xl
-                    transition-all
-                    duration-500
-                    hover:border-white/20
-                    hover:bg-white/[0.05]
-                  "
+                  className="group flex flex-col bg-[#EAE8E2] border border-[#D8D6D0] overflow-hidden transition-all duration-300 hover:border-[#111111]"
                 >
+                  {/* Image Container */}
                   <div
-                    className="relative aspect-[4/3] cursor-pointer overflow-hidden"
+                    className="relative aspect-[16/10] bg-[#D8D6D0] cursor-pointer overflow-hidden"
                     onClick={() => setSelectedImage(item.image)}
                   >
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="
-                        object-cover
-                        transition-transform
-                        duration-700
-                        group-hover:scale-105
-                      "
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-[#111111]/0 group-hover:bg-[#111111]/10 transition-colors duration-300" />
                   </div>
 
-                  <div className="p-6">
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-400">
-                      {item.source}
-                    </span>
-
-                    <h4 className="mt-4 text-lg font-semibold text-white">
-                      {item.title}
-                    </h4>
+                  {/* Content Info */}
+                  <div className="p-6 flex flex-col justify-between flex-grow">
+                    <div>
+                      <span className="inline-block text-[10px] font-mono uppercase tracking-widest text-[#777777] mb-2 border-b border-[#D8D6D0] pb-1">
+                        {item.source}
+                      </span>
+                      <h3 className="text-lg font-bold text-[#111111] leading-snug group-hover:text-[#0d4dbb] transition-colors">
+                        {item.title}
+                      </h3>
+                    </div>
 
                     <button
                       onClick={() => setSelectedImage(item.image)}
-                      className="mt-6 text-sm text-blue-400 transition hover:text-blue-300"
+                      className="mt-6 flex items-center justify-between w-full pt-4 border-t border-[#D8D6D0] text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#0d4dbb] transition-colors"
                     >
-                      View Certificate →
+                      <span>VIEW CERTIFICATE</span>
+                      <span className="text-base transition-transform duration-200 group-hover:translate-x-1">
+                        →
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -187,7 +147,7 @@ export default function Achievement() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Minimal Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -195,35 +155,34 @@ export default function Achievement() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/90 backdrop-blur-sm p-4 md:p-10"
           >
             <motion.div
-              initial={{
-                scale: 0.95,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-              exit={{
-                scale: 0.95,
-                opacity: 0,
-              }}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-6xl"
+              className="relative w-full max-w-5xl bg-[#F4F3EF] border border-[#D8D6D0] p-4 md:p-6"
             >
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-4xl text-white"
-              >
-                ×
-              </button>
+              {/* Modal Header */}
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#D8D6D0]">
+                <span className="text-xs font-mono uppercase text-[#777777]">
+                  PREVIEW CERTIFICATE
+                </span>
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="text-xs font-mono uppercase tracking-wider text-[#111111] hover:text-[#0d4dbb] transition-colors"
+                >
+                  [ CLOSE ESC ]
+                </button>
+              </div>
 
-              <div className="relative aspect-video w-full">
+              {/* Image */}
+              <div className="relative aspect-[16/10] w-full bg-[#EAE8E2]">
                 <Image
                   src={selectedImage}
-                  alt="Certificate"
+                  alt="Certificate Preview"
                   fill
                   className="object-contain"
                 />
