@@ -66,11 +66,11 @@ export default function Hero() {
 
         <div className="grid flex-1 grid-cols-1 lg:grid-cols-12">
           {/* Eyebrow */}
-          <div className=" lg:col-span-2 lg:pt-9">
+          <div className=" lg:col-span-2 pt-5 lg:pt-9">
             {/* <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#777777]">
               Tristia
             </p> */}
-            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[7.2vw]">
+            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] md:text-[12vw] lg:text-[7.2vw]">
               <span className="block">
                 Tristia<span className="text-[#0d4dbb]"></span>
               </span>
@@ -85,23 +85,25 @@ export default function Hero() {
           </div>
 
           {/* Main typography */}
-          <div className="flex flex-col justify-center pb-16 pt-14 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
+          <div className="flex flex-col justify-center pb-1 pt-52 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
+            <div className="relative top-36 md:top-16 md:block">
             <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
-              <span className="block pb-4">
+              <span className="block pb-2">
                 I&apos;m<span className="text-[#0d4dbb]"></span>
               </span>
             </h1>
 
             <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[8.2vw]">
               <span className="block pl-[7vw] lg:pl-[2svw]">Frontend</span>
-              <span className="block pl-[7vw] lg:pl-[20svw]">
+              <span className="block pl-[18vw] lg:pl-[20svw]">
                 Developer<span className="text-[#0d4dbb]">.</span>
               </span>
             </h1>
+            </div>
 
-            <div className="pointer-events-none absolute right-[10vw] top-[18%] z-0 hidden lg:block">
+            <div className="pointer-events-none absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[22%] md:top-[18%] z-0 opacity-40 lg:opacity-100 lg:block">
               {" "}
-              <div className="relative h-[460px] w-[460px] overflow-hidden rounded-full shadow-2xl">
+              <div className="relative h-[360px] w-[360px] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
                 {" "}
                 {/* REAL PHOTO */}{" "}
                 <Image
@@ -146,7 +148,7 @@ export default function Hero() {
                 </p> */}
               </div>
 
-              <div className="sm:text-right lg:col-span-3 lg:col-start-12 pb-8 whitespace-nowrap">
+              <div className="sm:text-right lg:col-span-3 lg:col-start-12 md:pb-8 whitespace-nowrap">
                 <Link
                   href="#contact"
                   className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em]"
