@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export default function CardProject({ projects }: ProjectCardProps) {
   return (
-    <div className="flex flex-col gap-20 py-8">
+    <div className="flex flex-col gap-8 md:gap-20 md:py-8">
       {projects.map((project, index) => {
         const formattedIndex = String(index + 1).padStart(2, "0");
         // Cek genap/ganjil untuk membuat pola selang-seling (zig-zag)
@@ -21,7 +21,7 @@ export default function CardProject({ projects }: ProjectCardProps) {
         return (
           <article
             key={index}
-            className="group relative border-b border-[#D8D6D0] pb-16"
+            className="group relative border-b border-[#D8D6D0] pb-8 md:pb-16"
           >
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
               
@@ -101,7 +101,7 @@ export default function CardProject({ projects }: ProjectCardProps) {
 
                 {/* Tech Stack & Link CTA */}
                 <div className="mt-8">
-                  <div className="pb-6 flex gap-2">
+                  <div className="pb-6 flex flex-wrap gap-2">
                     <CategoryStack categories={project.categories} />
                   </div>
 
