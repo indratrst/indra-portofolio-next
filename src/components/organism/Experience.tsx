@@ -50,7 +50,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
+      className="scroll-mt-28 relative min-h-[100svh] py-6 overflow-hidden bg-[#F4F3EF] text-[#111111] md:py-16"
     >
       {/* Subtle Editorial Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
@@ -60,7 +60,7 @@ export default function ExperienceSection() {
       <div className="relative z-10 mx-auto flex min-h-[100svh] flex-col px-5 sm:px-8 lg:px-36">
         
         {/* Editorial Section Header */}
-        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-6 md:pb-12 pt-6 lg:flex-row lg:items-end">
           <div>
             {/* Category Badge / Sub-label */}
             <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
@@ -83,17 +83,17 @@ export default function ExperienceSection() {
         </div>
 
         {/* Experiences List */}
-        <div className="mt-12 flex flex-col divide-y divide-[#D8D6D0] max-w-[1440px] mx-auto">
+        <div className="mt-1 flex flex-col divide-y divide-[#D8D6D0] max-w-[1440px] mx-auto">
           {experiences.map((experience) => (
             <article
               key={experience.number}
-              className="group relative py-12 transition-colors duration-300 hover:bg-[#EBE9E3]/50"
+              className="group relative py-8 md:py-12 transition-colors duration-300 hover:bg-[#EBE9E3]/50"
             >
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
                 
                 {/* Kolom Kiri: Metadata (Index & company) */}
                 <div className="lg:col-span-3">
-                  <div className="flex items-center gap-4 text-xs uppercase tracking-[0.14em] text-[#777777]">
+                  <div className="flex items-center md:gap-4 text-xs uppercase tracking-[0.14em] text-[#777777]">
                     <span>{experience.number}</span>
                     <span className="h-px w-6 bg-[#D8D6D0]" />
                     <span className="text-[#0d4dbb]">{experience.company}</span>
@@ -130,7 +130,7 @@ export default function ExperienceSection() {
         </div>
 
         {/* Bottom Editorial Footer */}
-        <div className="mt-auto border-t border-[#D8D6D0] pt-6">
+        <div className="mt-auto border-t border-[#D8D6D0] pt-8">
           <p className="text-[10px] uppercase tracking-[0.16em] text-[#777777]">
             Experience of work
           </p>

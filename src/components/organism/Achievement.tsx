@@ -23,7 +23,7 @@ export default function Achievement() {
     <>
       <section
         id="achievement"
-        className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
+        className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-8 lg:py-28"
       >
         {/* Subtle Editorial Grid Background */}
         <div className="pointer-events-none absolute inset-0 opacity-40">
@@ -33,7 +33,7 @@ export default function Achievement() {
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-36">
           
           {/* Editorial Section Header */}
-          <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+          <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-8 md:pb-12 pt-6 lg:flex-row lg:items-end">
             <div>
               <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
                 04 / Certifications
@@ -52,8 +52,8 @@ export default function Achievement() {
           </div>
 
           {/* Editorial Stats Bar */}
-          <div className="grid grid-cols-2 border-b border-[#D8D6D0] py-10 lg:grid-cols-12 lg:gap-8">
-            <div className="lg:col-span-4">
+          <div className="grid md:grid-cols-8 border-b border-[#D8D6D0] py-10 ">
+            <div className="">
               <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
                 Certificates Earned
               </span>
@@ -61,15 +61,15 @@ export default function Achievement() {
                 {totalCertificates}+
               </p>
             </div>
-            <div className="lg:col-span-4">
+            {/* <div className="lg:col-span-4">
               <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
                 Specialization Domains
               </span>
               <p className="mt-2 text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
                 {achievementCategories.length}
               </p>
-            </div>
-            <div className="col-span-2 mt-6 lg:col-span-4 lg:mt-0">
+            </div> */}
+            <div className=" lg:mt-0">
               <span className="text-[10px] uppercase tracking-[0.15em] text-[#777777]">
                 Learning Journey
               </span>
@@ -143,7 +143,7 @@ export default function Achievement() {
 
                     <button
                       onClick={() => setSelectedImage(item.image)}
-                      className="group/btn mt-6 flex items-center justify-between border-t border-[#D8D6D0] pt-4 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
+                      className="group/btn md:mt-6 flex items-center justify-between border-t border-[#D8D6D0] pt-4 text-[11px] uppercase tracking-[0.15em] text-[#111111] transition-colors hover:text-[#0d4dbb]"
                     >
                       <span>View Certificate</span>
                       <ArrowUpRight

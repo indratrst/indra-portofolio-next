@@ -135,7 +135,7 @@ export default function LearningJourney() {
   return (
     <section
       id="timeline"
-      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-20 lg:py-28"
+      className="scroll-mt-28 relative min-h-[100svh] overflow-hidden bg-[#F4F3EF] text-[#111111] py-8  md:py-20"
     >
       {/* Editorial Grid Background */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
@@ -144,7 +144,7 @@ export default function LearningJourney() {
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-full flex-col px-5 sm:px-8 lg:px-36">
         {/* Editorial Section Header */}
-        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-12 pt-6 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between border-b border-[#D8D6D0] pb-6 mt:pb-12 pt-6 lg:flex-row lg:items-end">
           <div>
             <p className="text-[11px] uppercase tracking-[0.14em] text-[#777777]">
               07 / Roadmap & Learning
@@ -157,13 +157,13 @@ export default function LearningJourney() {
             </h2>
           </div>
 
-          <p className="mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
+          <p className="mt-6 md:mt-8 max-w-md text-sm uppercase tracking-[0.08em] text-[#303030] lg:mt-0 lg:pb-3">
             My journey through frontend development, backend engineering, fullstack bootcamps, and modern AI tools.
           </p>
         </div>
 
         {/* Category Filter Tabs (Editorial Pill Badges) */}
-        <div className="flex flex-wrap gap-2 pt-10 pb-8 border-b border-[#D8D6D0] max-w-[1440px] mx-auto">
+        <div className="flex flex-wrap gap-2 pt-5 pb-5 md:pt-10 md:pb-8 border-b border-[#D8D6D0] max-w-[1440px] mx-auto">
           {learningJourney.map((track) => {
             const isActive = activeTrack === track.id;
             return (

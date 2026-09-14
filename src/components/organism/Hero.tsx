@@ -94,15 +94,13 @@ export default function Hero() {
         {/* ------------------------------------------------ */}
 
         <div className="grid flex-1 grid-cols-1 pt-8 sm:pt-10 lg:grid-cols-12 lg:pt-0">
-        {/* Eyebrow */}
-          <div className="lg:col-span-2 pt-5 lg:pt-9">
+          {/* Eyebrow */}
+          <div className="relative lg:col-span-2 -mt-3 lg:pt-9">
             {/* <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#777777]">
               Tristia
             </p> */}
             <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] md:text-[12vw] lg:text-[7.2vw]">
-              <span className="block">
-                Tristia<span className="text-[#0d4dbb]"></span>
-              </span>
+              <span className="block">Tristia</span>
               {/* <span className="block pl-[7vw] lg:pl-[10svw]">
                 Indra Tristia<span className="text-[#0d4dbb]">.</span>
               </span> */}
@@ -113,26 +111,9 @@ export default function Hero() {
             </p> */}
           </div>
 
-          {/* Main typography */}
-          <div className="flex flex-col justify-center pb-1 pt-52 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
-            <div className="relative top-0 md:top-16 md:block">
-            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
-              <span className="block pb-2">
-                I&apos;m<span className="text-[#0d4dbb]"></span>
-              </span>
-            </h1>
-
-            <h1 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[8.2vw]">
-              <span className="block pl-[7vw] lg:pl-[2svw]">Frontend</span>
-              <span className="block pl-[18vw] lg:pl-[20svw]">
-                Developer<span className="text-[#0d4dbb]">.</span>
-              </span>
-            </h1>
-            </div>
-
-            <div className="pointer-events-none  absolute transform right-1/2 translate-x-1/2 md:translate-x-0 md:right-[10vw] top-[28%] md:top-[18%] md:opacity-100 lg:block">
+           <div className="pointer-events-none  transform top-[7%] md:top-[18%] md:opacity-100 lg:block">
               {" "}
-              <div className="relative -z-30 h-[35vh] w-[70vw] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
+              <div className="relative  left-1/2 -translate-x-1/2 mt-7 md:left-96 md:translate-x-full md:mt-20  -z-30 h-[35vh] w-[70vw] md:h-[460px] md:w-[460px] overflow-hidden rounded-full shadow-2xl">
                 {" "}
                 {/* REAL PHOTO */}{" "}
                 <Image
@@ -153,11 +134,26 @@ export default function Hero() {
                   className="absolute inset-0 object-cover animate-image-illustration"
                 />{" "}
               </div>{" "}
-
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-20 md:grid-cols-12 md:gap-10">
 
-              <div className="sm:text-right md:col-span-3 md:col-start-8 lg:col-start-12 md:pb-8">
+          {/* Main typography */}
+          <div className="flex flex-col justify-center pb-1 pt-5 lg:col-span-9 lg:col-start-1 lg:pb-0 lg:pt-32">
+            <div className="relative mt-2 md:-mt-[360px]  md:block">
+              <h2 className="max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[4.2vw]">
+                <span className="block pb-2">I&apos;m</span>
+              </h2>
+
+                <h2 className=" max-w-[1250px] text-[15vw] font-medium leading-[0.82] tracking-[-0.075em] sm:text-[12vw] lg:text-[8.2vw]">
+                  <span className="block pl-[7vw] lg:pl-[2svw]">Frontend</span>
+                  <span className="block pl-[18vw] lg:pl-[20svw]">
+                    Developer<span className="text-[#0d4dbb]">.</span>
+                  </span>
+                </h2>
+            </div>
+
+           
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:mt-6 md:grid-cols-12 md:gap-10">
+              <div className="sm:text-right md:col-span-3 md:col-start-8 lg:col-start-12 md:pb-5">
                 <Link
                   href="mailto:indratrst@gmail.com"
                   className="group inline-flex items-center gap-2 whitespace-nowrap text-[11px] uppercase tracking-[0.15em] text-[#111111]"
